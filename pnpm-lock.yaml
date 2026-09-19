@@ -8,15 +8,6 @@ importers:
 
   .: {}
 
-  ../ScifiUI/packages/core:
-    dependencies:
-      gsap:
-        specifier: ^3.12.0
-        version: 3.15.0
-      tailwindcss:
-        specifier: ^4.0.0
-        version: 4.3.3
-
   apps/api:
     dependencies:
       '@creative-hub/shared':
@@ -88,7 +79,7 @@ importers:
         version: 5.3.0
       '@scifiui/core':
         specifier: workspace:*
-        version: link:../../../ScifiUI/packages/core
+        version: link:../../ScifiUI/packages/core
       '@tabler/icons-svelte':
         specifier: ^3.46.0
         version: 3.46.0(svelte@5.57.0)
@@ -1083,9 +1074,6 @@ packages:
   graphql@16.14.2:
     resolution: {integrity: sha512-Chq1s4CY7jmh8gO2qvLIJyfCDIN+EHLFW/9iShnp1z8FjBQMoodWP1kDC36VAMXXIvAjj4ARa7ntfAV2BrjsbA==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
-
-  gsap@3.15.0:
-    resolution: {integrity: sha512-dMW4CWBTUK1AEEDeZc1g4xpPGIrSf9fJF960qbTZmN/QwZIWY5wgliS6JWl9/25fpTGJrMRtSjGtOmPnfjZB+A==}
 
   ioredis@5.11.1:
     resolution: {integrity: sha512-ehuGcf94bQXhfagULNXrJdfnWO38v070jxSx/qE87Kjzmu2fU7ro5EFAb+OPituLqgfyuQaym5DlrNydW2sJ9A==}
@@ -2215,8 +2203,6 @@ snapshots:
   graceful-fs@4.2.11: {}
 
   graphql@16.14.2: {}
-
-  gsap@3.15.0: {}
 
   ioredis@5.11.1:
     dependencies:
