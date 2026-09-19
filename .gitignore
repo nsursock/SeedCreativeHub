@@ -45,6 +45,7 @@ out/
 .vercel/
 
 # ScifiUI checkout/symlink used by workspace (never commit)
+ScifiUI
 ScifiUI/
 
 # Logs & debug
