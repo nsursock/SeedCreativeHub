@@ -117,7 +117,7 @@ SeedCreativeHub/
 └── pnpm-workspace.yaml      # apps/* · packages/* · ../ScifiUI/packages/core
 ```
 
-**Workspace note:** UI kit `@scifiui/core` is linked from the sibling repo `WD/ScifiUI` via pnpm workspace. Clone/checkout ScifiUI next to this repo (or adjust the workspace path) before installing.
+**Workspace note:** UI kit `@scifiui/core` resolves via `./ScifiUI` (`pnpm` workspace). Locally, `node scripts/ensure-scifiui.mjs` (also `preinstall`) symlinks `../ScifiUI` or clones `nsursock/ScifiUI`. Clone/checkout ScifiUI next to this repo for day-to-day work.
 
 ---
 

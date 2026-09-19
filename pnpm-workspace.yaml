@@ -1,7 +1,9 @@
 packages:
   - "apps/*"
   - "packages/*"
-  - "../ScifiUI/packages/core"
+  # Local: scripts/ensure-scifiui.mjs symlinks ../ScifiUI → ./ScifiUI
+  # CI/Vercel: clones nsursock/ScifiUI into ./ScifiUI
+  - "ScifiUI/packages/core"
 
 allowBuilds:
   "@prisma/client": true

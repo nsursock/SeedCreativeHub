@@ -41,6 +41,9 @@ out/
 # Railway local link metadata (if present)
 .railway/
 
+# ScifiUI checkout/symlink used by workspace (never commit)
+ScifiUI/
+
 # Logs & debug
 *.log
 npm-debug.log*

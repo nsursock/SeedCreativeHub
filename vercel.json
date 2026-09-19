@@ -1,0 +1,21 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "node scripts/ensure-scifiui.mjs && pnpm install",
+  "buildCommand": "pnpm --filter @creative-hub/shared build && pnpm --filter @creative-hub/web build",
+  "outputDirectory": "apps/web/dist",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/graphql",
+      "destination": "https://api-production-8fa47.up.railway.app/graphql"
+    },
+    {
+      "source": "/health",
+      "destination": "https://api-production-8fa47.up.railway.app/health"
+    },
+    {
+      "source": "/((?!assets/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

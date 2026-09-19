@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+/**
+ * Ensure @scifiui/core is available at ./ScifiUI (workspace path).
+ * Local: symlink to ../ScifiUI when present.
+ * CI/Vercel: shallow-clone nsursock/ScifiUI if missing.
+ */
+import { existsSync, symlinkSync, rmSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const target = join(root, "ScifiUI");
+const core = join(target, "packages", "core", "package.json");
+const sibling = join(root, "..", "ScifiUI");
+
+if (existsSync(core)) {
+  console.log("[ensure-scifiui] present:", target);
+  process.exit(0);
+}
+
+if (existsSync(join(sibling, "packages", "core", "package.json"))) {
+  try {
+    if (existsSync(target)) rmSync(target, { recursive: true, force: true });
+  } catch {
+    /* ignore */
+  }
+  symlinkSync(sibling, target);
+  console.log("[ensure-scifiui] symlinked ScifiUI -> ../ScifiUI");
+  process.exit(0);
+}
+
+console.log("[ensure-scifiui] cloning https://github.com/nsursock/ScifiUI.git …");
+const r = spawnSync(
+  "git",
+  ["clone", "--depth", "1", "https://github.com/nsursock/ScifiUI.git", target],
+  { stdio: "inherit" },
+);
+process.exit(r.status ?? 1);
