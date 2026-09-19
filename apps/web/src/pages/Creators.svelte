@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { DISCIPLINES, LEBANESE_CITIES } from "@creative-hub/shared";
+  import { DISCIPLINES } from "@creative-hub/shared";
+  import { marketCities } from "../lib/i18n";
   import PageHero from "../components/PageHero.svelte";
   import ViewModeToggle from "../components/ViewModeToggle.svelte";
   import CreatorsList from "../components/directory/CreatorsList.svelte";
@@ -85,7 +86,7 @@
         <span class="label-kicker mb-1 block text-scifi-muted">{t(messages, "search.city")}</span>
         <select class="select select-bordered select-sm" bind:value={city} onchange={load}>
           <option value="">All</option>
-          {#each LEBANESE_CITIES as c}<option value={c}>{cityLabel(c, locale)}</option>{/each}
+          {#each marketCities() as c}<option value={c}>{cityLabel(c, locale)}</option>{/each}
         </select>
       </label>
       <label class="form-control">

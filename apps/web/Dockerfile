@@ -8,7 +8,9 @@ COPY packages/shared/package.json packages/shared/
 COPY packages packages
 COPY apps/web apps/web
 ARG VITE_PUBLIC_API_URL=
+ARG VITE_HUB_MARKET=worldwide
 ENV VITE_PUBLIC_API_URL=$VITE_PUBLIC_API_URL
+ENV VITE_HUB_MARKET=$VITE_HUB_MARKET
 RUN pnpm install --filter @creative-hub/web --filter @creative-hub/shared \
  && pnpm --filter @creative-hub/shared build \
  && pnpm --filter @creative-hub/web build

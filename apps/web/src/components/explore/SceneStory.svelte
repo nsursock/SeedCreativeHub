@@ -1,6 +1,6 @@
 <script lang="ts">
   import { link } from "svelte-spa-router";
-  import { localePath } from "../../lib/i18n";
+  import { getMessages, localePath, t } from "../../lib/i18n";
   import { locale as localeStore } from "../../lib/stores";
   import { reveal, hueOf, workCoverUrl, initialsOf } from "../../lib/reveal";
   import { dayOf, monthOf, labelOf, cityLabel, type CreatorRow, type WorkRow, type EventRow, type CollabRow } from "../../lib/directory";
@@ -18,6 +18,7 @@
   } = $props();
 
   let locale = $derived($localeStore);
+  let messages = $derived(getMessages(locale));
 
   let storyWork = $derived(works[0] ?? null);
   let storyCreator = $derived(creators[0] ?? null);
@@ -39,13 +40,13 @@
       <p class="label-kicker m-0 text-scifi-primary">// scene story</p>
       <h2 class="m-0 max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">
         {#if storyCreator && storyWork}
-          {storyCreator.displayName} and the work reshaping {storyCreator.city ? cityLabel(storyCreator.city, locale) : "Lebanon"}
+          {storyCreator.displayName} and the work reshaping {storyCreator.city ? cityLabel(storyCreator.city, locale) : t(messages, "explore.sceneStoryPlaceFallback")}
         {:else}
-          People making things in Lebanon
+          {t(messages, "explore.sceneStoryPeople")}
         {/if}
       </h2>
       <p class="m-0 max-w-xl text-sm text-scifi-muted">
-        A short arc across one creator, their work, an open call, and the next night on the ground.
+        {t(messages, "explore.sceneStoryArc")}
       </p>
     </div>
   </header>

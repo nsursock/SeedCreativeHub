@@ -7,7 +7,7 @@
   import IconNetwork from "@tabler/icons-svelte/icons/affiliate";
   import IconArrowDown from "@tabler/icons-svelte/icons/arrow-down";
   import { enterShell, playLandingIntro, typewriter, countUp } from "@scifiui/core/js";
-  import { getMessages, localePath, t } from "../lib/i18n";
+  import { getMessages, localePath, resolveHubMarket, t } from "../lib/i18n";
   import { locale as localeStore } from "../lib/stores";
   import { gql } from "../lib/gql";
   import { reveal, hueOf, initialsOf } from "../lib/reveal";
@@ -27,7 +27,10 @@
   const glitchTitle = $derived(t(messages, "landing.heroGlitch"));
 
   type FeedRow = { t: string; who: string; what: string };
-  const seedWho = ["@nour.png", "@beirut-synth", "@mariam.ink", "@studio-k", "@zee.wav", "@lens.lb"];
+  const seedWho =
+    resolveHubMarket() === "lebanon"
+      ? ["@nour.png", "@beirut-synth", "@mariam.ink", "@studio-k", "@zee.wav", "@lens.lb"]
+      : ["@nour.png", "@rio.loop", "@mariam.ink", "@studio-k", "@zee.wav", "@lens.nyc"];
   const seedWhat = [
     "published a work",
     "opened a collab",
@@ -37,10 +40,10 @@
     "claimed profile",
   ];
   let feed = $state<FeedRow[]>([
-    { t: "21:04:52", who: "@nour.png", what: "published a work" },
-    { t: "21:04:11", who: "@beirut-synth", what: "opened a collab" },
-    { t: "21:03:48", who: "@mariam.ink", what: "joined the waitlist" },
-    { t: "21:03:02", who: "@studio-k", what: "RSVP'd Hub Night" },
+    { t: "21:04:52", who: seedWho[0]!, what: "published a work" },
+    { t: "21:04:11", who: seedWho[1]!, what: "opened a collab" },
+    { t: "21:03:48", who: seedWho[2]!, what: "joined the waitlist" },
+    { t: "21:03:02", who: seedWho[3]!, what: "RSVP'd Hub Night" },
   ]);
 
   function toggle(d: string) {

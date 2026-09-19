@@ -1,8 +1,18 @@
 import "dotenv/config";
+import { defaultCountryForMarket, resolveMarketScope } from "@creative-hub/shared";
 import { parseCostMode } from "./seed-ai/costMode.js";
 
+const nodeEnv = process.env.NODE_ENV ?? "development";
+const marketScope = resolveMarketScope(process.env.HUB_MARKET ?? process.env.MARKET_SCOPE, {
+  isProduction: nodeEnv === "production",
+});
+
 export const env = {
-  nodeEnv: process.env.NODE_ENV ?? "development",
+  nodeEnv,
+  /** lebanon (local default) · worldwide (prod default). Override with HUB_MARKET. */
+  marketScope,
+  /** Profile country when omitted — Lebanon in local market, empty worldwide. */
+  defaultCountry: defaultCountryForMarket(marketScope),
   host: process.env.HOST ?? "0.0.0.0",
   port: Number(process.env.PORT ?? 3001),
   publicAppUrl: process.env.PUBLIC_APP_URL ?? "http://localhost:5173",

@@ -4,6 +4,7 @@ import {
   signUpSchema,
   signInSchema,
   claimProfileSchema,
+  citiesForMarket,
 } from "@creative-hub/shared";
 import type { Cache, Mailer, MediaStorage } from "../adapters/index.js";
 import { requireRole, requireUser, requireVerified, isStaff } from "../auth/guards.js";
@@ -150,8 +151,12 @@ export const resolvers = {
       ctx.prisma.work.findUnique({ where: { slug: args.slug } }),
     disciplines: (_: unknown, __: unknown, ctx: Ctx) =>
       ctx.prisma.discipline.findMany({ orderBy: { sortOrder: "asc" } }),
-    cities: (_: unknown, __: unknown, ctx: Ctx) =>
-      ctx.prisma.city.findMany({ orderBy: { sortOrder: "asc" } }),
+    cities: (_: unknown, __: unknown, ctx: Ctx) => {
+      const allowed = new Set(citiesForMarket(env.marketScope) as readonly string[]);
+      return ctx.prisma.city.findMany({ orderBy: { sortOrder: "asc" } }).then((rows) =>
+        rows.filter((c) => allowed.has(c.slug)),
+      );
+    },
 
     explore: async (_: unknown, __: unknown, ctx: Ctx) => {
       const features = await ctx.prisma.editorialFeature.findMany({ orderBy: { sortOrder: "asc" } });
@@ -664,7 +669,7 @@ export const resolvers = {
             displayName: args.input.displayName ?? handle,
             claimStatus: "claimed",
             city: args.input.city,
-            country: args.input.country ?? "Lebanon",
+            country: args.input.country ?? (env.defaultCountry || "Worldwide"),
             availability: args.input.intent,
           },
         });
@@ -1027,7 +1032,7 @@ export const resolvers = {
           displayName: input.displayName,
           bioShort: input.bioShort,
           city: input.city,
-          country: input.country ?? "Lebanon",
+          country: input.country ?? (env.defaultCountry || "Worldwide"),
           websiteUrl: input.websiteUrl,
           instagramUrl: input.instagramUrl,
           claimStatus: "unclaimed",

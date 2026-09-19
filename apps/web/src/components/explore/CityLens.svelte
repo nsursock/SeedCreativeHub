@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { DISCIPLINES, LEBANESE_CITIES } from "@creative-hub/shared";
+  import { DISCIPLINES } from "@creative-hub/shared";
+  import { marketCities } from "../../lib/i18n";
   import { link } from "svelte-spa-router";
   import CreatorsList from "../directory/CreatorsList.svelte";
   import WorksList from "../directory/WorksList.svelte";
@@ -25,7 +26,7 @@
 
   let locale = $derived($localeStore);
   let lensKind = $state<"city" | "discipline">("city");
-  let city = $state<string>(LEBANESE_CITIES[0]);
+  let city = $state<string>(marketCities()[0]);
   let discipline = $state<string>(DISCIPLINES[0]);
 
   let lensLabel = $derived(lensKind === "city" ? cityLabel(city, locale) : labelOf(discipline));
@@ -72,7 +73,7 @@
       <label class="form-control">
         <span class="label-kicker mb-1 block text-scifi-muted">city</span>
         <select class="select select-bordered select-sm" bind:value={city}>
-          {#each LEBANESE_CITIES as c}<option value={c}>{cityLabel(c, locale)}</option>{/each}
+          {#each marketCities() as c}<option value={c}>{cityLabel(c, locale)}</option>{/each}
         </select>
       </label>
     {:else}

@@ -1,7 +1,7 @@
 import { z } from "zod";
 import {
   DISCIPLINES,
-  LEBANESE_CITIES,
+  ALL_CITIES,
   LOCALES,
   WORK_TYPES,
   WORK_STATUSES,
@@ -11,7 +11,7 @@ import {
 
 export const localeSchema = z.enum(LOCALES);
 export const disciplineSchema = z.enum(DISCIPLINES);
-export const citySchema = z.enum(LEBANESE_CITIES);
+export const citySchema = z.enum(ALL_CITIES);
 
 export const joinWaitlistSchema = z.object({
   email: z.string().email(),

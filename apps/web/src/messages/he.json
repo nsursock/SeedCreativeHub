@@ -15,10 +15,10 @@
     "notifications": "התראות"
   },
   "landing": {
-    "heroKicker": "// קונסולת יצירה לבנון",
+    "heroKicker": "// קונסולת יצירה עולמית",
     "heroGlitch": "מצאו את הסצנה",
     "heroTitle": "מצאו שותפים. ראו מה קורה. פרסמו עבודה.",
-    "heroSub": "מדריך מעשי ליוצרים בלבנון — פרופילים, עבודות, שיתופים ו-Hub Nights.",
+    "heroSub": "מדריך מעשי ליוצרים בכל העולם — פרופילים, עבודות, שיתופים ו-Hub Nights.",
     "heroCta": "הצטרפו לרשימת ההמתנה",
     "pillA": "פרופילים",
     "pillB": "עבודות",
@@ -26,7 +26,7 @@
     "pillD": "Hub Nights",
     "consoleTitle": "סצנה חיה",
     "consoleBody": "יוצרים מזינים, עבודות מומלצות ו-Hub Nights קרובים — המדריך לפני שבירת ה-cold start.",
-    "bootLine": "hub init --locale lebanon --mode waitlist",
+    "bootLine": "hub init --locale worldwide --mode waitlist",
     "section01": "01 / למי",
     "section02": "02 / איך",
     "section03": "03 / מייסדים",
@@ -45,7 +45,7 @@
     "disciplines": "תחומים",
     "submit": "הצטרפות",
     "success": "אתם ברשימה. בדקו את תיבת המייל.",
-    "footer": "Creative Hub — כלי לרשת היצירה בלבנון."
+    "footer": "Creative Hub — כלי לרשת היצירה העולמית."
   },
   "explore": {
     "title": "גלה",
@@ -54,7 +54,10 @@
     "featuredWorks": "עבודות מומלצות",
     "latest": "עבודות אחרונות",
     "upcoming": "אירועים קרובים",
-    "opportunities": "שיתופים פתוחים"
+    "opportunities": "שיתופים פתוחים",
+    "sceneStoryPeople": "אנשים שיוצרים בכל מקום",
+    "sceneStoryPlaceFallback": "הסצנה",
+    "sceneStoryArc": "קשת קצרה סביב יוצר, העבודה שלו, קריאה פתוחה והערב הבא בשטח."
   },
   "profile": {
     "unclaimed": "פרופיל לא נתבע",
@@ -68,6 +71,13 @@
   "auth": {
     "signInTitle": "התחברות",
     "signUpTitle": "יצירת חשבון",
+    "signUpSub": "תפסו מקום ברשת היצירה העולמית.",
+    "signInSub": "התחברו כדי ליצור, לעקוב ולהתחבר.",
+    "overlayJoinTitle": "הצטרפו ל-Hub",
+    "overlayJoinBody": "פרופילים, עבודות, שיתופים ו-Hub Nights — מדריך מעשי ליוצרים בכל העולם.",
+    "overlayJoinQuote": "גלו את האנשים שיוצרים בכל מקום.",
+    "overlayContinueTitle": "המשיכו את הסצנה",
+    "overlayContinueBody": "המשיכו מהיכן שעצרתם — עקבו אחרי יוצרים, ענו לקריאות ופרסמו עבודה חדשה.",
     "email": "אימייל",
     "password": "סיסמה",
     "displayName": "שם תצוגה",

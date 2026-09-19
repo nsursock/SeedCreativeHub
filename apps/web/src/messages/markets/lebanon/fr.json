@@ -1,0 +1,17 @@
+{
+  "landing": {
+    "heroKicker": "// Console créative Liban",
+    "heroSub": "Un annuaire pratique pour les créateurs au Liban — profils, œuvres, collabs et Hub Nights.",
+    "bootLine": "hub init --locale lebanon --mode waitlist",
+    "footer": "Creative Hub — outil pour le graphe créatif libanais."
+  },
+  "auth": {
+    "signUpSub": "Prenez votre place dans le graphe créatif libanais.",
+    "overlayJoinBody": "Profils, œuvres, collabs et Hub Nights — un annuaire pratique pour les créateurs au Liban.",
+    "overlayJoinQuote": "Découvrez les gens qui créent au Liban."
+  },
+  "explore": {
+    "sceneStoryPeople": "Des gens qui créent au Liban",
+    "sceneStoryPlaceFallback": "le Liban"
+  }
+}

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import PageHero from "../components/PageHero.svelte";
-  import { getMessages, t } from "../lib/i18n";
+  import { getMessages, marketCities, t } from "../lib/i18n";
   import { locale as localeStore } from "../lib/stores";
   import { gql } from "../lib/gql";
   import { reveal } from "../lib/reveal";
@@ -9,6 +9,7 @@
 
   let locale = $derived($localeStore);
   let messages = $derived(getMessages(locale));
+  let defaultCity = $derived(marketCities()[0] ?? "other");
 
   let stats = $state<Record<string, number> | null>(null);
   let profiles = $state<any[]>([]);
@@ -74,7 +75,7 @@
         input: {
           handle: newHandle.toLowerCase(),
           displayName: newName,
-          city: "beirut",
+          city: defaultCity,
           disciplineSlugs: ["photography"],
           isFounding: true,
         },

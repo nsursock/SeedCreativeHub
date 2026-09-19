@@ -92,7 +92,7 @@
             <h1 class="hub-auth__title">
               <span class="brand-mark">{t(messages, "auth.signUpTitle")}</span>
             </h1>
-            <p class="hub-auth__sub">Claim your spot in Lebanon’s creative graph.</p>
+            <p class="hub-auth__sub">{t(messages, "auth.signUpSub")}</p>
           </div>
 
           {#if error && !showLogin}
@@ -152,7 +152,7 @@
             <h1 class="hub-auth__title">
               <span class="brand-mark">{t(messages, "auth.signInTitle")}</span>
             </h1>
-            <p class="hub-auth__sub">Sign in to create, follow, and connect.</p>
+            <p class="hub-auth__sub">{t(messages, "auth.signInSub")}</p>
           </div>
 
           {#if error && showLogin}
@@ -197,9 +197,9 @@
     <div class="hub-auth__overlay" class:hub-auth__overlay--login={showLogin} aria-hidden="true">
       <div class="hub-auth__overlay-pane" class:hub-auth__overlay-pane--active={!showLogin}>
         <div class="hub-auth__overlay-inner">
-          <h2 class="hub-auth__overlay-title">Join the Hub</h2>
+          <h2 class="hub-auth__overlay-title">{t(messages, "auth.overlayJoinTitle")}</h2>
           <p class="hub-auth__overlay-body">
-            Profiles, works, collabs, and Hub Nights — a practical directory for creators in Lebanon.
+            {t(messages, "auth.overlayJoinBody")}
           </p>
           <div class="hub-auth__stats">
             <div class="hub-auth__stat">
@@ -218,15 +218,15 @@
               <span class="hub-auth__stat-hint">Paid & unpaid calls</span>
             </div>
           </div>
-          <p class="hub-auth__overlay-quote">Discover the people making things in Lebanon.</p>
+          <p class="hub-auth__overlay-quote">{t(messages, "auth.overlayJoinQuote")}</p>
         </div>
       </div>
 
       <div class="hub-auth__overlay-pane" class:hub-auth__overlay-pane--active={showLogin}>
         <div class="hub-auth__overlay-inner">
-          <h2 class="hub-auth__overlay-title">Continue your scene</h2>
+          <h2 class="hub-auth__overlay-title">{t(messages, "auth.overlayContinueTitle")}</h2>
           <p class="hub-auth__overlay-body">
-            Pick up where you left off — follow creators, answer open calls, and ship new work.
+            {t(messages, "auth.overlayContinueBody")}
           </p>
           <div class="hub-auth__stats">
             <div class="hub-auth__stat">

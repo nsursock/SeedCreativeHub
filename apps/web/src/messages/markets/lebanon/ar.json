@@ -1,0 +1,17 @@
+{
+  "landing": {
+    "heroKicker": "// وحدة إبداع لبنان",
+    "heroSub": "دليل عملي للمبدعين في لبنان — ملفات، أعمال، تعاون، وليالي الـ Hub.",
+    "bootLine": "hub init --locale lebanon --mode waitlist",
+    "footer": "Creative Hub — أداة لشبكة الإبداع في لبنان."
+  },
+  "auth": {
+    "signUpSub": "احجز مكانك في شبكة الإبداع في لبنان.",
+    "overlayJoinBody": "ملفات وأعمال وتعاون وليالي Hub — دليل عملي للمبدعين في لبنان.",
+    "overlayJoinQuote": "اكتشف من يصنع الأشياء في لبنان."
+  },
+  "explore": {
+    "sceneStoryPeople": "ناس يصنعون الأشياء في لبنان",
+    "sceneStoryPlaceFallback": "لبنان"
+  }
+}

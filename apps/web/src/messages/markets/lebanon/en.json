@@ -1,0 +1,17 @@
+{
+  "landing": {
+    "heroKicker": "// Lebanon creative console",
+    "heroSub": "A practical directory for creators in Lebanon — profiles, works, collabs, and Hub Nights.",
+    "bootLine": "hub init --locale lebanon --mode waitlist",
+    "footer": "Creative Hub — utility for Lebanon's creative graph."
+  },
+  "auth": {
+    "signUpSub": "Claim your spot in Lebanon’s creative graph.",
+    "overlayJoinBody": "Profiles, works, collabs, and Hub Nights — a practical directory for creators in Lebanon.",
+    "overlayJoinQuote": "Discover the people making things in Lebanon."
+  },
+  "explore": {
+    "sceneStoryPeople": "People making things in Lebanon",
+    "sceneStoryPlaceFallback": "Lebanon"
+  }
+}

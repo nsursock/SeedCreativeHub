@@ -15,10 +15,10 @@
     "notifications": "Alerts"
   },
   "landing": {
-    "heroKicker": "// Lebanon creative console",
+    "heroKicker": "// Global creative console",
     "heroGlitch": "FIND YOUR SCENE",
     "heroTitle": "Find collaborators. See what's on. Ship work.",
-    "heroSub": "A practical directory for creators in Lebanon — profiles, works, collabs, and Hub Nights.",
+    "heroSub": "A practical directory for creators worldwide — profiles, works, collabs, and Hub Nights.",
     "heroCta": "Join the waitlist",
     "pillA": "Profiles",
     "pillB": "Works",
@@ -26,7 +26,7 @@
     "pillD": "Hub Nights",
     "consoleTitle": "Live scene",
     "consoleBody": "Seeded creators, featured works, and upcoming Hub Nights — the directory before the cold start breaks.",
-    "bootLine": "hub init --locale lebanon --mode waitlist",
+    "bootLine": "hub init --locale worldwide --mode waitlist",
     "section01": "01 / Who",
     "section02": "02 / How",
     "section03": "03 / Founding",
@@ -45,7 +45,7 @@
     "disciplines": "Disciplines",
     "submit": "Join waitlist",
     "success": "You're on the list. Check your inbox.",
-    "footer": "Creative Hub — utility for Lebanon's creative graph."
+    "footer": "Creative Hub — utility for the global creative graph."
   },
   "explore": {
     "title": "Explore",
@@ -61,7 +61,10 @@
     "latest": "Latest works",
     "upcoming": "Upcoming events",
     "opportunities": "Open collaborations",
-    "empty": "Nothing here yet."
+    "empty": "Nothing here yet.",
+    "sceneStoryPeople": "People making things everywhere",
+    "sceneStoryPlaceFallback": "the scene",
+    "sceneStoryArc": "A short arc across one creator, their work, an open call, and the next night on the ground."
   },
   "profile": {
     "unclaimed": "Unclaimed profile",
@@ -75,6 +78,13 @@
   "auth": {
     "signInTitle": "Sign in",
     "signUpTitle": "Create account",
+    "signUpSub": "Claim your spot in the global creative graph.",
+    "signInSub": "Sign in to create, follow, and connect.",
+    "overlayJoinTitle": "Join the Hub",
+    "overlayJoinBody": "Profiles, works, collabs, and Hub Nights — a practical directory for creators worldwide.",
+    "overlayJoinQuote": "Discover the people making things everywhere.",
+    "overlayContinueTitle": "Continue your scene",
+    "overlayContinueBody": "Pick up where you left off — follow creators, answer open calls, and ship new work.",
     "email": "Email",
     "password": "Password",
     "displayName": "Display name",

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { DISCIPLINES, LEBANESE_CITIES, WORK_TYPES } from "@creative-hub/shared";
+  import { DISCIPLINES, WORK_TYPES } from "@creative-hub/shared";
+  import { marketCities } from "../lib/i18n";
   import PageHero from "../components/PageHero.svelte";
   import ViewModeToggle from "../components/ViewModeToggle.svelte";
   import WorksList from "../components/directory/WorksList.svelte";
@@ -92,7 +93,7 @@
         <span class="label-kicker mb-1 block text-scifi-muted">{t(messages, "search.city")}</span>
         <select class="select select-bordered select-sm" bind:value={city} onchange={load}>
           <option value="">All</option>
-          {#each LEBANESE_CITIES as c}<option value={c}>{cityLabel(c, locale)}</option>{/each}
+          {#each marketCities() as c}<option value={c}>{cityLabel(c, locale)}</option>{/each}
         </select>
       </label>
       <button class="btn-cta btn-sm px-4 py-2 text-xs" type="button" onclick={load}>Apply</button>

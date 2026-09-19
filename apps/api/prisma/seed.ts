@@ -6,6 +6,7 @@ import {
   DISCIPLINES,
   DISCIPLINE_WORK_TYPE,
   LEBANESE_CITIES,
+  WORLD_CITIES,
   CITY_LABELS,
   type DisciplineSlug,
   type WorkType,
@@ -100,8 +101,9 @@ async function seedTaxonomy() {
   }
 
   i = 0;
-  for (const slug of LEBANESE_CITIES) {
+  for (const slug of WORLD_CITIES) {
     const labels = CITY_LABELS[slug];
+    const sortOrder = i++;
     await prisma.city.upsert({
       where: { slug },
       create: {
@@ -110,13 +112,14 @@ async function seedTaxonomy() {
         nameFr: labels.fr,
         nameAr: labels.ar,
         nameHe: labels.he,
-        sortOrder: i++,
+        sortOrder,
       },
       update: {
         nameEn: labels.en,
         nameFr: labels.fr,
         nameAr: labels.ar,
         nameHe: labels.he,
+        sortOrder,
       },
     });
   }

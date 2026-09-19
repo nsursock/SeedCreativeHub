@@ -15,10 +15,10 @@
     "notifications": "Alertes"
   },
   "landing": {
-    "heroKicker": "// Console créative Liban",
+    "heroKicker": "// Console créative mondiale",
     "heroGlitch": "TROUVE TA SCÈNE",
     "heroTitle": "Trouvez des collaborateurs. Voyez ce qui se passe. Publiez.",
-    "heroSub": "Un annuaire pratique pour les créateurs au Liban — profils, œuvres, collabs et Hub Nights.",
+    "heroSub": "Un annuaire pratique pour les créateurs du monde entier — profils, œuvres, collabs et Hub Nights.",
     "heroCta": "Rejoindre la liste d'attente",
     "pillA": "Profils",
     "pillB": "Œuvres",
@@ -26,7 +26,7 @@
     "pillD": "Hub Nights",
     "consoleTitle": "Scène live",
     "consoleBody": "Créateurs seedés, œuvres en vedette et Hub Nights à venir — l'annuaire avant la rupture du cold start.",
-    "bootLine": "hub init --locale lebanon --mode waitlist",
+    "bootLine": "hub init --locale worldwide --mode waitlist",
     "section01": "01 / Pour qui",
     "section02": "02 / Comment",
     "section03": "03 / Fondation",
@@ -45,7 +45,7 @@
     "disciplines": "Disciplines",
     "submit": "Rejoindre",
     "success": "Vous êtes sur la liste. Vérifiez votre boîte mail.",
-    "footer": "Creative Hub — outil pour le graphe créatif libanais."
+    "footer": "Creative Hub — outil pour le graphe créatif mondial."
   },
   "explore": {
     "title": "Explorer",
@@ -54,7 +54,10 @@
     "featuredWorks": "Œuvres en vedette",
     "latest": "Dernières œuvres",
     "upcoming": "Événements à venir",
-    "opportunities": "Collaborations ouvertes"
+    "opportunities": "Collaborations ouvertes",
+    "sceneStoryPeople": "Des gens qui créent partout",
+    "sceneStoryPlaceFallback": "la scène",
+    "sceneStoryArc": "Un arc court autour d'un créateur, de son œuvre, d'un appel ouvert et de la prochaine soirée sur le terrain."
   },
   "profile": {
     "unclaimed": "Profil non réclamé",
@@ -68,6 +71,13 @@
   "auth": {
     "signInTitle": "Connexion",
     "signUpTitle": "Créer un compte",
+    "signUpSub": "Prenez votre place dans le graphe créatif mondial.",
+    "signInSub": "Connectez-vous pour créer, suivre et collaborer.",
+    "overlayJoinTitle": "Rejoindre le Hub",
+    "overlayJoinBody": "Profils, œuvres, collabs et Hub Nights — un annuaire pratique pour les créateurs du monde entier.",
+    "overlayJoinQuote": "Découvrez les gens qui créent partout.",
+    "overlayContinueTitle": "Continuez votre scène",
+    "overlayContinueBody": "Reprenez où vous vous êtes arrêté — suivez des créateurs, répondez aux appels et publiez.",
     "email": "E-mail",
     "password": "Mot de passe",
     "displayName": "Nom affiché",

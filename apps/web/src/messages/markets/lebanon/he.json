@@ -1,0 +1,17 @@
+{
+  "landing": {
+    "heroKicker": "// קונסולת יצירה לבנון",
+    "heroSub": "מדריך מעשי ליוצרים בלבנון — פרופילים, עבודות, שיתופים ו-Hub Nights.",
+    "bootLine": "hub init --locale lebanon --mode waitlist",
+    "footer": "Creative Hub — כלי לרשת היצירה בלבנון."
+  },
+  "auth": {
+    "signUpSub": "תפסו מקום ברשת היצירה בלבנון.",
+    "overlayJoinBody": "פרופילים, עבודות, שיתופים ו-Hub Nights — מדריך מעשי ליוצרים בלבנון.",
+    "overlayJoinQuote": "גלו את האנשים שיוצרים בלבנון."
+  },
+  "explore": {
+    "sceneStoryPeople": "אנשים שיוצרים בלבנון",
+    "sceneStoryPlaceFallback": "לבנון"
+  }
+}
