@@ -41,6 +41,9 @@ out/
 # Railway local link metadata (if present)
 .railway/
 
+# Vercel local link metadata
+.vercel/
+
 # ScifiUI checkout/symlink used by workspace (never commit)
 ScifiUI/
 
