@@ -22,8 +22,10 @@ const schema = makeExecutableSchema({ typeDefs, resolvers });
 async function main() {
   initObservability();
   const redis = createRedis();
+  let redisReady = false;
   try {
     await redis.connect();
+    redisReady = true;
   } catch (err) {
     console.warn("[redis] connect deferred:", (err as Error).message);
   }
@@ -41,8 +43,7 @@ async function main() {
   await app.register(rateLimit, {
     max: 300,
     timeWindow: "1 minute",
-    redis,
-    nameSpace: "rl:",
+    ...(redisReady ? { redis, nameSpace: "rl:" as const } : {}),
   });
 
   app.get("/health", async () => ({ ok: true, service: "creative-hub-api" }));

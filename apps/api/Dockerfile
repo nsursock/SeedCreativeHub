@@ -4,6 +4,9 @@ RUN corepack enable && apk add --no-cache openssl libc6-compat
 COPY package.json pnpm-lock.yaml ./
 # API image does not need sibling ScifiUI (web-only workspace package).
 # Keep allowBuilds so prisma/argon2 native scripts are not ignored by pnpm 11+.
+# Cache bust when source-only API commits must rebuild (Railway Metal builder).
+ARG SOURCE_SHA=dev
+RUN echo "source_sha=${SOURCE_SHA}" >/tmp/source_sha
 RUN printf '%s\n' \
   'packages:' \
   '  - "apps/*"' \
