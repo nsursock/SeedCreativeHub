@@ -390,15 +390,16 @@ export const resolvers = {
       }),
     opportunity: (_: unknown, args: { slug: string }, ctx: Ctx) =>
       ctx.prisma.opportunity.findUnique({ where: { slug: args.slug } }),
-    events: (_: unknown, args: { limit?: number; upcomingOnly?: boolean }, ctx: Ctx) =>
-      ctx.prisma.event.findMany({
-        where: {
-          status: "published",
-          ...(args.upcomingOnly !== false ? { startsAt: { gte: new Date() } } : {}),
-        },
+    events: (_: unknown, args: { limit?: number; upcomingOnly?: boolean }, ctx: Ctx) => {
+      const upcomingOnly = args.upcomingOnly === true;
+      return ctx.prisma.event.findMany({
+        where: upcomingOnly
+          ? { status: "published", startsAt: { gte: new Date() } }
+          : { status: { in: ["published", "past"] } },
         orderBy: { startsAt: "asc" },
         take: args.limit ?? 40,
-      }),
+      });
+    },
     event: (_: unknown, args: { slug: string }, ctx: Ctx) =>
       ctx.prisma.event.findUnique({ where: { slug: args.slug } }),
     notifications: (_: unknown, args: { limit?: number }, ctx: Ctx) => {

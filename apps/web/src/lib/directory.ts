@@ -46,6 +46,7 @@ export type EventRow = {
   imageUrl?: string | null;
   isHubNight: boolean;
   capacity?: number | null;
+  status?: string | null;
 };
 
 export type CollabRow = {

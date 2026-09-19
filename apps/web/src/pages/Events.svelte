@@ -35,8 +35,8 @@
     } else {
       const res = await gql<{ events: EventRow[] }>(
         `query {
-          events(limit: 40) {
-            id slug name startsAt endsAt venue city category imageUrl isHubNight capacity
+          events(limit: 40, upcomingOnly: false) {
+            id slug name startsAt endsAt venue city category imageUrl isHubNight capacity status
           }
         }`,
       );
@@ -47,14 +47,14 @@
 </script>
 
 <main class="hub-page">
-  <PageHero kicker="calendar" title={t(messages, "events.title")} sub="Upcoming Hub Nights and scene listings." />
+  <PageHero kicker="calendar" title={t(messages, "events.title")} sub="Upcoming and recent Hub Nights and scene listings." />
 
   {#if !params?.slug}
     <div class="console-panel mb-8" use:reveal>
       <div class="pane-header">
         <span class="pane-title"><span class="pane-title-bar"></span> browse</span>
         <div class="flex items-center gap-2">
-          <span class="status-chip"><span class="dot"></span> {visible.length} live</span>
+          <span class="status-chip"><span class="dot"></span> {visible.length} listed</span>
           <ViewModeToggle />
         </div>
       </div>

@@ -115,6 +115,9 @@
               {#if e.isHubNight}
                 <span class="badge badge-primary badge-sm mt-1.5">{t(messages, "events.hubNight")}</span>
               {/if}
+              {#if e.status === "past" || (e.startsAt && new Date(e.startsAt).getTime() < Date.now())}
+                <span class="badge badge-outline badge-sm mt-1.5">past</span>
+              {/if}
             </span>
           </span>
         </a>

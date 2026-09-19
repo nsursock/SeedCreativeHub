@@ -214,7 +214,7 @@ export const typeDefs = /* GraphQL */ `
     works(discipline: String, city: String, type: WorkType, q: String, limit: Int = 40, offset: Int = 0): [Work!]!
     opportunities(status: OpportunityStatus = open, limit: Int = 40): [Opportunity!]!
     opportunity(slug: String!): Opportunity
-    events(limit: Int = 40, upcomingOnly: Boolean = true): [Event!]!
+    events(limit: Int = 40, upcomingOnly: Boolean = false): [Event!]!
     event(slug: String!): Event
     notifications(limit: Int = 30): [Notification!]!
     disciplines: [Discipline!]!

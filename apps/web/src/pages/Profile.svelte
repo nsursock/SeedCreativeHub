@@ -21,6 +21,7 @@
   let message = $state("");
   let reason = $state("");
   let flash = $state("");
+  let isOwnProfile = $derived(Boolean(profile && $me?.profile?.handle === profile.handle));
 
   async function load() {
     const res = await gql<{ profile: any }>(
@@ -141,7 +142,7 @@
           </div>
         </div>
         <div class="flex shrink-0 flex-wrap gap-2 sm:flex-col sm:justify-start">
-          {#if profile.claimStatus === "claimed"}
+          {#if profile.claimStatus === "claimed" && !isOwnProfile}
             <button class="btn-cta btn-sm px-4 py-2 text-sm" type="button" onclick={toggleFollow}>
               {profile.isFollowing ? t(messages, "profile.unfollow") : t(messages, "profile.follow")}
             </button>
@@ -149,9 +150,11 @@
               >{t(messages, "profile.contact")}</button
             >
           {/if}
-          <button class="btn btn-ghost btn-sm" type="button" onclick={openReport}
-            >{t(messages, "profile.report")}</button
-          >
+          {#if !isOwnProfile}
+            <button class="btn btn-ghost btn-sm" type="button" onclick={openReport}
+              >{t(messages, "profile.report")}</button
+            >
+          {/if}
         </div>
       </div>
       {#if profile.bioShort}
