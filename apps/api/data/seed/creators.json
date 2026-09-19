@@ -1,64 +1,1149 @@
 [
   {
-    "handle": "maya_k",
-    "displayName": "Maya Khoury",
-    "bioShort": "Photographer documenting Beirut nights.",
-    "city": "beirut",
-    "disciplineSlugs": ["photography"],
-    "works": [
-      {
-        "title": "Corniche After Midnight",
-        "type": "image",
-        "description": "Night walk along the Corniche — sodium lights, wet asphalt.",
-        "imagePrompt": "Documentary photo of Beirut Corniche at night, wet asphalt, sodium lights, grainy film, no text",
-        "primaryDiscipline": "photography"
-      }
-    ]
-  },
-  {
     "handle": "rami_beats",
     "displayName": "Rami Beats",
-    "bioShort": "Producer / sound designer.",
+    "bioShort": "Sound sketches for film, live sets, and unfinished playlists.",
+    "bioLong": "Rami Beats works primarily in music. Based in beirut. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
     "city": "beirut",
-    "disciplineSlugs": ["music"],
-    "works": [
-      {
-        "title": "Port Loop",
-        "type": "audio",
-        "description": "Two-minute port-side loop for late drives.",
-        "primaryDiscipline": "music"
-      }
-    ]
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "closed for commissions this season",
+    "instagramUrl": "https://instagram.com/rami.beats",
+    "isFounding": true,
+    "sceneWeight": 8,
+    "locale": "en",
+    "workSlugs": [
+      "port-loop",
+      "midnight-pad",
+      "porch-light",
+      "basement-voltage-2",
+      "low-tide-kick-3"
+    ],
+    "userStatus": "active"
   },
   {
-    "handle": "lina_writes",
-    "displayName": "Lina Haddad",
-    "bioShort": "Poet and essayist.",
+    "handle": "sora_keys",
+    "displayName": "Sora Keys",
+    "bioShort": "Sora makes music from amsterdam — late sessions and portable speakers.",
+    "bioLong": "Sora Keys works primarily in music. Based in amsterdam. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "amsterdam",
+    "country": "Netherlands",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for illustrator",
+    "websiteUrl": "https://example.com/sora_keys",
+    "instagramUrl": "https://instagram.com/sora.keys",
+    "isFounding": true,
+    "sceneWeight": 8,
+    "locale": "en",
+    "workSlugs": [
+      "sidewalk-amplifier",
+      "copper-morning-2"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "milo_wave",
+    "displayName": "Milo Wave",
+    "bioShort": "Producer / performer shaping small rooms into bigger nights.",
+    "bioLong": "Milo Wave works primarily in music. Based in tripoli. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
     "city": "tripoli",
-    "disciplineSlugs": ["writing"],
-    "works": [
-      {
-        "title": "Letters from the Port",
-        "type": "text",
-        "description": "A short essay on leaving and returning.",
-        "body": "We measure distance in ferry horns. Tripoli keeps the drafts; Beirut keeps the edits. Between them, a sentence tries to stay honest.",
-        "primaryDiscipline": "writing"
-      }
-    ]
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "selective · remote OK",
+    "isFounding": true,
+    "sceneWeight": 2,
+    "locale": "en",
+    "workSlugs": [
+      "port-loop-redux",
+      "atlas-hum-2"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "nadia_freq",
+    "displayName": "Nadia Freq",
+    "bioShort": "Producer / performer shaping small rooms into bigger nights.",
+    "bioLong": "Nadia Freq works primarily in music. Based in buenos aires. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "buenos-aires",
+    "country": "Argentina",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "selective · remote OK",
+    "isFounding": true,
+    "sceneWeight": 6,
+    "locale": "en",
+    "workSlugs": [
+      "dream-harbor",
+      "porch-light-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "jax_lowend",
+    "displayName": "Jax Lowend",
+    "bioShort": "Promotional account — limited engagement (seed moderation demo).",
+    "bioLong": "Jax Lowend works primarily in music. Based in cairo. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "cairo",
+    "country": "Egypt",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "closed for commissions this season",
+    "websiteUrl": "https://example.com/jax_lowend",
+    "isFounding": true,
+    "sceneWeight": 5,
+    "locale": "en",
+    "workSlugs": [
+      "night-shift-trio",
+      "sidewalk-amplifier-2",
+      "copper-morning-3"
+    ],
+    "userStatus": "suspended"
+  },
+  {
+    "handle": "yara_strings",
+    "displayName": "Yara Strings",
+    "bioShort": "Producer / performer shaping small rooms into bigger nights.",
+    "bioLong": "Yara Strings works primarily in music. Based in nairobi. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "nairobi",
+    "country": "Kenya",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for vocalist",
+    "instagramUrl": "https://instagram.com/yara.strings",
+    "isFounding": true,
+    "sceneWeight": 3,
+    "locale": "en",
+    "workSlugs": [
+      "low-tide-kick",
+      "grid-static-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "kenji_tape",
+    "displayName": "Kenji Tape",
+    "bioShort": "Kenji makes music from dubai — late sessions and portable speakers.",
+    "bioLong": "Kenji Tape works primarily in music. Based in dubai. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "dubai",
+    "country": "United Arab Emirates",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "selective · onsite preferred",
+    "isFounding": true,
+    "sceneWeight": 3,
+    "locale": "en",
+    "workSlugs": [
+      "signal-drift",
+      "dream-harbor-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "amina_pulse",
+    "displayName": "Amina Pulse",
+    "bioShort": "Producer / performer shaping small rooms into bigger nights.",
+    "bioLong": "Amina Pulse works primarily in music. Based in lisbon. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "lisbon",
+    "country": "Portugal",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "closed for commissions this season",
+    "websiteUrl": "https://example.com/amina_pulse",
+    "isFounding": true,
+    "sceneWeight": 5,
+    "locale": "en",
+    "workSlugs": [
+      "concrete-cipher",
+      "velvet-delay-2",
+      "signal-drift-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "theo_reverb",
+    "displayName": "Theo Reverb",
+    "bioShort": "Sound sketches for film, live sets, and unfinished playlists.",
+    "bioLong": "Theo Reverb works primarily in music. Based in mexico city. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "mexico-city",
+    "country": "Mexico",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for illustrator",
+    "isFounding": true,
+    "sceneWeight": 2,
+    "locale": "ar",
+    "workSlugs": [
+      "paper-mic",
+      "concrete-cipher-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "leila_chord",
+    "displayName": "Leila Chord",
+    "bioShort": "Leila makes music from istanbul — late sessions and portable speakers.",
+    "bioLong": "Leila Chord works primarily in music. Based in istanbul. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "istanbul",
+    "country": "Turkey",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "selective · remote OK",
+    "websiteUrl": "https://example.com/leila_chord",
+    "instagramUrl": "https://instagram.com/leila.chord",
+    "isFounding": true,
+    "sceneWeight": 2,
+    "locale": "en",
+    "workSlugs": [
+      "soft-horizon",
+      "port-loop-redux-2"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "omar_drum",
+    "displayName": "Omar Drum",
+    "bioShort": "Omar makes music from london — late sessions and portable speakers.",
+    "bioLong": "Omar Drum works primarily in music. Based in london. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "london",
+    "country": "United Kingdom",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for producer",
+    "websiteUrl": "https://example.com/omar_drum",
+    "isFounding": true,
+    "sceneWeight": 4,
+    "locale": "en",
+    "workSlugs": [
+      "concrete-cipher-2",
+      "velvet-delay-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "iris_synth",
+    "displayName": "Iris Synth",
+    "bioShort": "Iris makes music from beirut — late sessions and portable speakers.",
+    "bioLong": "Iris Synth works primarily in music. Based in beirut. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for illustrator",
+    "isFounding": true,
+    "sceneWeight": 4,
+    "locale": "en",
+    "workSlugs": [
+      "grid-static",
+      "soft-horizon-2",
+      "port-loop-redux-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "diego_bass",
+    "displayName": "Diego Bass",
+    "bioShort": "Diego makes music from mumbai — late sessions and portable speakers.",
+    "bioLong": "Diego Bass works primarily in music. Based in mumbai. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "mumbai",
+    "country": "India",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for producer",
+    "isFounding": false,
+    "sceneWeight": 4,
+    "locale": "fr",
+    "workSlugs": [
+      "velvet-delay",
+      "signal-drift-2"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "hana_echo",
+    "displayName": "Hana Echo",
+    "bioShort": "Hana makes music from beirut — late sessions and portable speakers.",
+    "bioLong": "Hana Echo works primarily in music. Based in beirut. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "unclaimed",
+    "availability": "open · looking for vocalist",
+    "websiteUrl": "https://example.com/hana_echo",
+    "instagramUrl": "https://instagram.com/hana.echo",
+    "isFounding": false,
+    "sceneWeight": 3,
+    "locale": "en",
+    "workSlugs": [
+      "basement-voltage",
+      "low-tide-kick-2"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "samir_groove",
+    "displayName": "Samir Groove",
+    "bioShort": "Samir makes music from beirut — late sessions and portable speakers.",
+    "bioLong": "Samir Groove works primarily in music. Based in beirut. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "selective · onsite preferred",
+    "isFounding": false,
+    "sceneWeight": 3,
+    "locale": "en",
+    "workSlugs": [
+      "grid-static-2",
+      "soft-horizon-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "maya_k",
+    "displayName": "Maya Khoury",
+    "bioShort": "Documentary and portrait work with patience for ordinary rooms.",
+    "bioLong": "Maya Khoury works primarily in photography. Based in beirut. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "photography"
+    ],
+    "claimStatus": "pending",
+    "availability": "selective · remote OK",
+    "isFounding": false,
+    "sceneWeight": 9,
+    "locale": "en",
+    "workSlugs": [
+      "cornice-after-midnight",
+      "grain-on-hamra",
+      "grain-on-hamra-2-2",
+      "portrait-room-4-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "noura_lens",
+    "displayName": "Noura Lens",
+    "bioShort": "Architecture and street studies between commissions.",
+    "bioLong": "Noura Lens works primarily in photography. Based in paris. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "paris",
+    "country": "France",
+    "disciplineSlugs": [
+      "photography"
+    ],
+    "claimStatus": "claimed",
+    "availability": "selective · onsite preferred",
+    "isFounding": false,
+    "sceneWeight": 8,
+    "locale": "ar",
+    "workSlugs": [
+      "analog-sundays",
+      "scaffold-geometry-2",
+      "metro-hands-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "caleb_frame",
+    "displayName": "Caleb Frame",
+    "bioShort": "Architecture and street studies between commissions.",
+    "bioLong": "Caleb Frame works primarily in photography. Based in byblos. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "byblos",
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "photography"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for electronic musician",
+    "instagramUrl": "https://instagram.com/caleb.frame",
+    "isFounding": false,
+    "sceneWeight": 6,
+    "locale": "en",
+    "workSlugs": [
+      "scaffold-geometry",
+      "metro-hands-2",
+      "glass-lobby-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "zara_grain",
+    "displayName": "Zara Grain",
+    "bioShort": "Zara photographs tokyo edges — light, grain, and waiting.",
+    "bioLong": "Zara Grain works primarily in photography. Based in tokyo. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "tokyo",
+    "country": "Japan",
+    "disciplineSlugs": [
+      "photography"
+    ],
+    "claimStatus": "pending",
+    "availability": "open · looking for electronic musician",
+    "isFounding": false,
+    "sceneWeight": 5,
+    "locale": "fr",
+    "workSlugs": [
+      "paris-blue-hour",
+      "analog-sundays-2",
+      "scaffold-geometry-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "pedro_street",
+    "displayName": "Pedro Street",
+    "bioShort": "Documentary and portrait work with patience for ordinary rooms.",
+    "bioLong": "Pedro Street works primarily in photography. Based in new york. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "new-york",
+    "country": "United States",
+    "disciplineSlugs": [
+      "photography"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for electronic musician",
+    "instagramUrl": "https://instagram.com/pedro.street",
+    "isFounding": false,
+    "sceneWeight": 6,
+    "locale": "fr",
+    "workSlugs": [
+      "river-fog",
+      "roof-laundry-2",
+      "ferry-deck-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "noor_light",
+    "displayName": "Noor Light",
+    "bioShort": "Documentary and portrait work with patience for ordinary rooms.",
+    "bioLong": "Noor Light works primarily in photography. Based in paris. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "paris",
+    "country": "France",
+    "disciplineSlugs": [
+      "photography"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for electronic musician",
+    "instagramUrl": "https://instagram.com/noor.light",
+    "isFounding": false,
+    "sceneWeight": 5,
+    "locale": "fr",
+    "workSlugs": [
+      "paris-blue-hour-2",
+      "analog-sundays-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "ines_aperture",
+    "displayName": "Inès Aperture",
+    "bioShort": "Architecture and street studies between commissions.",
+    "bioLong": "Inès Aperture works primarily in photography. Based in london. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "london",
+    "country": "United Kingdom",
+    "disciplineSlugs": [
+      "photography"
+    ],
+    "claimStatus": "claimed",
+    "availability": "selective · onsite preferred",
+    "isFounding": false,
+    "sceneWeight": 5,
+    "locale": "en",
+    "workSlugs": [
+      "grain-on-hamra-2",
+      "portrait-room-4-2",
+      "night-market-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "jun_shadow",
+    "displayName": "Jun Shadow",
+    "bioShort": "Jun photographs beirut edges — light, grain, and waiting.",
+    "bioLong": "Jun Shadow works primarily in photography. Based in beirut. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "photography"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for vocalist",
+    "websiteUrl": "https://example.com/jun_shadow",
+    "isFounding": false,
+    "sceneWeight": 6,
+    "locale": "en",
+    "workSlugs": [
+      "ferry-deck",
+      "grain-on-hamra-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "rita_film",
+    "displayName": "Rita Film",
+    "bioShort": "Architecture and street studies between commissions.",
+    "bioLong": "Rita Film works primarily in photography. Based in beirut. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "photography"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for stylist",
+    "websiteUrl": "https://example.com/rita_film",
+    "isFounding": false,
+    "sceneWeight": 5,
+    "locale": "en",
+    "workSlugs": [
+      "night-market",
+      "river-fog-2",
+      "roof-laundry-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "adel_portrait",
+    "displayName": "Adel Portrait",
+    "bioShort": "Architecture and street studies between commissions.",
+    "bioLong": "Adel Portrait works primarily in photography. Based in berlin. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "berlin",
+    "country": "Germany",
+    "disciplineSlugs": [
+      "photography"
+    ],
+    "claimStatus": "unclaimed",
+    "availability": "open · looking for electronic musician",
+    "isFounding": false,
+    "sceneWeight": 5,
+    "locale": "fr",
+    "workSlugs": [
+      "corniche-after-midnight",
+      "paris-blue-hour-3"
+    ],
+    "userStatus": "active"
   },
   {
     "handle": "karim_film",
     "displayName": "Karim Abou",
-    "bioShort": "Independent filmmaker.",
+    "bioShort": "Independent filmmaker cutting shorts between longer waits.",
+    "bioLong": "Karim Abou works primarily in film. Based in saida. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
     "city": "saida",
-    "disciplineSlugs": ["film"],
-    "works": [
-      {
-        "title": "Short: The Stairs",
-        "type": "video",
-        "description": "A one-shot climb through a Saida stairwell.",
-        "primaryDiscipline": "film"
-      }
-    ]
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "film"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for producer",
+    "websiteUrl": "https://example.com/karim_film",
+    "instagramUrl": "https://instagram.com/karim.film",
+    "isFounding": false,
+    "sceneWeight": 8,
+    "locale": "en",
+    "workSlugs": [
+      "the-stairs",
+      "harbor-cut",
+      "narrative-bus-stop",
+      "rehearsal-take-3-2"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "sofia_cut",
+    "displayName": "Sofia Cut",
+    "bioShort": "Narrative and doc fragments from paris.",
+    "bioLong": "Sofia Cut works primarily in film. Based in paris. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "paris",
+    "country": "France",
+    "disciplineSlugs": [
+      "film"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for illustrator",
+    "isFounding": false,
+    "sceneWeight": 8,
+    "locale": "en",
+    "workSlugs": [
+      "neon-crossing-2",
+      "tape-over-credits-2",
+      "narrative-bus-stop-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "malik_reel",
+    "displayName": "Malik Reel",
+    "bioShort": "Malik directs lean crews and keeps the takes honest.",
+    "bioLong": "Malik Reel works primarily in film. Based in beirut. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "film"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for editor",
+    "isFounding": false,
+    "sceneWeight": 6,
+    "locale": "en",
+    "workSlugs": [
+      "neon-crossing-2-2",
+      "tape-over-credits-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "elena_lens",
+    "displayName": "Elena Lens",
+    "bioShort": "Narrative and doc fragments from sydney.",
+    "bioLong": "Elena Lens works primarily in film. Based in sydney. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "sydney",
+    "country": "Australia",
+    "disciplineSlugs": [
+      "film"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for editor",
+    "isFounding": false,
+    "sceneWeight": 4,
+    "locale": "en",
+    "workSlugs": [
+      "tape-over-credits",
+      "narrative-bus-stop-2",
+      "rehearsal-take-3-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "tomas_shot",
+    "displayName": "Tomás Shot",
+    "bioShort": "Tomás directs lean crews and keeps the takes honest.",
+    "bioLong": "Tomás Shot works primarily in film. Based in london. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "london",
+    "country": "United Kingdom",
+    "disciplineSlugs": [
+      "film"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for illustrator",
+    "instagramUrl": "https://instagram.com/tomas.shot",
+    "isFounding": false,
+    "sceneWeight": 2,
+    "locale": "en",
+    "workSlugs": [
+      "harbor-cut-2-2",
+      "kitchen-documentary-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "aya_frame",
+    "displayName": "Aya Frame",
+    "bioShort": "Narrative and doc fragments from beirut.",
+    "bioLong": "Aya Frame works primarily in film. Based in beirut. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "film"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for cinematographer",
+    "websiteUrl": "https://example.com/aya_frame",
+    "instagramUrl": "https://instagram.com/aya.frame",
+    "isFounding": false,
+    "sceneWeight": 3,
+    "locale": "en",
+    "workSlugs": [
+      "music-video-drift",
+      "animation-dust-2"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "nico_doc",
+    "displayName": "Nico Doc",
+    "bioShort": "Narrative and doc fragments from barcelona.",
+    "bioLong": "Nico Doc works primarily in film. Based in barcelona. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "barcelona",
+    "country": "Spain",
+    "disciplineSlugs": [
+      "film"
+    ],
+    "claimStatus": "pending",
+    "availability": "open · looking for electronic musician",
+    "websiteUrl": "https://example.com/nico_doc",
+    "isFounding": false,
+    "sceneWeight": 2,
+    "locale": "en",
+    "workSlugs": [
+      "the-stairs-2",
+      "neon-crossing-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "priya_cut",
+    "displayName": "Priya Cut",
+    "bioShort": "Narrative and doc fragments from new york.",
+    "bioLong": "Priya Cut works primarily in film. Based in new york. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "new-york",
+    "country": "United States",
+    "disciplineSlugs": [
+      "film"
+    ],
+    "claimStatus": "unclaimed",
+    "availability": "open · looking for stylist",
+    "websiteUrl": "https://example.com/priya_cut",
+    "instagramUrl": "https://instagram.com/priya.cut",
+    "isFounding": false,
+    "sceneWeight": 3,
+    "locale": "ar",
+    "workSlugs": [
+      "kitchen-documentary",
+      "music-video-drift-2",
+      "animation-dust-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "lina_writes",
+    "displayName": "Lina Haddad",
+    "bioShort": "Essays, flash, and notes from tripoli desks.",
+    "bioLong": "Lina Haddad works primarily in writing. Based in tripoli. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "tripoli",
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "writing"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for stylist",
+    "isFounding": false,
+    "sceneWeight": 2,
+    "locale": "ar",
+    "workSlugs": [
+      "letters-from-the-port",
+      "ferry-drafts",
+      "border-grammar",
+      "letters-from-the-port-3",
+      "ferry-drafts-4"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "marc_verse",
+    "displayName": "Marc Verse",
+    "bioShort": "Marc writes short forms that refuse neat endings.",
+    "bioLong": "Marc Verse works primarily in writing. Based in berlin. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "berlin",
+    "country": "Germany",
+    "disciplineSlugs": [
+      "writing"
+    ],
+    "claimStatus": "claimed",
+    "availability": "selective · onsite preferred",
+    "websiteUrl": "https://example.com/marc_verse",
+    "instagramUrl": "https://instagram.com/marc.verse",
+    "isFounding": false,
+    "sceneWeight": 5,
+    "locale": "en",
+    "workSlugs": [
+      "inventory-of-quiet",
+      "short-story-keys-2",
+      "city-sonnets-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "sara_page",
+    "displayName": "Sara Page",
+    "bioShort": "Essays, flash, and notes from montreal desks.",
+    "bioLong": "Sara Page works primarily in writing. Based in montreal. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "montreal",
+    "country": "Canada",
+    "disciplineSlugs": [
+      "writing"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for stylist",
+    "websiteUrl": "https://example.com/sara_page",
+    "instagramUrl": "https://instagram.com/sara.page",
+    "isFounding": false,
+    "sceneWeight": 6,
+    "locale": "en",
+    "workSlugs": [
+      "ferry-drafts-2-2",
+      "inventory-of-quiet-3",
+      "short-story-keys-4"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "ibrahim_ink",
+    "displayName": "Ibrahim Ink",
+    "bioShort": "Ibrahim writes short forms that refuse neat endings.",
+    "bioLong": "Ibrahim Ink works primarily in writing. Based in paris. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "paris",
+    "country": "France",
+    "disciplineSlugs": [
+      "writing"
+    ],
+    "claimStatus": "claimed",
+    "availability": "selective · onsite preferred",
+    "isFounding": false,
+    "sceneWeight": 6,
+    "locale": "ar",
+    "workSlugs": [
+      "letters-from-the-port-2",
+      "ferry-drafts-3",
+      "inventory-of-quiet-4"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "claire_essay",
+    "displayName": "Claire Essay",
+    "bioShort": "Essays, flash, and notes from seoul desks.",
+    "bioLong": "Claire Essay works primarily in writing. Based in seoul. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "seoul",
+    "country": "South Korea",
+    "disciplineSlugs": [
+      "writing"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for illustrator",
+    "isFounding": false,
+    "sceneWeight": 2,
+    "locale": "en",
+    "workSlugs": [
+      "notes-from-a-screening",
+      "border-grammar-2",
+      "letters-from-the-port-4"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "yuki_flash",
+    "displayName": "Yuki Flash",
+    "bioShort": "Poet and essayist drafting between cities.",
+    "bioLong": "Yuki Flash works primarily in writing. Based in berlin. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "berlin",
+    "country": "Germany",
+    "disciplineSlugs": [
+      "writing"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for illustrator",
+    "isFounding": false,
+    "sceneWeight": 5,
+    "locale": "en",
+    "workSlugs": [
+      "city-sonnets",
+      "flash-receipt-2",
+      "essay-archives-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "dalia_poem",
+    "displayName": "Dalia Poem",
+    "bioShort": "Essays, flash, and notes from montreal desks.",
+    "bioLong": "Dalia Poem works primarily in writing. Based in montreal. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "montreal",
+    "country": "Canada",
+    "disciplineSlugs": [
+      "writing"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for illustrator",
+    "websiteUrl": "https://example.com/dalia_poem",
+    "instagramUrl": "https://instagram.com/dalia.poem",
+    "isFounding": false,
+    "sceneWeight": 2,
+    "locale": "en",
+    "workSlugs": [
+      "essay-archives",
+      "poem-scaffolding-2",
+      "notes-from-a-screening-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "ben_draft",
+    "displayName": "Ben Draft",
+    "bioShort": "Essays, flash, and notes from cape town desks.",
+    "bioLong": "Ben Draft works primarily in writing. Based in cape town. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "cape-town",
+    "country": "South Africa",
+    "disciplineSlugs": [
+      "writing"
+    ],
+    "claimStatus": "unclaimed",
+    "availability": "open · looking for producer",
+    "instagramUrl": "https://instagram.com/ben.draft",
+    "isFounding": false,
+    "sceneWeight": 3,
+    "locale": "ar",
+    "workSlugs": [
+      "ferry-drafts-2",
+      "inventory-of-quiet-2",
+      "short-story-keys-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "elio_noir",
+    "displayName": "Elio Noir",
+    "bioShort": "Sound sketches for film, live sets, and unfinished playlists.",
+    "bioLong": "Elio Noir works primarily in music + film. Based in berlin. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "berlin",
+    "country": "Germany",
+    "disciplineSlugs": [
+      "music",
+      "film"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for producer",
+    "websiteUrl": "https://example.com/elio_noir",
+    "isFounding": false,
+    "sceneWeight": 8,
+    "locale": "en",
+    "workSlugs": [
+      "berlin-basement-tape",
+      "neon-crossing",
+      "copper-morning",
+      "paper-mic-2",
+      "window-seat",
+      "harbor-cut-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "mira_hybrid",
+    "displayName": "Mira Hybrid",
+    "bioShort": "Architecture and street studies between commissions.",
+    "bioLong": "Mira Hybrid works primarily in photography + writing. Based in lagos. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "lagos",
+    "country": "Nigeria",
+    "disciplineSlugs": [
+      "photography",
+      "writing"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for illustrator",
+    "websiteUrl": "https://example.com/mira_hybrid",
+    "isFounding": false,
+    "sceneWeight": 2,
+    "locale": "en",
+    "workSlugs": [
+      "glass-lobby",
+      "corniche-after-midnight-3",
+      "paris-blue-hour-4",
+      "poem-scaffolding",
+      "notes-from-a-screening-2",
+      "border-grammar-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "kasper_mix",
+    "displayName": "Kasper Mix",
+    "bioShort": "Sound sketches for film, live sets, and unfinished playlists.",
+    "bioLong": "Kasper Mix works primarily in music + photography. Based in toronto. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "toronto",
+    "country": "Canada",
+    "disciplineSlugs": [
+      "music",
+      "photography"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for cinematographer",
+    "isFounding": false,
+    "sceneWeight": 6,
+    "locale": "fr",
+    "workSlugs": [
+      "porch-light-2",
+      "basement-voltage-3",
+      "portrait-room-4",
+      "night-market-2",
+      "river-fog-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "layla_cross",
+    "displayName": "Layla Cross",
+    "bioShort": "Layla directs lean crews and keeps the takes honest.",
+    "bioLong": "Layla Cross works primarily in film + writing. Based in saida. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "saida",
+    "country": "Lebanon",
+    "disciplineSlugs": [
+      "film",
+      "writing"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for editor",
+    "instagramUrl": "https://instagram.com/layla.cross",
+    "isFounding": false,
+    "sceneWeight": 3,
+    "locale": "fr",
+    "workSlugs": [
+      "harbor-cut-2",
+      "kitchen-documentary-2",
+      "music-video-drift-3",
+      "short-story-keys",
+      "city-sonnets-2",
+      "flash-receipt-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "oren_studio",
+    "displayName": "Oren Studio",
+    "bioShort": "Producer / performer shaping small rooms into bigger nights.",
+    "bioLong": "Oren Studio works primarily in music + film + photography. Based in los angeles. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "los-angeles",
+    "country": "United States",
+    "disciplineSlugs": [
+      "music",
+      "film",
+      "photography"
+    ],
+    "claimStatus": "unclaimed",
+    "availability": "open · looking for cinematographer",
+    "websiteUrl": "https://example.com/oren_studio",
+    "isFounding": false,
+    "sceneWeight": 5,
+    "locale": "ar",
+    "workSlugs": [
+      "night-shift-trio-2",
+      "sidewalk-amplifier-3",
+      "metro-hands",
+      "glass-lobby-2",
+      "corniche-after-midnight-4",
+      "rehearsal-take-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "rita_vinyl",
+    "displayName": "Rita Vinyl",
+    "bioShort": "Rita makes music from montreal — late sessions and portable speakers.",
+    "bioLong": "Rita Vinyl works primarily in music. Based in montreal. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "montreal",
+    "country": "Canada",
+    "disciplineSlugs": [
+      "music"
+    ],
+    "claimStatus": "claimed",
+    "availability": "selective · remote OK",
+    "websiteUrl": "https://example.com/rita_vinyl",
+    "instagramUrl": "https://instagram.com/rita.vinyl",
+    "isFounding": false,
+    "sceneWeight": 3,
+    "locale": "en",
+    "workSlugs": [
+      "atlas-hum",
+      "night-shift-trio-3"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "hugo_still",
+    "displayName": "Hugo Still",
+    "bioShort": "Architecture and street studies between commissions.",
+    "bioLong": "Hugo Still works primarily in photography. Based in london. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "london",
+    "country": "United Kingdom",
+    "disciplineSlugs": [
+      "photography"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for producer",
+    "instagramUrl": "https://instagram.com/hugo.still",
+    "isFounding": false,
+    "sceneWeight": 5,
+    "locale": "en",
+    "workSlugs": [
+      "roof-laundry",
+      "ferry-deck-2",
+      "grain-on-hamra-4"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "mina_cut",
+    "displayName": "Mina Cut",
+    "bioShort": "Independent filmmaker cutting shorts between longer waits.",
+    "bioLong": "Mina Cut works primarily in film. Based in new york. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "new-york",
+    "country": "United States",
+    "disciplineSlugs": [
+      "film"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for illustrator",
+    "websiteUrl": "https://example.com/mina_cut",
+    "instagramUrl": "https://instagram.com/mina.cut",
+    "isFounding": false,
+    "sceneWeight": 5,
+    "locale": "en",
+    "workSlugs": [
+      "animation-dust",
+      "window-seat-2"
+    ],
+    "userStatus": "active"
+  },
+  {
+    "handle": "joel_line",
+    "displayName": "Joel Line",
+    "bioShort": "Poet and essayist drafting between cities.",
+    "bioLong": "Joel Line works primarily in writing. Based in montreal. Skills woven into practice rather than a résumé line. Looking for collaborators who care about the middle of a piece as much as the hook.",
+    "city": "montreal",
+    "country": "Canada",
+    "disciplineSlugs": [
+      "writing"
+    ],
+    "claimStatus": "claimed",
+    "availability": "open · looking for vocalist",
+    "instagramUrl": "https://instagram.com/joel.line",
+    "isFounding": false,
+    "sceneWeight": 6,
+    "locale": "en",
+    "workSlugs": [
+      "flash-receipt",
+      "essay-archives-2",
+      "poem-scaffolding-3"
+    ],
+    "userStatus": "active"
   }
 ]

@@ -1,0 +1,107 @@
+[
+  {
+    "email": "waitlist+leila@example.com",
+    "displayName": "Leila",
+    "disciplines": [
+      "music"
+    ],
+    "locale": "fr",
+    "referralCode": "hub-night"
+  },
+  {
+    "email": "waitlist+youssef@example.com",
+    "displayName": "Youssef",
+    "disciplines": [
+      "film",
+      "writing"
+    ],
+    "locale": "fr"
+  },
+  {
+    "email": "waitlist+amina@example.com",
+    "displayName": "Amina",
+    "disciplines": [
+      "writing"
+    ],
+    "locale": "ar"
+  },
+  {
+    "email": "waitlist+noah@example.com",
+    "displayName": "Noah",
+    "disciplines": [
+      "film",
+      "writing"
+    ],
+    "locale": "en"
+  },
+  {
+    "email": "waitlist+sami@example.com",
+    "displayName": "Sami",
+    "disciplines": [
+      "writing"
+    ],
+    "locale": "fr",
+    "referralCode": "hub-night"
+  },
+  {
+    "email": "waitlist+elena@example.com",
+    "displayName": "Elena",
+    "disciplines": [
+      "writing",
+      "music"
+    ],
+    "locale": "ar"
+  },
+  {
+    "email": "waitlist+karim@example.com",
+    "displayName": "Karim",
+    "disciplines": [
+      "writing"
+    ],
+    "locale": "fr"
+  },
+  {
+    "email": "waitlist+mia@example.com",
+    "displayName": "Mia",
+    "disciplines": [
+      "writing",
+      "photography"
+    ],
+    "locale": "fr"
+  },
+  {
+    "email": "waitlist+omar@example.com",
+    "displayName": "Omar",
+    "disciplines": [
+      "music"
+    ],
+    "locale": "fr",
+    "referralCode": "hub-night"
+  },
+  {
+    "email": "waitlist+jules@example.com",
+    "displayName": "Jules",
+    "disciplines": [
+      "writing",
+      "photography"
+    ],
+    "locale": "en"
+  },
+  {
+    "email": "waitlist+rania@example.com",
+    "displayName": "Rania",
+    "disciplines": [
+      "writing"
+    ],
+    "locale": "fr"
+  },
+  {
+    "email": "waitlist+theo@example.com",
+    "displayName": "Theo",
+    "disciplines": [
+      "writing",
+      "film"
+    ],
+    "locale": "en"
+  }
+]

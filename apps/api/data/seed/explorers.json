@@ -1,0 +1,602 @@
+[
+  {
+    "handle": "sara_photo",
+    "displayName": "Sara N.",
+    "bioShort": "Follows photographers and the occasional film short.",
+    "city": "paris",
+    "country": "France",
+    "persona": "photo_explorer",
+    "locale": "en",
+    "disciplineSlugs": [
+      "photography"
+    ]
+  },
+  {
+    "handle": "omar_listen",
+    "displayName": "Omar Listen",
+    "bioShort": "Mostly here for music — and the writers who soundtrack nights.",
+    "city": "cairo",
+    "country": "Egypt",
+    "persona": "music_explorer",
+    "locale": "en",
+    "disciplineSlugs": [
+      "music"
+    ]
+  },
+  {
+    "handle": "jade_collab",
+    "displayName": "Jade Collab",
+    "bioShort": "Cross-discipline collaborator hunting projects across media.",
+    "city": "montreal",
+    "country": "Canada",
+    "persona": "cross_discipline_collaborator",
+    "locale": "en",
+    "disciplineSlugs": [
+      "film",
+      "music"
+    ]
+  },
+  {
+    "handle": "nabil_hub",
+    "displayName": "Nabil Hub",
+    "bioShort": "Beirut Hub Night regular — shows up early, stays for the recap.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "persona": "hub_night_regular",
+    "locale": "en",
+    "disciplineSlugs": [
+      "music",
+      "photography"
+    ]
+  },
+  {
+    "handle": "quiet_viewer",
+    "displayName": "Quiet Viewer",
+    "bioShort": "Watches a lot. Follows almost no one.",
+    "city": "london",
+    "country": "United Kingdom",
+    "persona": "lurker",
+    "locale": "en"
+  },
+  {
+    "handle": "ex_06_photo",
+    "displayName": "Mona North",
+    "bioShort": "Mona explores Creative Hub as a photo explorer.",
+    "city": "berlin",
+    "country": "Germany",
+    "persona": "photo_explorer",
+    "locale": "ar",
+    "disciplineSlugs": [
+      "photography"
+    ]
+  },
+  {
+    "handle": "ex_07_music",
+    "displayName": "Leo Wave",
+    "bioShort": "Leo explores Creative Hub as a music explorer.",
+    "city": "new-york",
+    "country": "United States",
+    "persona": "music_explorer",
+    "locale": "en",
+    "disciplineSlugs": [
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_08_cross",
+    "displayName": "Rana Quiet",
+    "bioShort": "Rana explores Creative Hub as a cross discipline collaborator.",
+    "city": "lisbon",
+    "country": "Portugal",
+    "persona": "cross_discipline_collaborator",
+    "locale": "ar",
+    "disciplineSlugs": [
+      "writing",
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_09_hub",
+    "displayName": "Chris Field",
+    "bioShort": "Chris explores Creative Hub as a hub night regular.",
+    "city": "lagos",
+    "country": "Nigeria",
+    "persona": "hub_night_regular",
+    "locale": "en",
+    "disciplineSlugs": [
+      "music",
+      "writing"
+    ]
+  },
+  {
+    "handle": "ex_10_lurker",
+    "displayName": "Aya Note",
+    "bioShort": "Aya explores Creative Hub as a lurker.",
+    "city": "tokyo",
+    "country": "Japan",
+    "persona": "lurker",
+    "locale": "fr",
+    "disciplineSlugs": []
+  },
+  {
+    "handle": "ex_11_photo",
+    "displayName": "Paul Lane",
+    "bioShort": "Paul explores Creative Hub as a photo explorer.",
+    "city": "barcelona",
+    "country": "Spain",
+    "persona": "photo_explorer",
+    "locale": "en",
+    "disciplineSlugs": [
+      "photography"
+    ]
+  },
+  {
+    "handle": "ex_12_music",
+    "displayName": "Hiba Atlas",
+    "bioShort": "Hiba explores Creative Hub as a music explorer.",
+    "city": "dubai",
+    "country": "United Arab Emirates",
+    "persona": "music_explorer",
+    "locale": "fr",
+    "disciplineSlugs": [
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_13_cross",
+    "displayName": "Dev Drift",
+    "bioShort": "Dev explores Creative Hub as a cross discipline collaborator.",
+    "city": "istanbul",
+    "country": "Turkey",
+    "persona": "cross_discipline_collaborator",
+    "locale": "en",
+    "disciplineSlugs": [
+      "film",
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_14_hub",
+    "displayName": "Nora Moss",
+    "bioShort": "Nora explores Creative Hub as a hub night regular.",
+    "city": "amsterdam",
+    "country": "Netherlands",
+    "persona": "hub_night_regular",
+    "locale": "fr",
+    "disciplineSlugs": [
+      "music",
+      "writing"
+    ]
+  },
+  {
+    "handle": "ex_15_lurker",
+    "displayName": "Sam Reed",
+    "bioShort": "Sam explores Creative Hub as a lurker.",
+    "city": "toronto",
+    "country": "Canada",
+    "persona": "lurker",
+    "locale": "ar",
+    "disciplineSlugs": []
+  },
+  {
+    "handle": "ex_16_photo",
+    "displayName": "Farah Pike",
+    "bioShort": "Farah explores Creative Hub as a photo explorer.",
+    "city": "cape-town",
+    "country": "South Africa",
+    "persona": "photo_explorer",
+    "locale": "en",
+    "disciplineSlugs": [
+      "photography"
+    ]
+  },
+  {
+    "handle": "ex_17_music",
+    "displayName": "Alex Vale",
+    "bioShort": "Alex explores Creative Hub as a music explorer.",
+    "city": "buenos-aires",
+    "country": "Argentina",
+    "persona": "music_explorer",
+    "locale": "en",
+    "disciplineSlugs": [
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_18_cross",
+    "displayName": "Tala Shore",
+    "bioShort": "Tala explores Creative Hub as a cross discipline collaborator.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "persona": "cross_discipline_collaborator",
+    "locale": "ar",
+    "disciplineSlugs": [
+      "film",
+      "writing"
+    ]
+  },
+  {
+    "handle": "ex_19_hub",
+    "displayName": "Kit Bloom",
+    "bioShort": "Kit explores Creative Hub as a hub night regular.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "persona": "hub_night_regular",
+    "locale": "ar",
+    "disciplineSlugs": [
+      "music",
+      "photography"
+    ]
+  },
+  {
+    "handle": "ex_20_lurker",
+    "displayName": "Rami Clay",
+    "bioShort": "Rami explores Creative Hub as a lurker.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "persona": "lurker",
+    "locale": "en",
+    "disciplineSlugs": []
+  },
+  {
+    "handle": "ex_21_photo",
+    "displayName": "Eve Photo",
+    "bioShort": "Eve explores Creative Hub as a photo explorer.",
+    "city": "paris",
+    "country": "France",
+    "persona": "photo_explorer",
+    "locale": "fr",
+    "disciplineSlugs": [
+      "photography"
+    ]
+  },
+  {
+    "handle": "ex_22_music",
+    "displayName": "Ziad Listen",
+    "bioShort": "Ziad explores Creative Hub as a music explorer.",
+    "city": "cairo",
+    "country": "Egypt",
+    "persona": "music_explorer",
+    "locale": "en",
+    "disciplineSlugs": [
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_23_cross",
+    "displayName": "Jon Collab",
+    "bioShort": "Jon explores Creative Hub as a cross discipline collaborator.",
+    "city": "montreal",
+    "country": "Canada",
+    "persona": "cross_discipline_collaborator",
+    "locale": "en",
+    "disciplineSlugs": [
+      "writing",
+      "film"
+    ]
+  },
+  {
+    "handle": "ex_24_hub",
+    "displayName": "Maya Hub",
+    "bioShort": "Maya explores Creative Hub as a hub night regular.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "persona": "hub_night_regular",
+    "locale": "en",
+    "disciplineSlugs": [
+      "writing",
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_25_lurker",
+    "displayName": "Gus Viewer",
+    "bioShort": "Gus explores Creative Hub as a lurker.",
+    "city": "london",
+    "country": "United Kingdom",
+    "persona": "lurker",
+    "locale": "en",
+    "disciplineSlugs": []
+  },
+  {
+    "handle": "ex_26_photo",
+    "displayName": "Lana North",
+    "bioShort": "Lana explores Creative Hub as a photo explorer.",
+    "city": "berlin",
+    "country": "Germany",
+    "persona": "photo_explorer",
+    "locale": "ar",
+    "disciplineSlugs": [
+      "photography"
+    ]
+  },
+  {
+    "handle": "ex_27_music",
+    "displayName": "Vic Wave",
+    "bioShort": "Vic explores Creative Hub as a music explorer.",
+    "city": "new-york",
+    "country": "United States",
+    "persona": "music_explorer",
+    "locale": "fr",
+    "disciplineSlugs": [
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_28_cross",
+    "displayName": "Dana Quiet",
+    "bioShort": "Dana explores Creative Hub as a cross discipline collaborator.",
+    "city": "lisbon",
+    "country": "Portugal",
+    "persona": "cross_discipline_collaborator",
+    "locale": "en",
+    "disciplineSlugs": [
+      "photography",
+      "writing"
+    ]
+  },
+  {
+    "handle": "ex_29_hub",
+    "displayName": "Rex Field",
+    "bioShort": "Rex explores Creative Hub as a hub night regular.",
+    "city": "lagos",
+    "country": "Nigeria",
+    "persona": "hub_night_regular",
+    "locale": "fr",
+    "disciplineSlugs": [
+      "music",
+      "writing"
+    ]
+  },
+  {
+    "handle": "ex_30_lurker",
+    "displayName": "Salma Note",
+    "bioShort": "Salma explores Creative Hub as a lurker.",
+    "city": "tokyo",
+    "country": "Japan",
+    "persona": "lurker",
+    "locale": "fr",
+    "disciplineSlugs": []
+  },
+  {
+    "handle": "ex_31_photo",
+    "displayName": "Hugo Lane",
+    "bioShort": "Hugo explores Creative Hub as a photo explorer.",
+    "city": "barcelona",
+    "country": "Spain",
+    "persona": "photo_explorer",
+    "locale": "en",
+    "disciplineSlugs": [
+      "photography"
+    ]
+  },
+  {
+    "handle": "ex_32_music",
+    "displayName": "Iman Atlas",
+    "bioShort": "Iman explores Creative Hub as a music explorer.",
+    "city": "dubai",
+    "country": "United Arab Emirates",
+    "persona": "music_explorer",
+    "locale": "ar",
+    "disciplineSlugs": [
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_33_cross",
+    "displayName": "Max Drift",
+    "bioShort": "Max explores Creative Hub as a cross discipline collaborator.",
+    "city": "istanbul",
+    "country": "Turkey",
+    "persona": "cross_discipline_collaborator",
+    "locale": "en",
+    "disciplineSlugs": [
+      "music",
+      "writing"
+    ]
+  },
+  {
+    "handle": "ex_34_hub",
+    "displayName": "Ruba Moss",
+    "bioShort": "Ruba explores Creative Hub as a hub night regular.",
+    "city": "amsterdam",
+    "country": "Netherlands",
+    "persona": "hub_night_regular",
+    "locale": "en",
+    "disciplineSlugs": [
+      "writing",
+      "film"
+    ]
+  },
+  {
+    "handle": "ex_35_lurker",
+    "displayName": "Ned Reed",
+    "bioShort": "Ned explores Creative Hub as a lurker.",
+    "city": "toronto",
+    "country": "Canada",
+    "persona": "lurker",
+    "locale": "fr",
+    "disciplineSlugs": []
+  },
+  {
+    "handle": "ex_36_photo",
+    "displayName": "Celi Pike",
+    "bioShort": "Celi explores Creative Hub as a photo explorer.",
+    "city": "cape-town",
+    "country": "South Africa",
+    "persona": "photo_explorer",
+    "locale": "en",
+    "disciplineSlugs": [
+      "photography"
+    ]
+  },
+  {
+    "handle": "ex_37_music",
+    "displayName": "Tom Vale",
+    "bioShort": "Tom explores Creative Hub as a music explorer.",
+    "city": "buenos-aires",
+    "country": "Argentina",
+    "persona": "music_explorer",
+    "locale": "ar",
+    "disciplineSlugs": [
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_38_cross",
+    "displayName": "Yas Shore",
+    "bioShort": "Yas explores Creative Hub as a cross discipline collaborator.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "persona": "cross_discipline_collaborator",
+    "locale": "fr",
+    "disciplineSlugs": [
+      "film",
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_39_hub",
+    "displayName": "Ben Bloom",
+    "bioShort": "Ben explores Creative Hub as a hub night regular.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "persona": "hub_night_regular",
+    "locale": "ar",
+    "disciplineSlugs": [
+      "writing",
+      "photography"
+    ]
+  },
+  {
+    "handle": "ex_40_lurker",
+    "displayName": "Kim Clay",
+    "bioShort": "Kim explores Creative Hub as a lurker.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "persona": "lurker",
+    "locale": "ar",
+    "disciplineSlugs": []
+  },
+  {
+    "handle": "ex_41_photo",
+    "displayName": "Lou Photo",
+    "bioShort": "Lou explores Creative Hub as a photo explorer.",
+    "city": "paris",
+    "country": "France",
+    "persona": "photo_explorer",
+    "locale": "en",
+    "disciplineSlugs": [
+      "photography"
+    ]
+  },
+  {
+    "handle": "ex_42_music",
+    "displayName": "Amir Listen",
+    "bioShort": "Amir explores Creative Hub as a music explorer.",
+    "city": "cairo",
+    "country": "Egypt",
+    "persona": "music_explorer",
+    "locale": "ar",
+    "disciplineSlugs": [
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_43_cross",
+    "displayName": "Sky Collab",
+    "bioShort": "Sky explores Creative Hub as a cross discipline collaborator.",
+    "city": "montreal",
+    "country": "Canada",
+    "persona": "cross_discipline_collaborator",
+    "locale": "en",
+    "disciplineSlugs": [
+      "writing",
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_44_hub",
+    "displayName": "Vera Hub",
+    "bioShort": "Vera explores Creative Hub as a hub night regular.",
+    "city": "beirut",
+    "country": "Lebanon",
+    "persona": "hub_night_regular",
+    "locale": "ar",
+    "disciplineSlugs": [
+      "music",
+      "film"
+    ]
+  },
+  {
+    "handle": "ex_45_lurker",
+    "displayName": "Oz Viewer",
+    "bioShort": "Oz explores Creative Hub as a lurker.",
+    "city": "london",
+    "country": "United Kingdom",
+    "persona": "lurker",
+    "locale": "fr",
+    "disciplineSlugs": []
+  },
+  {
+    "handle": "ex_46_photo",
+    "displayName": "Nina North",
+    "bioShort": "Nina explores Creative Hub as a photo explorer.",
+    "city": "berlin",
+    "country": "Germany",
+    "persona": "photo_explorer",
+    "locale": "fr",
+    "disciplineSlugs": [
+      "photography"
+    ]
+  },
+  {
+    "handle": "ex_47_music",
+    "displayName": "Jay Wave",
+    "bioShort": "Jay explores Creative Hub as a music explorer.",
+    "city": "new-york",
+    "country": "United States",
+    "persona": "music_explorer",
+    "locale": "ar",
+    "disciplineSlugs": [
+      "music"
+    ]
+  },
+  {
+    "handle": "ex_48_cross",
+    "displayName": "Reem Quiet",
+    "bioShort": "Reem explores Creative Hub as a cross discipline collaborator.",
+    "city": "lisbon",
+    "country": "Portugal",
+    "persona": "cross_discipline_collaborator",
+    "locale": "fr",
+    "disciplineSlugs": [
+      "photography",
+      "writing"
+    ]
+  },
+  {
+    "handle": "ex_49_hub",
+    "displayName": "Fox Field",
+    "bioShort": "Fox explores Creative Hub as a hub night regular.",
+    "city": "lagos",
+    "country": "Nigeria",
+    "persona": "hub_night_regular",
+    "locale": "fr",
+    "disciplineSlugs": [
+      "photography",
+      "writing"
+    ]
+  },
+  {
+    "handle": "ex_50_lurker",
+    "displayName": "Promo Blast",
+    "bioShort": "Automated promo account (seed moderation demo).",
+    "city": "tokyo",
+    "country": "Japan",
+    "persona": "lurker",
+    "locale": "en",
+    "disciplineSlugs": [],
+    "userStatus": "suspended"
+  }
+]

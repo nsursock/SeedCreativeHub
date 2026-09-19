@@ -1,0 +1,92 @@
+[
+  {
+    "entityType": "profile",
+    "entityRef": "rami_beats",
+    "placement": "explore_featured_creators",
+    "sortOrder": 0
+  },
+  {
+    "entityType": "profile",
+    "entityRef": "elio_noir",
+    "placement": "explore_featured_creators",
+    "sortOrder": 1
+  },
+  {
+    "entityType": "profile",
+    "entityRef": "karim_film",
+    "placement": "explore_featured_creators",
+    "sortOrder": 2
+  },
+  {
+    "entityType": "profile",
+    "entityRef": "lina_writes",
+    "placement": "explore_featured_creators",
+    "sortOrder": 3
+  },
+  {
+    "entityType": "profile",
+    "entityRef": "noura_lens",
+    "placement": "explore_featured_creators",
+    "sortOrder": 4
+  },
+  {
+    "entityType": "profile",
+    "entityRef": "maya_k",
+    "placement": "explore_featured_creators",
+    "sortOrder": 5
+  },
+  {
+    "entityType": "profile",
+    "entityRef": "sora_keys",
+    "placement": "explore_featured_creators",
+    "sortOrder": 6
+  },
+  {
+    "entityType": "profile",
+    "entityRef": "sofia_cut",
+    "placement": "explore_featured_creators",
+    "sortOrder": 7
+  },
+  {
+    "entityType": "work",
+    "entityRef": "port-loop",
+    "placement": "explore_featured_works",
+    "sortOrder": 0
+  },
+  {
+    "entityType": "work",
+    "entityRef": "cornice-after-midnight",
+    "placement": "explore_featured_works",
+    "sortOrder": 1
+  },
+  {
+    "entityType": "work",
+    "entityRef": "berlin-basement-tape",
+    "placement": "explore_featured_works",
+    "sortOrder": 2
+  },
+  {
+    "entityType": "work",
+    "entityRef": "the-stairs",
+    "placement": "explore_featured_works",
+    "sortOrder": 3
+  },
+  {
+    "entityType": "work",
+    "entityRef": "letters-from-the-port",
+    "placement": "explore_featured_works",
+    "sortOrder": 4
+  },
+  {
+    "entityType": "event",
+    "entityRef": "hub-night-beirut-soft-launch",
+    "placement": "explore_upcoming_events",
+    "sortOrder": 0
+  },
+  {
+    "entityType": "opportunity",
+    "entityRef": "looking-for-a-vocalist-rami-beats-0",
+    "placement": "explore_opportunities",
+    "sortOrder": 0
+  }
+]

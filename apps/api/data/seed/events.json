@@ -1,30 +1,115 @@
 [
   {
-    "name": "Creative Hub Night — Soft Launch",
+    "slug": "hub-night-beirut-soft-launch",
+    "name": "Hub Night — Beirut",
     "description": "Founding creators meetup: show work, swap contacts, plan the season.",
-    "venue": "TBD — Beirut",
+    "venue": "TBD — Mar Mikhael",
     "city": "beirut",
     "category": "hub_night",
     "isHubNight": true,
-    "daysFromNow": 21
+    "organizerHandle": "rami_beats",
+    "daysFromEpoch": 21,
+    "durationHours": 4,
+    "status": "published"
   },
   {
-    "name": "Open Studio Walk — Mar Mikhael",
-    "description": "Self-guided visits to open studios along the strip.",
-    "venue": "Mar Mikhael",
+    "slug": "independent-film-night-paris",
+    "name": "Independent Film Night — Paris",
+    "description": "An evening of shorts from independent makers.",
+    "venue": "Microcinema Belleville",
+    "city": "paris",
+    "category": "screening",
+    "organizerHandle": "karim_film",
+    "daysFromEpoch": 35,
+    "status": "published"
+  },
+  {
+    "slug": "experimental-music-showcase-berlin",
+    "name": "Experimental Music Showcase — Berlin",
+    "description": "Basement sets and tape experiments.",
+    "venue": "Kellerraum",
+    "city": "berlin",
+    "category": "showcase",
+    "organizerHandle": "elio_noir",
+    "daysFromEpoch": 28,
+    "status": "published"
+  },
+  {
+    "slug": "photography-walk-beirut",
+    "name": "Photography Walk — Beirut",
+    "description": "Golden-hour walk from Hamra toward the Corniche.",
+    "venue": "Meet at Hamra",
     "city": "beirut",
     "category": "community",
-    "isHubNight": false,
-    "daysFromNow": 35,
-    "externalUrl": "https://example.com/open-studio"
+    "organizerHandle": "admin",
+    "daysFromEpoch": 14,
+    "status": "published"
   },
   {
-    "name": "Film Screening: Local Shorts",
-    "description": "An evening of short films by Lebanon-based makers.",
-    "venue": "Metro al Madina",
+    "slug": "writers-open-mic-london",
+    "name": "Writers' Open Mic — London",
+    "description": "Short readings — essay, poetry, flash.",
+    "venue": "Independent bookshop basement",
+    "city": "london",
+    "category": "open_mic",
+    "organizerHandle": "lina_writes",
+    "daysFromEpoch": 40,
+    "status": "published"
+  },
+  {
+    "slug": "creative-coding-night-montreal",
+    "name": "Creative Coding Night — Montreal",
+    "description": "Visuals + sound sketches; bring a laptop.",
+    "venue": "Studio co-op",
+    "city": "montreal",
+    "category": "workshop",
+    "organizerHandle": "elio_noir",
+    "daysFromEpoch": 50,
+    "status": "published"
+  },
+  {
+    "slug": "portrait-salon-paris",
+    "name": "Portrait Salon — Paris",
+    "description": "Small salon for portrait series and critique.",
+    "venue": "Shared studio",
+    "city": "paris",
+    "category": "salon",
+    "organizerHandle": "noura_lens",
+    "daysFromEpoch": 18,
+    "status": "published"
+  },
+  {
+    "slug": "hub-night-beirut-spring-recap",
+    "name": "Hub Night — Beirut (Spring Recap)",
+    "description": "Past Hub Night — coverage and reunions.",
+    "venue": "Mar Mikhael",
     "city": "beirut",
+    "category": "hub_night",
+    "isHubNight": true,
+    "organizerHandle": "rami_beats",
+    "daysFromEpoch": -40,
+    "status": "past"
+  },
+  {
+    "slug": "lagos-listening-room",
+    "name": "Listening Room — Lagos",
+    "description": "Past listening session for new instrumentals.",
+    "venue": "Community room",
+    "city": "lagos",
+    "category": "listening",
+    "organizerHandle": "mira_hybrid",
+    "daysFromEpoch": -25,
+    "status": "past"
+  },
+  {
+    "slug": "tokyo-micro-shorts",
+    "name": "Micro Shorts — Tokyo",
+    "description": "Past screening of under-3-minute works.",
+    "venue": "Micro theater",
+    "city": "tokyo",
     "category": "screening",
-    "isHubNight": false,
-    "daysFromNow": 45
+    "organizerHandle": "karim_film",
+    "daysFromEpoch": -60,
+    "status": "past"
   }
 ]

@@ -1,0 +1,49 @@
+[
+  {
+    "key": "report-open-1",
+    "reporterHandle": "nabil_hub",
+    "entityType": "profile",
+    "entityRef": "jax_lowend",
+    "reason": "spam",
+    "details": "Seed demo open report.",
+    "status": "open"
+  },
+  {
+    "key": "report-open-2",
+    "reporterHandle": "sara_photo",
+    "entityType": "work",
+    "entityRef": "port-loop",
+    "reason": "copyright_claim",
+    "details": "Seed demo report — not a real claim.",
+    "status": "open"
+  },
+  {
+    "key": "report-open-3",
+    "reporterHandle": "omar_listen",
+    "entityType": "user",
+    "entityRef": "ex_50_lurker",
+    "reason": "spam",
+    "details": "Suspended promo account — seed demo.",
+    "status": "open"
+  },
+  {
+    "key": "report-resolved-1",
+    "reporterHandle": "jade_collab",
+    "entityType": "work",
+    "entityRef": "harbor-cut",
+    "reason": "inappropriate",
+    "details": "Resolved seed demo.",
+    "status": "resolved",
+    "resolvedByHandle": "admin"
+  },
+  {
+    "key": "report-dismissed-1",
+    "reporterHandle": "quiet_viewer",
+    "entityType": "work",
+    "entityRef": "neon-crossing",
+    "reason": "other",
+    "details": "Dismissed seed demo.",
+    "status": "dismissed",
+    "resolvedByHandle": "admin"
+  }
+]

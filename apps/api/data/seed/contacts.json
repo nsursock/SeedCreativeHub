@@ -1,0 +1,282 @@
+[
+  {
+    "key": "contact-sara_photo-rami_beats-0",
+    "fromHandle": "sara_photo",
+    "toHandle": "rami_beats",
+    "subject": "Live set thought — Rami Beats",
+    "message": "The mid-piece shift into noise is the part I'd keep in a live set."
+  },
+  {
+    "key": "contact-omar_listen-nadia_freq-1",
+    "fromHandle": "omar_listen",
+    "toHandle": "nadia_freq",
+    "subject": "Coverage offer — Nadia Freq",
+    "message": "Would shoot stills for a second cut if you need coverage."
+  },
+  {
+    "key": "contact-jade_collab-kenji_tape-2",
+    "fromHandle": "jade_collab",
+    "toHandle": "kenji_tape",
+    "subject": "After the ending — Kenji Tape",
+    "message": "The ending stayed with me. Happy to share edit notes if useful."
+  },
+  {
+    "key": "contact-nabil_hub-leila_chord-3",
+    "fromHandle": "nabil_hub",
+    "toHandle": "leila_chord",
+    "subject": "Grain and timing — Leila Chord",
+    "message": "Love the grain in this series — the timing against the soundtrack is exact."
+  },
+  {
+    "key": "contact-quiet_viewer-diego_bass-4",
+    "fromHandle": "quiet_viewer",
+    "toHandle": "diego_bass",
+    "subject": "Hub Night reading — Diego Bass",
+    "message": "Would love to see this read or screened at the next Hub Night."
+  },
+  {
+    "key": "contact-ex_06_photo-caleb_frame-5",
+    "fromHandle": "ex_06_photo",
+    "toHandle": "caleb_frame",
+    "subject": "Stronger first half — Caleb Frame",
+    "message": "The first half feels stronger than the second — curious if you agree."
+  },
+  {
+    "key": "contact-ex_07_music-ines_aperture-6",
+    "fromHandle": "ex_07_music",
+    "toHandle": "ines_aperture",
+    "subject": "Collab spark — Inès Aperture",
+    "message": "This sits next to something I'm drafting. Open to a short exchange?"
+  },
+  {
+    "key": "contact-ex_08_cross-karim_film-7",
+    "fromHandle": "ex_08_cross",
+    "toHandle": "karim_film",
+    "subject": "Instrumental pocket — Karim Abou",
+    "message": "This pocket matches a vocal take I've been sitting on. Trade?"
+  },
+  {
+    "key": "contact-ex_09_hub-elena_lens-8",
+    "fromHandle": "ex_09_hub",
+    "toHandle": "elena_lens",
+    "subject": "Live set thought — Elena Lens",
+    "message": "The mid-piece shift into noise is the part I'd keep in a live set."
+  },
+  {
+    "key": "contact-ex_11_photo-lina_writes-9",
+    "fromHandle": "ex_11_photo",
+    "toHandle": "lina_writes",
+    "subject": "Coverage offer — Lina Haddad",
+    "message": "Would shoot stills for a second cut if you need coverage."
+  },
+  {
+    "key": "contact-ex_12_music-ibrahim_ink-10",
+    "fromHandle": "ex_12_music",
+    "toHandle": "ibrahim_ink",
+    "subject": "After the ending — Ibrahim Ink",
+    "message": "The ending stayed with me. Happy to share edit notes if useful."
+  },
+  {
+    "key": "contact-ex_13_cross-dalia_poem-11",
+    "fromHandle": "ex_13_cross",
+    "toHandle": "dalia_poem",
+    "subject": "Grain and timing — Dalia Poem",
+    "message": "Love the grain in this series — the timing against the soundtrack is exact."
+  },
+  {
+    "key": "contact-ex_14_hub-kasper_mix-12",
+    "fromHandle": "ex_14_hub",
+    "toHandle": "kasper_mix",
+    "subject": "Hub Night reading — Kasper Mix",
+    "message": "Would love to see this read or screened at the next Hub Night."
+  },
+  {
+    "key": "contact-ex_16_photo-hugo_still-13",
+    "fromHandle": "ex_16_photo",
+    "toHandle": "hugo_still",
+    "subject": "Stronger first half — Hugo Still",
+    "message": "The first half feels stronger than the second — curious if you agree."
+  },
+  {
+    "key": "contact-ex_17_music-rami_beats-14",
+    "fromHandle": "ex_17_music",
+    "toHandle": "rami_beats",
+    "subject": "Collab spark — Rami Beats",
+    "message": "This sits next to something I'm drafting. Open to a short exchange?"
+  },
+  {
+    "key": "contact-ex_18_cross-nadia_freq-15",
+    "fromHandle": "ex_18_cross",
+    "toHandle": "nadia_freq",
+    "subject": "Instrumental pocket — Nadia Freq",
+    "message": "This pocket matches a vocal take I've been sitting on. Trade?"
+  },
+  {
+    "key": "contact-ex_19_hub-kenji_tape-16",
+    "fromHandle": "ex_19_hub",
+    "toHandle": "kenji_tape",
+    "subject": "Live set thought — Kenji Tape",
+    "message": "The mid-piece shift into noise is the part I'd keep in a live set."
+  },
+  {
+    "key": "contact-ex_21_photo-leila_chord-17",
+    "fromHandle": "ex_21_photo",
+    "toHandle": "leila_chord",
+    "subject": "Coverage offer — Leila Chord",
+    "message": "Would shoot stills for a second cut if you need coverage."
+  },
+  {
+    "key": "contact-ex_22_music-diego_bass-18",
+    "fromHandle": "ex_22_music",
+    "toHandle": "diego_bass",
+    "subject": "After the ending — Diego Bass",
+    "message": "The ending stayed with me. Happy to share edit notes if useful."
+  },
+  {
+    "key": "contact-ex_23_cross-caleb_frame-19",
+    "fromHandle": "ex_23_cross",
+    "toHandle": "caleb_frame",
+    "subject": "Grain and timing — Caleb Frame",
+    "message": "Love the grain in this series — the timing against the soundtrack is exact."
+  },
+  {
+    "key": "contact-ex_24_hub-ines_aperture-20",
+    "fromHandle": "ex_24_hub",
+    "toHandle": "ines_aperture",
+    "subject": "Hub Night reading — Inès Aperture",
+    "message": "Would love to see this read or screened at the next Hub Night."
+  },
+  {
+    "key": "contact-ex_26_photo-karim_film-21",
+    "fromHandle": "ex_26_photo",
+    "toHandle": "karim_film",
+    "subject": "Stronger first half — Karim Abou",
+    "message": "The first half feels stronger than the second — curious if you agree."
+  },
+  {
+    "key": "contact-ex_27_music-elena_lens-22",
+    "fromHandle": "ex_27_music",
+    "toHandle": "elena_lens",
+    "subject": "Collab spark — Elena Lens",
+    "message": "This sits next to something I'm drafting. Open to a short exchange?"
+  },
+  {
+    "key": "contact-ex_28_cross-lina_writes-23",
+    "fromHandle": "ex_28_cross",
+    "toHandle": "lina_writes",
+    "subject": "Instrumental pocket — Lina Haddad",
+    "message": "This pocket matches a vocal take I've been sitting on. Trade?"
+  },
+  {
+    "key": "contact-ex_29_hub-ibrahim_ink-24",
+    "fromHandle": "ex_29_hub",
+    "toHandle": "ibrahim_ink",
+    "subject": "Live set thought — Ibrahim Ink",
+    "message": "The mid-piece shift into noise is the part I'd keep in a live set."
+  },
+  {
+    "key": "contact-ex_31_photo-dalia_poem-25",
+    "fromHandle": "ex_31_photo",
+    "toHandle": "dalia_poem",
+    "subject": "Coverage offer — Dalia Poem",
+    "message": "Would shoot stills for a second cut if you need coverage."
+  },
+  {
+    "key": "contact-ex_32_music-kasper_mix-26",
+    "fromHandle": "ex_32_music",
+    "toHandle": "kasper_mix",
+    "subject": "After the ending — Kasper Mix",
+    "message": "The ending stayed with me. Happy to share edit notes if useful."
+  },
+  {
+    "key": "contact-ex_33_cross-hugo_still-27",
+    "fromHandle": "ex_33_cross",
+    "toHandle": "hugo_still",
+    "subject": "Grain and timing — Hugo Still",
+    "message": "Love the grain in this series — the timing against the soundtrack is exact."
+  },
+  {
+    "key": "contact-ex_34_hub-rami_beats-28",
+    "fromHandle": "ex_34_hub",
+    "toHandle": "rami_beats",
+    "subject": "Hub Night reading — Rami Beats",
+    "message": "Would love to see this read or screened at the next Hub Night."
+  },
+  {
+    "key": "contact-ex_36_photo-nadia_freq-29",
+    "fromHandle": "ex_36_photo",
+    "toHandle": "nadia_freq",
+    "subject": "Stronger first half — Nadia Freq",
+    "message": "The first half feels stronger than the second — curious if you agree."
+  },
+  {
+    "key": "contact-ex_37_music-kenji_tape-30",
+    "fromHandle": "ex_37_music",
+    "toHandle": "kenji_tape",
+    "subject": "Collab spark — Kenji Tape",
+    "message": "This sits next to something I'm drafting. Open to a short exchange?"
+  },
+  {
+    "key": "contact-ex_38_cross-leila_chord-31",
+    "fromHandle": "ex_38_cross",
+    "toHandle": "leila_chord",
+    "subject": "Instrumental pocket — Leila Chord",
+    "message": "This pocket matches a vocal take I've been sitting on. Trade?"
+  },
+  {
+    "key": "contact-ex_39_hub-diego_bass-32",
+    "fromHandle": "ex_39_hub",
+    "toHandle": "diego_bass",
+    "subject": "Live set thought — Diego Bass",
+    "message": "The mid-piece shift into noise is the part I'd keep in a live set."
+  },
+  {
+    "key": "contact-ex_41_photo-caleb_frame-33",
+    "fromHandle": "ex_41_photo",
+    "toHandle": "caleb_frame",
+    "subject": "Coverage offer — Caleb Frame",
+    "message": "Would shoot stills for a second cut if you need coverage."
+  },
+  {
+    "key": "contact-ex_42_music-ines_aperture-34",
+    "fromHandle": "ex_42_music",
+    "toHandle": "ines_aperture",
+    "subject": "After the ending — Inès Aperture",
+    "message": "The ending stayed with me. Happy to share edit notes if useful."
+  },
+  {
+    "key": "contact-ex_43_cross-karim_film-35",
+    "fromHandle": "ex_43_cross",
+    "toHandle": "karim_film",
+    "subject": "Grain and timing — Karim Abou",
+    "message": "Love the grain in this series — the timing against the soundtrack is exact."
+  },
+  {
+    "key": "contact-ex_44_hub-elena_lens-36",
+    "fromHandle": "ex_44_hub",
+    "toHandle": "elena_lens",
+    "subject": "Hub Night reading — Elena Lens",
+    "message": "Would love to see this read or screened at the next Hub Night."
+  },
+  {
+    "key": "contact-ex_46_photo-lina_writes-37",
+    "fromHandle": "ex_46_photo",
+    "toHandle": "lina_writes",
+    "subject": "Stronger first half — Lina Haddad",
+    "message": "The first half feels stronger than the second — curious if you agree."
+  },
+  {
+    "key": "contact-ex_47_music-ibrahim_ink-38",
+    "fromHandle": "ex_47_music",
+    "toHandle": "ibrahim_ink",
+    "subject": "Collab spark — Ibrahim Ink",
+    "message": "This sits next to something I'm drafting. Open to a short exchange?"
+  },
+  {
+    "key": "contact-ex_48_cross-dalia_poem-39",
+    "fromHandle": "ex_48_cross",
+    "toHandle": "dalia_poem",
+    "subject": "Instrumental pocket — Dalia Poem",
+    "message": "This pocket matches a vocal take I've been sitting on. Trade?"
+  }
+]

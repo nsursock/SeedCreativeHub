@@ -1,0 +1,806 @@
+[
+  {
+    "key": "notif-follow-0",
+    "userHandle": "rami_beats",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "sara_photo"
+    }
+  },
+  {
+    "key": "notif-follow-1",
+    "userHandle": "sora_keys",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "omar_listen"
+    }
+  },
+  {
+    "key": "notif-follow-2",
+    "userHandle": "milo_wave",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "jade_collab"
+    }
+  },
+  {
+    "key": "notif-follow-3",
+    "userHandle": "nadia_freq",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "nabil_hub"
+    }
+  },
+  {
+    "key": "notif-follow-4",
+    "userHandle": "jax_lowend",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "quiet_viewer"
+    }
+  },
+  {
+    "key": "notif-follow-5",
+    "userHandle": "yara_strings",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_06_photo"
+    }
+  },
+  {
+    "key": "notif-follow-6",
+    "userHandle": "kenji_tape",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_07_music"
+    }
+  },
+  {
+    "key": "notif-follow-7",
+    "userHandle": "amina_pulse",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_08_cross"
+    }
+  },
+  {
+    "key": "notif-follow-8",
+    "userHandle": "theo_reverb",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_09_hub"
+    }
+  },
+  {
+    "key": "notif-follow-9",
+    "userHandle": "leila_chord",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_10_lurker"
+    }
+  },
+  {
+    "key": "notif-follow-10",
+    "userHandle": "omar_drum",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_11_photo"
+    }
+  },
+  {
+    "key": "notif-follow-11",
+    "userHandle": "iris_synth",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_12_music"
+    }
+  },
+  {
+    "key": "notif-follow-12",
+    "userHandle": "diego_bass",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_13_cross"
+    }
+  },
+  {
+    "key": "notif-follow-13",
+    "userHandle": "samir_groove",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_14_hub"
+    }
+  },
+  {
+    "key": "notif-follow-14",
+    "userHandle": "noura_lens",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_15_lurker"
+    }
+  },
+  {
+    "key": "notif-follow-15",
+    "userHandle": "caleb_frame",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_16_photo"
+    }
+  },
+  {
+    "key": "notif-follow-16",
+    "userHandle": "pedro_street",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_17_music"
+    }
+  },
+  {
+    "key": "notif-follow-17",
+    "userHandle": "noor_light",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_18_cross"
+    }
+  },
+  {
+    "key": "notif-follow-18",
+    "userHandle": "ines_aperture",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_19_hub"
+    }
+  },
+  {
+    "key": "notif-follow-19",
+    "userHandle": "jun_shadow",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_20_lurker"
+    }
+  },
+  {
+    "key": "notif-follow-20",
+    "userHandle": "rita_film",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_21_photo"
+    }
+  },
+  {
+    "key": "notif-follow-21",
+    "userHandle": "karim_film",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_22_music"
+    }
+  },
+  {
+    "key": "notif-follow-22",
+    "userHandle": "sofia_cut",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_23_cross"
+    }
+  },
+  {
+    "key": "notif-follow-23",
+    "userHandle": "malik_reel",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_24_hub"
+    }
+  },
+  {
+    "key": "notif-follow-24",
+    "userHandle": "elena_lens",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_25_lurker"
+    }
+  },
+  {
+    "key": "notif-follow-25",
+    "userHandle": "tomas_shot",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_26_photo"
+    }
+  },
+  {
+    "key": "notif-follow-26",
+    "userHandle": "aya_frame",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_27_music"
+    }
+  },
+  {
+    "key": "notif-follow-27",
+    "userHandle": "lina_writes",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_28_cross"
+    }
+  },
+  {
+    "key": "notif-follow-28",
+    "userHandle": "marc_verse",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_29_hub"
+    }
+  },
+  {
+    "key": "notif-follow-29",
+    "userHandle": "sara_page",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_30_lurker"
+    }
+  },
+  {
+    "key": "notif-follow-30",
+    "userHandle": "ibrahim_ink",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_31_photo"
+    }
+  },
+  {
+    "key": "notif-follow-31",
+    "userHandle": "claire_essay",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_32_music"
+    }
+  },
+  {
+    "key": "notif-follow-32",
+    "userHandle": "yuki_flash",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_33_cross"
+    }
+  },
+  {
+    "key": "notif-follow-33",
+    "userHandle": "dalia_poem",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_34_hub"
+    }
+  },
+  {
+    "key": "notif-follow-34",
+    "userHandle": "elio_noir",
+    "type": "follow",
+    "title": "New follower",
+    "body": "Someone started following you.",
+    "payload": {
+      "fromHandle": "ex_35_lurker"
+    }
+  },
+  {
+    "key": "notif-interest-0",
+    "userHandle": "rami_beats",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_17_music expressed interest.",
+    "payload": {
+      "opportunitySlug": "looking-for-a-vocalist-rami-beats-0",
+      "fromHandle": "ex_17_music"
+    }
+  },
+  {
+    "key": "notif-interest-1",
+    "userHandle": "sora_keys",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_32_music expressed interest.",
+    "payload": {
+      "opportunitySlug": "filmmaker-looking-for-cinematographer-sora-keys-1",
+      "fromHandle": "ex_32_music"
+    }
+  },
+  {
+    "key": "notif-interest-2",
+    "userHandle": "milo_wave",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_08_cross expressed interest.",
+    "payload": {
+      "opportunitySlug": "photographer-looking-for-stylist-milo-wave-2",
+      "fromHandle": "ex_08_cross"
+    }
+  },
+  {
+    "key": "notif-interest-3",
+    "userHandle": "nadia_freq",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_21_photo expressed interest.",
+    "payload": {
+      "opportunitySlug": "writer-looking-for-illustrator-nadia-freq-3",
+      "fromHandle": "ex_21_photo"
+    }
+  },
+  {
+    "key": "notif-interest-4",
+    "userHandle": "jax_lowend",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_34_hub expressed interest.",
+    "payload": {
+      "opportunitySlug": "producer-looking-for-electronic-musician-yara-strings-4",
+      "fromHandle": "ex_34_hub"
+    }
+  },
+  {
+    "key": "notif-interest-5",
+    "userHandle": "yara_strings",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_21_photo expressed interest.",
+    "payload": {
+      "opportunitySlug": "designer-looking-for-filmmaker-kenji-tape-5",
+      "fromHandle": "ex_21_photo"
+    }
+  },
+  {
+    "key": "notif-interest-6",
+    "userHandle": "kenji_tape",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "nabil_hub expressed interest.",
+    "payload": {
+      "opportunitySlug": "editor-for-local-shorts-reel-amina-pulse-6",
+      "fromHandle": "nabil_hub"
+    }
+  },
+  {
+    "key": "notif-interest-7",
+    "userHandle": "amina_pulse",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_43_cross expressed interest.",
+    "payload": {
+      "opportunitySlug": "sound-designer-for-narrative-short-theo-reverb-7",
+      "fromHandle": "ex_43_cross"
+    }
+  },
+  {
+    "key": "notif-interest-8",
+    "userHandle": "theo_reverb",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_38_cross expressed interest.",
+    "payload": {
+      "opportunitySlug": "looking-for-a-vocalist-leila-chord-8",
+      "fromHandle": "ex_38_cross"
+    }
+  },
+  {
+    "key": "notif-interest-9",
+    "userHandle": "leila_chord",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_16_photo expressed interest.",
+    "payload": {
+      "opportunitySlug": "filmmaker-looking-for-cinematographer-omar-drum-9",
+      "fromHandle": "ex_16_photo"
+    }
+  },
+  {
+    "key": "notif-interest-10",
+    "userHandle": "omar_drum",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_36_photo expressed interest.",
+    "payload": {
+      "opportunitySlug": "photographer-looking-for-stylist-iris-synth-10",
+      "fromHandle": "ex_36_photo"
+    }
+  },
+  {
+    "key": "notif-interest-11",
+    "userHandle": "iris_synth",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_26_photo expressed interest.",
+    "payload": {
+      "opportunitySlug": "writer-looking-for-illustrator-diego-bass-11",
+      "fromHandle": "ex_26_photo"
+    }
+  },
+  {
+    "key": "notif-interest-12",
+    "userHandle": "diego_bass",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_49_hub expressed interest.",
+    "payload": {
+      "opportunitySlug": "producer-looking-for-electronic-musician-samir-groove-12",
+      "fromHandle": "ex_49_hub"
+    }
+  },
+  {
+    "key": "notif-interest-13",
+    "userHandle": "samir_groove",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "jade_collab expressed interest.",
+    "payload": {
+      "opportunitySlug": "designer-looking-for-filmmaker-noura-lens-13",
+      "fromHandle": "jade_collab"
+    }
+  },
+  {
+    "key": "notif-interest-14",
+    "userHandle": "noura_lens",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_06_photo expressed interest.",
+    "payload": {
+      "opportunitySlug": "editor-for-local-shorts-reel-caleb-frame-14",
+      "fromHandle": "ex_06_photo"
+    }
+  },
+  {
+    "key": "notif-interest-15",
+    "userHandle": "caleb_frame",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_48_cross expressed interest.",
+    "payload": {
+      "opportunitySlug": "sound-designer-for-narrative-short-pedro-street-15",
+      "fromHandle": "ex_48_cross"
+    }
+  },
+  {
+    "key": "notif-interest-16",
+    "userHandle": "pedro_street",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_24_hub expressed interest.",
+    "payload": {
+      "opportunitySlug": "looking-for-a-vocalist-noor-light-16",
+      "fromHandle": "ex_24_hub"
+    }
+  },
+  {
+    "key": "notif-interest-17",
+    "userHandle": "noor_light",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "nabil_hub expressed interest.",
+    "payload": {
+      "opportunitySlug": "filmmaker-looking-for-cinematographer-ines-aperture-17",
+      "fromHandle": "nabil_hub"
+    }
+  },
+  {
+    "key": "notif-interest-18",
+    "userHandle": "ines_aperture",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_24_hub expressed interest.",
+    "payload": {
+      "opportunitySlug": "photographer-looking-for-stylist-jun-shadow-18",
+      "fromHandle": "ex_24_hub"
+    }
+  },
+  {
+    "key": "notif-interest-19",
+    "userHandle": "jun_shadow",
+    "type": "collab_interest",
+    "title": "Collaboration interest",
+    "body": "ex_37_music expressed interest.",
+    "payload": {
+      "opportunitySlug": "writer-looking-for-illustrator-rita-film-19",
+      "fromHandle": "ex_37_music"
+    }
+  },
+  {
+    "key": "notif-contact-0",
+    "userHandle": "rami_beats",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "Live set thought — Rami Beats",
+    "payload": {
+      "fromHandle": "sara_photo"
+    }
+  },
+  {
+    "key": "notif-contact-1",
+    "userHandle": "nadia_freq",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "Coverage offer — Nadia Freq",
+    "payload": {
+      "fromHandle": "omar_listen"
+    }
+  },
+  {
+    "key": "notif-contact-2",
+    "userHandle": "kenji_tape",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "After the ending — Kenji Tape",
+    "payload": {
+      "fromHandle": "jade_collab"
+    }
+  },
+  {
+    "key": "notif-contact-3",
+    "userHandle": "leila_chord",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "Grain and timing — Leila Chord",
+    "payload": {
+      "fromHandle": "nabil_hub"
+    }
+  },
+  {
+    "key": "notif-contact-4",
+    "userHandle": "diego_bass",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "Hub Night reading — Diego Bass",
+    "payload": {
+      "fromHandle": "quiet_viewer"
+    }
+  },
+  {
+    "key": "notif-contact-5",
+    "userHandle": "caleb_frame",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "Stronger first half — Caleb Frame",
+    "payload": {
+      "fromHandle": "ex_06_photo"
+    }
+  },
+  {
+    "key": "notif-contact-6",
+    "userHandle": "ines_aperture",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "Collab spark — Inès Aperture",
+    "payload": {
+      "fromHandle": "ex_07_music"
+    }
+  },
+  {
+    "key": "notif-contact-7",
+    "userHandle": "karim_film",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "Instrumental pocket — Karim Abou",
+    "payload": {
+      "fromHandle": "ex_08_cross"
+    }
+  },
+  {
+    "key": "notif-contact-8",
+    "userHandle": "elena_lens",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "Live set thought — Elena Lens",
+    "payload": {
+      "fromHandle": "ex_09_hub"
+    }
+  },
+  {
+    "key": "notif-contact-9",
+    "userHandle": "lina_writes",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "Coverage offer — Lina Haddad",
+    "payload": {
+      "fromHandle": "ex_11_photo"
+    }
+  },
+  {
+    "key": "notif-contact-10",
+    "userHandle": "ibrahim_ink",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "After the ending — Ibrahim Ink",
+    "payload": {
+      "fromHandle": "ex_12_music"
+    }
+  },
+  {
+    "key": "notif-contact-11",
+    "userHandle": "dalia_poem",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "Grain and timing — Dalia Poem",
+    "payload": {
+      "fromHandle": "ex_13_cross"
+    }
+  },
+  {
+    "key": "notif-contact-12",
+    "userHandle": "kasper_mix",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "Hub Night reading — Kasper Mix",
+    "payload": {
+      "fromHandle": "ex_14_hub"
+    }
+  },
+  {
+    "key": "notif-contact-13",
+    "userHandle": "hugo_still",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "Stronger first half — Hugo Still",
+    "payload": {
+      "fromHandle": "ex_16_photo"
+    }
+  },
+  {
+    "key": "notif-contact-14",
+    "userHandle": "rami_beats",
+    "type": "contact_message",
+    "title": "New message",
+    "body": "Collab spark — Rami Beats",
+    "payload": {
+      "fromHandle": "ex_17_music"
+    }
+  },
+  {
+    "key": "notif-maya-claim",
+    "userHandle": "admin",
+    "type": "claim",
+    "title": "Claim link active",
+    "body": "Demo claim token for maya_k is ready.",
+    "payload": {
+      "profileHandle": "maya_k"
+    }
+  },
+  {
+    "key": "notif-pending-zara",
+    "userHandle": "admin",
+    "type": "claim",
+    "title": "Pending claim",
+    "body": "Claim token active for zara_grain.",
+    "payload": {
+      "profileHandle": "zara_grain"
+    }
+  },
+  {
+    "key": "notif-system-72",
+    "userHandle": "ex_23_cross",
+    "type": "system",
+    "title": "Welcome to Creative Hub",
+    "body": "Explore creators, works, and collaboration opportunities.",
+    "read": true
+  },
+  {
+    "key": "notif-system-73",
+    "userHandle": "ex_24_hub",
+    "type": "system",
+    "title": "Welcome to Creative Hub",
+    "body": "Explore creators, works, and collaboration opportunities.",
+    "read": false
+  },
+  {
+    "key": "notif-system-74",
+    "userHandle": "ex_25_lurker",
+    "type": "system",
+    "title": "Welcome to Creative Hub",
+    "body": "Explore creators, works, and collaboration opportunities.",
+    "read": false
+  },
+  {
+    "key": "notif-system-75",
+    "userHandle": "ex_26_photo",
+    "type": "system",
+    "title": "Welcome to Creative Hub",
+    "body": "Explore creators, works, and collaboration opportunities.",
+    "read": true
+  },
+  {
+    "key": "notif-system-76",
+    "userHandle": "ex_27_music",
+    "type": "system",
+    "title": "Welcome to Creative Hub",
+    "body": "Explore creators, works, and collaboration opportunities.",
+    "read": false
+  },
+  {
+    "key": "notif-system-77",
+    "userHandle": "ex_28_cross",
+    "type": "system",
+    "title": "Welcome to Creative Hub",
+    "body": "Explore creators, works, and collaboration opportunities.",
+    "read": false
+  },
+  {
+    "key": "notif-system-78",
+    "userHandle": "ex_29_hub",
+    "type": "system",
+    "title": "Welcome to Creative Hub",
+    "body": "Explore creators, works, and collaboration opportunities.",
+    "read": true
+  },
+  {
+    "key": "notif-system-79",
+    "userHandle": "ex_30_lurker",
+    "type": "system",
+    "title": "Welcome to Creative Hub",
+    "body": "Explore creators, works, and collaboration opportunities.",
+    "read": false
+  }
+]

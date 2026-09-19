@@ -1,0 +1,20 @@
+[
+  {
+    "token": "demo-claim-token-maya-k-phase1",
+    "profileHandle": "maya_k",
+    "expiresDaysFromEpoch": 120,
+    "used": false
+  },
+  {
+    "token": "demo-claim-token-zara-grain",
+    "profileHandle": "zara_grain",
+    "expiresDaysFromEpoch": 90,
+    "used": false
+  },
+  {
+    "token": "demo-claim-token-nico-doc",
+    "profileHandle": "nico_doc",
+    "expiresDaysFromEpoch": 90,
+    "used": false
+  }
+]

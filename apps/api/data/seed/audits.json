@@ -1,0 +1,27 @@
+[
+  {
+    "key": "audit-seed-bootstrap",
+    "actorHandle": "admin",
+    "action": "seed.bootstrap",
+    "target": "creative_hub",
+    "metadata": {
+      "phase": "full-staging",
+      "fixture": true
+    }
+  },
+  {
+    "key": "audit-feature-works",
+    "actorHandle": "admin",
+    "action": "editorial.feature",
+    "target": "explore_featured_works",
+    "metadata": {
+      "count": 5
+    }
+  },
+  {
+    "key": "audit-resolve-report",
+    "actorHandle": "admin",
+    "action": "moderation.resolve",
+    "target": "report-resolved-1"
+  }
+]

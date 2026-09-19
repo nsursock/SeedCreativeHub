@@ -1,0 +1,2759 @@
+[
+  {
+    "slug": "cornice-after-midnight",
+    "discipline": "photography",
+    "genre": [
+      "street",
+      "documentary"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "analog-leaning",
+    "language": "n/a",
+    "city": "beirut"
+  },
+  {
+    "slug": "grain-on-hamra",
+    "discipline": "photography",
+    "genre": [
+      "street",
+      "analog"
+    ],
+    "mood": [
+      "observational",
+      "warm"
+    ],
+    "themes": [
+      "everyday",
+      "city"
+    ],
+    "style": "35mm grain",
+    "language": "n/a",
+    "city": "beirut"
+  },
+  {
+    "slug": "port-loop",
+    "discipline": "music",
+    "genre": [
+      "electronic",
+      "lo-fi"
+    ],
+    "mood": [
+      "nocturnal",
+      "driving"
+    ],
+    "themes": [
+      "port",
+      "transit"
+    ],
+    "style": "loop-based instrumental",
+    "language": "instrumental",
+    "city": "beirut"
+  },
+  {
+    "slug": "midnight-pad",
+    "discipline": "music",
+    "genre": [
+      "ambient"
+    ],
+    "mood": [
+      "dreamy",
+      "sparse"
+    ],
+    "themes": [
+      "night",
+      "waiting"
+    ],
+    "style": "pad sketch",
+    "language": "instrumental",
+    "city": "beirut"
+  },
+  {
+    "slug": "letters-from-the-port",
+    "discipline": "writing",
+    "genre": [
+      "essay",
+      "personal"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "distance",
+      "identity",
+      "return"
+    ],
+    "style": "literary nonfiction",
+    "language": "English",
+    "city": "tripoli"
+  },
+  {
+    "slug": "ferry-drafts",
+    "discipline": "writing",
+    "genre": [
+      "flash fiction"
+    ],
+    "mood": [
+      "melancholic"
+    ],
+    "themes": [
+      "crossing",
+      "unfinished"
+    ],
+    "style": "compressed narrative",
+    "language": "English",
+    "city": "tripoli"
+  },
+  {
+    "slug": "the-stairs",
+    "discipline": "film",
+    "genre": [
+      "narrative short",
+      "experimental"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "ascent",
+      "place"
+    ],
+    "style": "one-shot",
+    "language": "minimal dialogue",
+    "city": "saida"
+  },
+  {
+    "slug": "harbor-cut",
+    "discipline": "film",
+    "genre": [
+      "documentary",
+      "short"
+    ],
+    "mood": [
+      "observational"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "vérité fragment",
+    "language": "Arabic/English",
+    "city": "saida"
+  },
+  {
+    "slug": "berlin-basement-tape",
+    "discipline": "music",
+    "genre": [
+      "experimental electronic"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "basement",
+      "night"
+    ],
+    "style": "tape-damaged techno-adjacent",
+    "language": "instrumental",
+    "city": "berlin"
+  },
+  {
+    "slug": "neon-crossing",
+    "discipline": "film",
+    "genre": [
+      "experimental short",
+      "music video"
+    ],
+    "mood": [
+      "neon",
+      "wet"
+    ],
+    "themes": [
+      "city",
+      "timing"
+    ],
+    "style": "micro-short",
+    "language": "wordless",
+    "city": "berlin"
+  },
+  {
+    "slug": "grid-static",
+    "discipline": "music",
+    "genre": [
+      "ambient"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "field recording",
+    "language": "French",
+    "city": "beirut"
+  },
+  {
+    "slug": "night-shift-trio",
+    "discipline": "music",
+    "genre": [
+      "neo-soul"
+    ],
+    "mood": [
+      "warm",
+      "observational"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "loop-based",
+    "language": "English",
+    "city": "cairo"
+  },
+  {
+    "slug": "concrete-cipher",
+    "discipline": "music",
+    "genre": [
+      "experimental",
+      "electronic"
+    ],
+    "mood": [
+      "warm",
+      "observational"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "loop-based",
+    "language": "instrumental",
+    "city": "lisbon"
+  },
+  {
+    "slug": "porch-light",
+    "discipline": "music",
+    "genre": [
+      "jazz"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "field recording",
+    "language": "Arabic",
+    "city": "beirut"
+  },
+  {
+    "slug": "soft-horizon",
+    "discipline": "music",
+    "genre": [
+      "indie",
+      "rock"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "studio polish",
+    "language": "French",
+    "city": "istanbul"
+  },
+  {
+    "slug": "sidewalk-amplifier",
+    "discipline": "music",
+    "genre": [
+      "ambient"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "transit",
+      "port"
+    ],
+    "style": "loop-based",
+    "language": "English",
+    "city": "amsterdam"
+  },
+  {
+    "slug": "velvet-delay",
+    "discipline": "music",
+    "genre": [
+      "jazz"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "one-shot",
+    "language": "instrumental",
+    "city": "mumbai"
+  },
+  {
+    "slug": "basement-voltage",
+    "discipline": "music",
+    "genre": [
+      "neo-soul"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "analog-leaning",
+    "language": "Arabic",
+    "city": "beirut"
+  },
+  {
+    "slug": "port-loop-redux",
+    "discipline": "music",
+    "genre": [
+      "indie",
+      "rock"
+    ],
+    "mood": [
+      "warm",
+      "observational"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "field recording",
+    "language": "Arabic",
+    "city": "tripoli"
+  },
+  {
+    "slug": "copper-morning",
+    "discipline": "music",
+    "genre": [
+      "experimental",
+      "electronic"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "one-shot",
+    "language": "instrumental",
+    "city": "berlin"
+  },
+  {
+    "slug": "signal-drift",
+    "discipline": "music",
+    "genre": [
+      "indie",
+      "rock"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "field recording",
+    "language": "French",
+    "city": "dubai"
+  },
+  {
+    "slug": "low-tide-kick",
+    "discipline": "music",
+    "genre": [
+      "indie",
+      "rock"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "studio polish",
+    "language": "French",
+    "city": "nairobi"
+  },
+  {
+    "slug": "atlas-hum",
+    "discipline": "music",
+    "genre": [
+      "neo-soul"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "studio polish",
+    "language": "French",
+    "city": "montreal"
+  },
+  {
+    "slug": "paper-mic",
+    "discipline": "music",
+    "genre": [
+      "indie",
+      "rock"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "loop-based",
+    "language": "Arabic",
+    "city": "mexico-city"
+  },
+  {
+    "slug": "dream-harbor",
+    "discipline": "music",
+    "genre": [
+      "indie",
+      "rock"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "literary nonfiction",
+    "language": "English",
+    "city": "buenos-aires"
+  },
+  {
+    "slug": "grid-static-2",
+    "discipline": "music",
+    "genre": [
+      "indie",
+      "rock"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "transit",
+      "port"
+    ],
+    "style": "literary nonfiction",
+    "language": "English",
+    "city": "beirut"
+  },
+  {
+    "slug": "night-shift-trio-2",
+    "discipline": "music",
+    "genre": [
+      "ambient"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "vérité fragment",
+    "language": "French",
+    "city": "los-angeles"
+  },
+  {
+    "slug": "concrete-cipher-2",
+    "discipline": "music",
+    "genre": [
+      "neo-soul"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "one-shot",
+    "language": "instrumental",
+    "city": "london"
+  },
+  {
+    "slug": "porch-light-2",
+    "discipline": "music",
+    "genre": [
+      "experimental",
+      "electronic"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "loop-based",
+    "language": "Arabic",
+    "city": "toronto"
+  },
+  {
+    "slug": "soft-horizon-2",
+    "discipline": "music",
+    "genre": [
+      "experimental",
+      "electronic"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "one-shot",
+    "language": "French",
+    "city": "beirut"
+  },
+  {
+    "slug": "sidewalk-amplifier-2",
+    "discipline": "music",
+    "genre": [
+      "jazz"
+    ],
+    "mood": [
+      "warm",
+      "observational"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "vérité fragment",
+    "language": "French",
+    "city": "cairo"
+  },
+  {
+    "slug": "velvet-delay-2",
+    "discipline": "music",
+    "genre": [
+      "hip-hop",
+      "instrumental"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "loop-based",
+    "language": "instrumental",
+    "city": "lisbon"
+  },
+  {
+    "slug": "basement-voltage-2",
+    "discipline": "music",
+    "genre": [
+      "jazz"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "vérité fragment",
+    "language": "instrumental",
+    "city": "beirut"
+  },
+  {
+    "slug": "port-loop-redux-2",
+    "discipline": "music",
+    "genre": [
+      "hip-hop",
+      "instrumental"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "literary nonfiction",
+    "language": "English",
+    "city": "istanbul"
+  },
+  {
+    "slug": "copper-morning-2",
+    "discipline": "music",
+    "genre": [
+      "indie",
+      "dream-pop"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "analog-leaning",
+    "language": "instrumental",
+    "city": "amsterdam"
+  },
+  {
+    "slug": "signal-drift-2",
+    "discipline": "music",
+    "genre": [
+      "neo-soul"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "analog-leaning",
+    "language": "instrumental",
+    "city": "mumbai"
+  },
+  {
+    "slug": "low-tide-kick-2",
+    "discipline": "music",
+    "genre": [
+      "ambient"
+    ],
+    "mood": [
+      "warm",
+      "observational"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "literary nonfiction",
+    "language": "instrumental",
+    "city": "beirut"
+  },
+  {
+    "slug": "atlas-hum-2",
+    "discipline": "music",
+    "genre": [
+      "jazz"
+    ],
+    "mood": [
+      "warm",
+      "observational"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "one-shot",
+    "language": "Arabic",
+    "city": "tripoli"
+  },
+  {
+    "slug": "paper-mic-2",
+    "discipline": "music",
+    "genre": [
+      "indie",
+      "dream-pop"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "vérité fragment",
+    "language": "instrumental",
+    "city": "berlin"
+  },
+  {
+    "slug": "dream-harbor-3",
+    "discipline": "music",
+    "genre": [
+      "neo-soul"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "literary nonfiction",
+    "language": "French",
+    "city": "dubai"
+  },
+  {
+    "slug": "grid-static-3",
+    "discipline": "music",
+    "genre": [
+      "neo-soul"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "analog-leaning",
+    "language": "English",
+    "city": "nairobi"
+  },
+  {
+    "slug": "night-shift-trio-3",
+    "discipline": "music",
+    "genre": [
+      "neo-soul"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "studio polish",
+    "language": "French",
+    "city": "montreal"
+  },
+  {
+    "slug": "concrete-cipher-3",
+    "discipline": "music",
+    "genre": [
+      "indie",
+      "dream-pop"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "literary nonfiction",
+    "language": "French",
+    "city": "mexico-city"
+  },
+  {
+    "slug": "porch-light-3",
+    "discipline": "music",
+    "genre": [
+      "indie",
+      "rock"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "loop-based",
+    "language": "instrumental",
+    "city": "buenos-aires"
+  },
+  {
+    "slug": "soft-horizon-3",
+    "discipline": "music",
+    "genre": [
+      "jazz"
+    ],
+    "mood": [
+      "warm",
+      "observational"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "one-shot",
+    "language": "instrumental",
+    "city": "beirut"
+  },
+  {
+    "slug": "sidewalk-amplifier-3",
+    "discipline": "music",
+    "genre": [
+      "indie",
+      "dream-pop"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "vérité fragment",
+    "language": "Arabic",
+    "city": "los-angeles"
+  },
+  {
+    "slug": "velvet-delay-3",
+    "discipline": "music",
+    "genre": [
+      "experimental",
+      "electronic"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "loop-based",
+    "language": "English",
+    "city": "london"
+  },
+  {
+    "slug": "basement-voltage-3",
+    "discipline": "music",
+    "genre": [
+      "jazz"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "night",
+      "waiting"
+    ],
+    "style": "loop-based",
+    "language": "Arabic",
+    "city": "toronto"
+  },
+  {
+    "slug": "port-loop-redux-3",
+    "discipline": "music",
+    "genre": [
+      "folk",
+      "acoustic"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "compressed narrative",
+    "language": "French",
+    "city": "beirut"
+  },
+  {
+    "slug": "copper-morning-3",
+    "discipline": "music",
+    "genre": [
+      "neo-soul"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "studio polish",
+    "language": "instrumental",
+    "city": "cairo"
+  },
+  {
+    "slug": "signal-drift-3",
+    "discipline": "music",
+    "genre": [
+      "jazz"
+    ],
+    "mood": [
+      "warm",
+      "observational"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "loop-based",
+    "language": "Arabic",
+    "city": "lisbon"
+  },
+  {
+    "slug": "low-tide-kick-3",
+    "discipline": "music",
+    "genre": [
+      "indie",
+      "rock"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "studio polish",
+    "language": "instrumental",
+    "city": "beirut"
+  },
+  {
+    "slug": "grain-on-hamra-2",
+    "discipline": "photography",
+    "genre": [
+      "street",
+      "documentary"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "one-shot",
+    "language": "n/a",
+    "city": "london"
+  },
+  {
+    "slug": "paris-blue-hour",
+    "discipline": "photography",
+    "genre": [
+      "portrait"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "analog-leaning",
+    "language": "English",
+    "city": "tokyo"
+  },
+  {
+    "slug": "portrait-room-4",
+    "discipline": "photography",
+    "genre": [
+      "analog",
+      "street"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "literary nonfiction",
+    "language": "n/a",
+    "city": "toronto"
+  },
+  {
+    "slug": "analog-sundays",
+    "discipline": "photography",
+    "genre": [
+      "architecture"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "analog-leaning",
+    "language": "Spanish",
+    "city": "paris"
+  },
+  {
+    "slug": "night-market",
+    "discipline": "photography",
+    "genre": [
+      "night",
+      "documentary"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "field recording",
+    "language": "bilingual",
+    "city": "beirut"
+  },
+  {
+    "slug": "scaffold-geometry",
+    "discipline": "photography",
+    "genre": [
+      "architecture"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "loop-based",
+    "language": "Arabic",
+    "city": "byblos"
+  },
+  {
+    "slug": "river-fog",
+    "discipline": "photography",
+    "genre": [
+      "night",
+      "documentary"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "loop-based",
+    "language": "instrumental",
+    "city": "new-york"
+  },
+  {
+    "slug": "metro-hands",
+    "discipline": "photography",
+    "genre": [
+      "street",
+      "documentary"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "literary nonfiction",
+    "language": "wordless",
+    "city": "los-angeles"
+  },
+  {
+    "slug": "roof-laundry",
+    "discipline": "photography",
+    "genre": [
+      "portrait"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "loop-based",
+    "language": "wordless",
+    "city": "london"
+  },
+  {
+    "slug": "glass-lobby",
+    "discipline": "photography",
+    "genre": [
+      "analog",
+      "street"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "literary nonfiction",
+    "language": "bilingual",
+    "city": "lagos"
+  },
+  {
+    "slug": "ferry-deck",
+    "discipline": "photography",
+    "genre": [
+      "architecture"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "studio polish",
+    "language": "bilingual",
+    "city": "beirut"
+  },
+  {
+    "slug": "corniche-after-midnight",
+    "discipline": "photography",
+    "genre": [
+      "analog",
+      "street"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "vérité fragment",
+    "language": "French",
+    "city": "berlin"
+  },
+  {
+    "slug": "grain-on-hamra-2-2",
+    "discipline": "photography",
+    "genre": [
+      "portrait"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "analog-leaning",
+    "language": "wordless",
+    "city": "beirut"
+  },
+  {
+    "slug": "paris-blue-hour-2",
+    "discipline": "photography",
+    "genre": [
+      "architecture"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "one-shot",
+    "language": "Arabic",
+    "city": "paris"
+  },
+  {
+    "slug": "portrait-room-4-2",
+    "discipline": "photography",
+    "genre": [
+      "analog",
+      "street"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "one-shot",
+    "language": "Spanish",
+    "city": "london"
+  },
+  {
+    "slug": "analog-sundays-2",
+    "discipline": "photography",
+    "genre": [
+      "documentary"
+    ],
+    "mood": [
+      "warm",
+      "observational"
+    ],
+    "themes": [
+      "transit",
+      "port"
+    ],
+    "style": "one-shot",
+    "language": "French",
+    "city": "tokyo"
+  },
+  {
+    "slug": "night-market-2",
+    "discipline": "photography",
+    "genre": [
+      "architecture"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "one-shot",
+    "language": "Arabic",
+    "city": "toronto"
+  },
+  {
+    "slug": "scaffold-geometry-2",
+    "discipline": "photography",
+    "genre": [
+      "street",
+      "documentary"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "compressed narrative",
+    "language": "English",
+    "city": "paris"
+  },
+  {
+    "slug": "river-fog-2",
+    "discipline": "photography",
+    "genre": [
+      "street",
+      "documentary"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "compressed narrative",
+    "language": "French",
+    "city": "beirut"
+  },
+  {
+    "slug": "metro-hands-2",
+    "discipline": "photography",
+    "genre": [
+      "architecture"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "studio polish",
+    "language": "wordless",
+    "city": "byblos"
+  },
+  {
+    "slug": "roof-laundry-2",
+    "discipline": "photography",
+    "genre": [
+      "night",
+      "documentary"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "literary nonfiction",
+    "language": "instrumental",
+    "city": "new-york"
+  },
+  {
+    "slug": "glass-lobby-2",
+    "discipline": "photography",
+    "genre": [
+      "night",
+      "documentary"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "vérité fragment",
+    "language": "Spanish",
+    "city": "los-angeles"
+  },
+  {
+    "slug": "ferry-deck-2",
+    "discipline": "photography",
+    "genre": [
+      "documentary"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "night",
+      "waiting"
+    ],
+    "style": "analog-leaning",
+    "language": "wordless",
+    "city": "london"
+  },
+  {
+    "slug": "corniche-after-midnight-3",
+    "discipline": "photography",
+    "genre": [
+      "portrait"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "analog-leaning",
+    "language": "bilingual",
+    "city": "lagos"
+  },
+  {
+    "slug": "grain-on-hamra-3",
+    "discipline": "photography",
+    "genre": [
+      "portrait"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "literary nonfiction",
+    "language": "Spanish",
+    "city": "beirut"
+  },
+  {
+    "slug": "paris-blue-hour-3",
+    "discipline": "photography",
+    "genre": [
+      "street",
+      "documentary"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "vérité fragment",
+    "language": "French",
+    "city": "berlin"
+  },
+  {
+    "slug": "portrait-room-4-3",
+    "discipline": "photography",
+    "genre": [
+      "analog",
+      "street"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "analog-leaning",
+    "language": "Spanish",
+    "city": "beirut"
+  },
+  {
+    "slug": "analog-sundays-3",
+    "discipline": "photography",
+    "genre": [
+      "architecture"
+    ],
+    "mood": [
+      "warm",
+      "observational"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "field recording",
+    "language": "French",
+    "city": "paris"
+  },
+  {
+    "slug": "night-market-3",
+    "discipline": "photography",
+    "genre": [
+      "street",
+      "documentary"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "studio polish",
+    "language": "instrumental",
+    "city": "london"
+  },
+  {
+    "slug": "scaffold-geometry-3",
+    "discipline": "photography",
+    "genre": [
+      "portrait"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "night",
+      "waiting"
+    ],
+    "style": "analog-leaning",
+    "language": "Arabic",
+    "city": "tokyo"
+  },
+  {
+    "slug": "river-fog-3",
+    "discipline": "photography",
+    "genre": [
+      "architecture"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "field recording",
+    "language": "English",
+    "city": "toronto"
+  },
+  {
+    "slug": "metro-hands-3",
+    "discipline": "photography",
+    "genre": [
+      "architecture"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "transit",
+      "port"
+    ],
+    "style": "compressed narrative",
+    "language": "English",
+    "city": "paris"
+  },
+  {
+    "slug": "roof-laundry-3",
+    "discipline": "photography",
+    "genre": [
+      "street",
+      "documentary"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "compressed narrative",
+    "language": "wordless",
+    "city": "beirut"
+  },
+  {
+    "slug": "glass-lobby-3",
+    "discipline": "photography",
+    "genre": [
+      "portrait"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "night",
+      "waiting"
+    ],
+    "style": "one-shot",
+    "language": "n/a",
+    "city": "byblos"
+  },
+  {
+    "slug": "ferry-deck-3",
+    "discipline": "photography",
+    "genre": [
+      "street",
+      "documentary"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "vérité fragment",
+    "language": "n/a",
+    "city": "new-york"
+  },
+  {
+    "slug": "corniche-after-midnight-4",
+    "discipline": "photography",
+    "genre": [
+      "architecture"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "one-shot",
+    "language": "Arabic",
+    "city": "los-angeles"
+  },
+  {
+    "slug": "grain-on-hamra-4",
+    "discipline": "photography",
+    "genre": [
+      "street",
+      "documentary"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "loop-based",
+    "language": "bilingual",
+    "city": "london"
+  },
+  {
+    "slug": "paris-blue-hour-4",
+    "discipline": "photography",
+    "genre": [
+      "analog",
+      "street"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "studio polish",
+    "language": "Spanish",
+    "city": "lagos"
+  },
+  {
+    "slug": "harbor-cut-2",
+    "discipline": "film",
+    "genre": [
+      "documentary",
+      "short"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "transit",
+      "port"
+    ],
+    "style": "literary nonfiction",
+    "language": "Arabic",
+    "city": "saida"
+  },
+  {
+    "slug": "neon-crossing-2",
+    "discipline": "film",
+    "genre": [
+      "documentary",
+      "short"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "night",
+      "waiting"
+    ],
+    "style": "studio polish",
+    "language": "English",
+    "city": "paris"
+  },
+  {
+    "slug": "kitchen-documentary",
+    "discipline": "film",
+    "genre": [
+      "animation"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "loop-based",
+    "language": "English",
+    "city": "new-york"
+  },
+  {
+    "slug": "tape-over-credits",
+    "discipline": "film",
+    "genre": [
+      "documentary",
+      "short"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "loop-based",
+    "language": "bilingual",
+    "city": "sydney"
+  },
+  {
+    "slug": "music-video-drift",
+    "discipline": "film",
+    "genre": [
+      "narrative short"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "field recording",
+    "language": "Spanish",
+    "city": "beirut"
+  },
+  {
+    "slug": "narrative-bus-stop",
+    "discipline": "film",
+    "genre": [
+      "animation"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "one-shot",
+    "language": "French",
+    "city": "saida"
+  },
+  {
+    "slug": "animation-dust",
+    "discipline": "film",
+    "genre": [
+      "music video"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "field recording",
+    "language": "n/a",
+    "city": "new-york"
+  },
+  {
+    "slug": "rehearsal-take-3",
+    "discipline": "film",
+    "genre": [
+      "animation"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "loop-based",
+    "language": "instrumental",
+    "city": "los-angeles"
+  },
+  {
+    "slug": "window-seat",
+    "discipline": "film",
+    "genre": [
+      "documentary",
+      "short"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "compressed narrative",
+    "language": "Spanish",
+    "city": "berlin"
+  },
+  {
+    "slug": "the-stairs-2",
+    "discipline": "film",
+    "genre": [
+      "music video"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "vérité fragment",
+    "language": "wordless",
+    "city": "barcelona"
+  },
+  {
+    "slug": "harbor-cut-2-2",
+    "discipline": "film",
+    "genre": [
+      "animation"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "literary nonfiction",
+    "language": "instrumental",
+    "city": "london"
+  },
+  {
+    "slug": "neon-crossing-2-2",
+    "discipline": "film",
+    "genre": [
+      "experimental short"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "studio polish",
+    "language": "Spanish",
+    "city": "beirut"
+  },
+  {
+    "slug": "kitchen-documentary-2",
+    "discipline": "film",
+    "genre": [
+      "narrative short"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "compressed narrative",
+    "language": "bilingual",
+    "city": "saida"
+  },
+  {
+    "slug": "tape-over-credits-2",
+    "discipline": "film",
+    "genre": [
+      "narrative short"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "transit",
+      "port"
+    ],
+    "style": "one-shot",
+    "language": "bilingual",
+    "city": "paris"
+  },
+  {
+    "slug": "music-video-drift-2",
+    "discipline": "film",
+    "genre": [
+      "narrative short"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "loop-based",
+    "language": "bilingual",
+    "city": "new-york"
+  },
+  {
+    "slug": "narrative-bus-stop-2",
+    "discipline": "film",
+    "genre": [
+      "experimental short"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "analog-leaning",
+    "language": "bilingual",
+    "city": "sydney"
+  },
+  {
+    "slug": "animation-dust-2",
+    "discipline": "film",
+    "genre": [
+      "documentary",
+      "short"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "one-shot",
+    "language": "bilingual",
+    "city": "beirut"
+  },
+  {
+    "slug": "rehearsal-take-3-2",
+    "discipline": "film",
+    "genre": [
+      "narrative short"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "one-shot",
+    "language": "English",
+    "city": "saida"
+  },
+  {
+    "slug": "window-seat-2",
+    "discipline": "film",
+    "genre": [
+      "animation"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "one-shot",
+    "language": "Spanish",
+    "city": "new-york"
+  },
+  {
+    "slug": "harbor-cut-3",
+    "discipline": "film",
+    "genre": [
+      "animation"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "compressed narrative",
+    "language": "French",
+    "city": "berlin"
+  },
+  {
+    "slug": "neon-crossing-3",
+    "discipline": "film",
+    "genre": [
+      "music video"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "transit",
+      "port"
+    ],
+    "style": "studio polish",
+    "language": "Arabic",
+    "city": "barcelona"
+  },
+  {
+    "slug": "kitchen-documentary-3",
+    "discipline": "film",
+    "genre": [
+      "narrative short"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "field recording",
+    "language": "Spanish",
+    "city": "london"
+  },
+  {
+    "slug": "tape-over-credits-3",
+    "discipline": "film",
+    "genre": [
+      "music video"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "field recording",
+    "language": "Arabic",
+    "city": "beirut"
+  },
+  {
+    "slug": "music-video-drift-3",
+    "discipline": "film",
+    "genre": [
+      "narrative short"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "one-shot",
+    "language": "Spanish",
+    "city": "saida"
+  },
+  {
+    "slug": "narrative-bus-stop-3",
+    "discipline": "film",
+    "genre": [
+      "animation"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "one-shot",
+    "language": "Arabic",
+    "city": "paris"
+  },
+  {
+    "slug": "animation-dust-3",
+    "discipline": "film",
+    "genre": [
+      "experimental short"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "literary nonfiction",
+    "language": "Arabic",
+    "city": "new-york"
+  },
+  {
+    "slug": "rehearsal-take-3-3",
+    "discipline": "film",
+    "genre": [
+      "music video"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "studio polish",
+    "language": "Arabic",
+    "city": "sydney"
+  },
+  {
+    "slug": "ferry-drafts-2",
+    "discipline": "writing",
+    "genre": [
+      "short story"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "analog-leaning",
+    "language": "Arabic",
+    "city": "cape-town"
+  },
+  {
+    "slug": "inventory-of-quiet",
+    "discipline": "writing",
+    "genre": [
+      "essay",
+      "personal"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "transit",
+      "port"
+    ],
+    "style": "loop-based",
+    "language": "French",
+    "city": "berlin"
+  },
+  {
+    "slug": "short-story-keys",
+    "discipline": "writing",
+    "genre": [
+      "poetry"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "one-shot",
+    "language": "Arabic",
+    "city": "saida"
+  },
+  {
+    "slug": "city-sonnets",
+    "discipline": "writing",
+    "genre": [
+      "essay",
+      "personal"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "night",
+      "waiting"
+    ],
+    "style": "field recording",
+    "language": "French",
+    "city": "berlin"
+  },
+  {
+    "slug": "flash-receipt",
+    "discipline": "writing",
+    "genre": [
+      "poetry"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "field recording",
+    "language": "instrumental",
+    "city": "montreal"
+  },
+  {
+    "slug": "essay-archives",
+    "discipline": "writing",
+    "genre": [
+      "short story"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "studio polish",
+    "language": "n/a",
+    "city": "montreal"
+  },
+  {
+    "slug": "poem-scaffolding",
+    "discipline": "writing",
+    "genre": [
+      "essay",
+      "personal"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "analog-leaning",
+    "language": "n/a",
+    "city": "lagos"
+  },
+  {
+    "slug": "notes-from-a-screening",
+    "discipline": "writing",
+    "genre": [
+      "short story"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "one-shot",
+    "language": "English",
+    "city": "seoul"
+  },
+  {
+    "slug": "border-grammar",
+    "discipline": "writing",
+    "genre": [
+      "short story"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "loop-based",
+    "language": "n/a",
+    "city": "tripoli"
+  },
+  {
+    "slug": "letters-from-the-port-2",
+    "discipline": "writing",
+    "genre": [
+      "essay"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "transit",
+      "port"
+    ],
+    "style": "vérité fragment",
+    "language": "English",
+    "city": "paris"
+  },
+  {
+    "slug": "ferry-drafts-2-2",
+    "discipline": "writing",
+    "genre": [
+      "flash fiction"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "literary nonfiction",
+    "language": "bilingual",
+    "city": "montreal"
+  },
+  {
+    "slug": "inventory-of-quiet-2",
+    "discipline": "writing",
+    "genre": [
+      "flash fiction"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "transit",
+      "port"
+    ],
+    "style": "studio polish",
+    "language": "Spanish",
+    "city": "cape-town"
+  },
+  {
+    "slug": "short-story-keys-2",
+    "discipline": "writing",
+    "genre": [
+      "essay"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "one-shot",
+    "language": "bilingual",
+    "city": "berlin"
+  },
+  {
+    "slug": "city-sonnets-2",
+    "discipline": "writing",
+    "genre": [
+      "poetry"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "studio polish",
+    "language": "English",
+    "city": "saida"
+  },
+  {
+    "slug": "flash-receipt-2",
+    "discipline": "writing",
+    "genre": [
+      "essay"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "studio polish",
+    "language": "instrumental",
+    "city": "berlin"
+  },
+  {
+    "slug": "essay-archives-2",
+    "discipline": "writing",
+    "genre": [
+      "flash fiction"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "transit",
+      "port"
+    ],
+    "style": "analog-leaning",
+    "language": "English",
+    "city": "montreal"
+  },
+  {
+    "slug": "poem-scaffolding-2",
+    "discipline": "writing",
+    "genre": [
+      "poetry"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "vérité fragment",
+    "language": "Spanish",
+    "city": "montreal"
+  },
+  {
+    "slug": "notes-from-a-screening-2",
+    "discipline": "writing",
+    "genre": [
+      "essay",
+      "personal"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "analog-leaning",
+    "language": "Spanish",
+    "city": "lagos"
+  },
+  {
+    "slug": "border-grammar-2",
+    "discipline": "writing",
+    "genre": [
+      "flash fiction"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "studio polish",
+    "language": "n/a",
+    "city": "seoul"
+  },
+  {
+    "slug": "letters-from-the-port-3",
+    "discipline": "writing",
+    "genre": [
+      "essay",
+      "personal"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "literary nonfiction",
+    "language": "French",
+    "city": "tripoli"
+  },
+  {
+    "slug": "ferry-drafts-3",
+    "discipline": "writing",
+    "genre": [
+      "essay"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "transit",
+      "port"
+    ],
+    "style": "literary nonfiction",
+    "language": "bilingual",
+    "city": "paris"
+  },
+  {
+    "slug": "inventory-of-quiet-3",
+    "discipline": "writing",
+    "genre": [
+      "essay"
+    ],
+    "mood": [
+      "melancholic",
+      "dreamy"
+    ],
+    "themes": [
+      "distance",
+      "identity"
+    ],
+    "style": "literary nonfiction",
+    "language": "n/a",
+    "city": "montreal"
+  },
+  {
+    "slug": "short-story-keys-3",
+    "discipline": "writing",
+    "genre": [
+      "essay",
+      "personal"
+    ],
+    "mood": [
+      "warm",
+      "observational"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "compressed narrative",
+    "language": "Spanish",
+    "city": "cape-town"
+  },
+  {
+    "slug": "city-sonnets-3",
+    "discipline": "writing",
+    "genre": [
+      "poetry"
+    ],
+    "mood": [
+      "abrasive",
+      "hypnotic"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "one-shot",
+    "language": "English",
+    "city": "berlin"
+  },
+  {
+    "slug": "flash-receipt-3",
+    "discipline": "writing",
+    "genre": [
+      "poetry"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "loop-based",
+    "language": "French",
+    "city": "saida"
+  },
+  {
+    "slug": "essay-archives-3",
+    "discipline": "writing",
+    "genre": [
+      "poetry"
+    ],
+    "mood": [
+      "nocturnal",
+      "grainy"
+    ],
+    "themes": [
+      "labor",
+      "morning"
+    ],
+    "style": "analog-leaning",
+    "language": "n/a",
+    "city": "berlin"
+  },
+  {
+    "slug": "poem-scaffolding-3",
+    "discipline": "writing",
+    "genre": [
+      "short story"
+    ],
+    "mood": [
+      "warm",
+      "observational"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "field recording",
+    "language": "French",
+    "city": "montreal"
+  },
+  {
+    "slug": "notes-from-a-screening-3",
+    "discipline": "writing",
+    "genre": [
+      "short story"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "transit",
+      "port"
+    ],
+    "style": "literary nonfiction",
+    "language": "wordless",
+    "city": "montreal"
+  },
+  {
+    "slug": "border-grammar-3",
+    "discipline": "writing",
+    "genre": [
+      "essay"
+    ],
+    "mood": [
+      "reflective",
+      "tender"
+    ],
+    "themes": [
+      "return",
+      "memory"
+    ],
+    "style": "loop-based",
+    "language": "instrumental",
+    "city": "lagos"
+  },
+  {
+    "slug": "letters-from-the-port-4",
+    "discipline": "writing",
+    "genre": [
+      "flash fiction"
+    ],
+    "mood": [
+      "sparse",
+      "quiet"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "loop-based",
+    "language": "instrumental",
+    "city": "seoul"
+  },
+  {
+    "slug": "ferry-drafts-4",
+    "discipline": "writing",
+    "genre": [
+      "flash fiction"
+    ],
+    "mood": [
+      "energetic",
+      "urban"
+    ],
+    "themes": [
+      "performance",
+      "rehearsal"
+    ],
+    "style": "one-shot",
+    "language": "instrumental",
+    "city": "tripoli"
+  },
+  {
+    "slug": "inventory-of-quiet-4",
+    "discipline": "writing",
+    "genre": [
+      "poetry"
+    ],
+    "mood": [
+      "warm",
+      "observational"
+    ],
+    "themes": [
+      "city",
+      "solitude"
+    ],
+    "style": "compressed narrative",
+    "language": "Arabic",
+    "city": "paris"
+  },
+  {
+    "slug": "short-story-keys-4",
+    "discipline": "writing",
+    "genre": [
+      "poetry"
+    ],
+    "mood": [
+      "tense",
+      "intimate"
+    ],
+    "themes": [
+      "family",
+      "archives"
+    ],
+    "style": "studio polish",
+    "language": "n/a",
+    "city": "montreal"
+  }
+]
