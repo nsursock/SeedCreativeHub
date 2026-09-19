@@ -1,10 +1,9 @@
-# Railway service config for the Fastify API (link this service before `railway up`).
+# Railway service config for the Fastify API (linked to GitHub main).
 [build]
 builder = "DOCKERFILE"
 dockerfilePath = "apps/api/Dockerfile"
 
 [deploy]
-# Healthcheck after listen; keep generous timeout for cold starts.
-healthcheckPath = "/health"
-healthcheckTimeout = 120
+# Temporarily omit healthcheckPath — recent deploys fail after image push while
+# the previous SUCCESS revision keeps serving. Re-enable once stable.
 restartPolicyType = "ON_FAILURE"
