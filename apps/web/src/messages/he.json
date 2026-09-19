@@ -1,0 +1,130 @@
+{
+  "brand": "Creative Hub",
+  "nav": {
+    "explore": "גלה",
+    "creators": "יוצרים",
+    "collaborate": "שיתופי פעולה",
+    "events": "אירועים",
+    "search": "חיפוש",
+    "create": "יצירה",
+    "signIn": "התחברות",
+    "signOut": "התנתקות",
+    "admin": "ניהול",
+    "notifications": "התראות"
+  },
+  "landing": {
+    "heroKicker": "// קונסולת יצירה לבנון",
+    "heroGlitch": "מצאו את הסצנה",
+    "heroTitle": "מצאו שותפים. ראו מה קורה. פרסמו עבודה.",
+    "heroSub": "מדריך מעשי ליוצרים בלבנון — פרופילים, עבודות, שיתופים ו-Hub Nights.",
+    "heroCta": "הצטרפו לרשימת ההמתנה",
+    "pillA": "פרופילים",
+    "pillB": "עבודות",
+    "pillC": "שיתופים",
+    "pillD": "Hub Nights",
+    "consoleTitle": "סצנה חיה",
+    "consoleBody": "יוצרים מזינים, עבודות מומלצות ו-Hub Nights קרובים — המדריך לפני שבירת ה-cold start.",
+    "bootLine": "hub init --locale lebanon --mode waitlist",
+    "section01": "01 / למי",
+    "section02": "02 / איך",
+    "section03": "03 / מייסדים",
+    "supportATitle": "למי זה",
+    "supportABody": "אמנים, מעצבים, מוזיקאים, קולנוענים וכותבים שצריכים מפה ברורה של אנשים והזדמנויות בסביבה.",
+    "supportBTitle": "איך החיבור עובד",
+    "supportBBody": "גלו ב-Explore, עקבו אחרי יוצרים, שלחו פנייה מובנית או הצטרפו להזדמנות — ואז תפגשו ב-Hub Nights.",
+    "foundingTitle": "היו יוצרים מייסדים",
+    "foundingBody": "תקופת מייסדים חינמית בזמן מילוי המדריך. בלי תשלום — רשימת המתנה או תביעת פרופיל.",
+    "foundingCta": "בקשו גישת מייסדים",
+    "pricingBadge": "שלב 0",
+    "pricingPrice": "חינם בזמן המילוי",
+    "ctaTitle": "מוכנים כשאתם מוכנים",
+    "ctaBody": "השאירו אימייל ותחומים. נזמין כש-Explore מתמלא.",
+    "email": "אימייל",
+    "disciplines": "תחומים",
+    "submit": "הצטרפות",
+    "success": "אתם ברשימה. בדקו את תיבת המייל.",
+    "footer": "Creative Hub — כלי לרשת היצירה בלבנון."
+  },
+  "explore": {
+    "title": "גלה",
+    "featuredCreators": "יוצרים מומלצים",
+    "featuredWorks": "עבודות מומלצות",
+    "latest": "עבודות אחרונות",
+    "upcoming": "אירועים קרובים",
+    "opportunities": "שיתופים פתוחים"
+  },
+  "profile": {
+    "unclaimed": "פרופיל לא נתבע",
+    "unclaimedHint": "פרופיל שנוצר מראש. תבעו אותו כדי לערוך ולפרסם.",
+    "follow": "עקוב",
+    "unfollow": "הפסק מעקב",
+    "contact": "יצירת קשר",
+    "works": "עבודות",
+    "report": "דיווח"
+  },
+  "auth": {
+    "signInTitle": "התחברות",
+    "signUpTitle": "יצירת חשבון",
+    "email": "אימייל",
+    "password": "סיסמה",
+    "displayName": "שם תצוגה",
+    "handle": "מזהה",
+    "magicLink": "שלחו קישור התחברות",
+    "submit": "המשך",
+    "claimTitle": "תביעת הפרופיל",
+    "claimBody": "הגדירו אימייל וסיסמה כדי לקחת בעלות על הפרופיל."
+  },
+  "search": {
+    "title": "חיפוש",
+    "placeholder": "יוצרים, עבודות, אירועים…",
+    "discipline": "תחום",
+    "city": "עיר",
+    "submit": "חיפוש"
+  },
+  "collab": {
+    "title": "שיתופי פעולה",
+    "expressInterest": "הבעת עניין",
+    "empty": "אין הזדמנויות פתוחות."
+  },
+  "events": {
+    "title": "אירועים",
+    "hubNight": "Hub Night",
+    "empty": "אין אירועים קרובים."
+  },
+  "admin": {
+    "title": "ניהול",
+    "creators": "יוצרים",
+    "reports": "דיווחים",
+    "stats": "סטטיסטיקה",
+    "import": "ייבוא JSON",
+    "claimLink": "יצירת קישור תביעה",
+    "feature": "הצג ב-Explore"
+  },
+  "create": {
+    "media": "מדיה",
+    "photography": "צילום",
+    "music": "מוזיקה",
+    "film": "קולנוע",
+    "writing": "כתיבה",
+    "title": "כותרת",
+    "body": "גוף הטקסט",
+    "bodyHint": "כתבו את היצירה — טקסט רגיל או Markdown קל.",
+    "caption": "כיתוב",
+    "captionHint": "הערה אופציונלית ליד התמונה.",
+    "imageUrl": "כתובת תמונה",
+    "imageUrlHint": "קישור ל-JPG, PNG או WEBP לעת עתה.",
+    "notes": "הערות",
+    "embed": "כתובת הטמעה",
+    "embedAudioHint": "קישור SoundCloud, Bandcamp או Spotify.",
+    "embedVideoHint": "קישור YouTube או Vimeo מועדף.",
+    "externalOptional": "קישור חיצוני (אופציונלי)",
+    "publish": "פרסום"
+  },
+  "common": {
+    "loading": "טוען…",
+    "error": "משהו השתבש.",
+    "back": "חזרה",
+    "save": "שמירה",
+    "cancel": "ביטול"
+  }
+}

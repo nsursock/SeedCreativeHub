@@ -1,0 +1,64 @@
+[
+  {
+    "handle": "maya_k",
+    "displayName": "Maya Khoury",
+    "bioShort": "Photographer documenting Beirut nights.",
+    "city": "beirut",
+    "disciplineSlugs": ["photography"],
+    "works": [
+      {
+        "title": "Corniche After Midnight",
+        "type": "image",
+        "description": "Night walk along the Corniche — sodium lights, wet asphalt.",
+        "imagePrompt": "Documentary photo of Beirut Corniche at night, wet asphalt, sodium lights, grainy film, no text",
+        "primaryDiscipline": "photography"
+      }
+    ]
+  },
+  {
+    "handle": "rami_beats",
+    "displayName": "Rami Beats",
+    "bioShort": "Producer / sound designer.",
+    "city": "beirut",
+    "disciplineSlugs": ["music"],
+    "works": [
+      {
+        "title": "Port Loop",
+        "type": "audio",
+        "description": "Two-minute port-side loop for late drives.",
+        "primaryDiscipline": "music"
+      }
+    ]
+  },
+  {
+    "handle": "lina_writes",
+    "displayName": "Lina Haddad",
+    "bioShort": "Poet and essayist.",
+    "city": "tripoli",
+    "disciplineSlugs": ["writing"],
+    "works": [
+      {
+        "title": "Letters from the Port",
+        "type": "text",
+        "description": "A short essay on leaving and returning.",
+        "body": "We measure distance in ferry horns. Tripoli keeps the drafts; Beirut keeps the edits. Between them, a sentence tries to stay honest.",
+        "primaryDiscipline": "writing"
+      }
+    ]
+  },
+  {
+    "handle": "karim_film",
+    "displayName": "Karim Abou",
+    "bioShort": "Independent filmmaker.",
+    "city": "saida",
+    "disciplineSlugs": ["film"],
+    "works": [
+      {
+        "title": "Short: The Stairs",
+        "type": "video",
+        "description": "A one-shot climb through a Saida stairwell.",
+        "primaryDiscipline": "film"
+      }
+    ]
+  }
+]

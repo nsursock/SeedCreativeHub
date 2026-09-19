@@ -1,0 +1,130 @@
+{
+  "brand": "Creative Hub",
+  "nav": {
+    "explore": "استكشف",
+    "creators": "مبدعون",
+    "collaborate": "تعاون",
+    "events": "فعاليات",
+    "search": "بحث",
+    "create": "إنشاء",
+    "signIn": "دخول",
+    "signOut": "خروج",
+    "admin": "إدارة",
+    "notifications": "تنبيهات"
+  },
+  "landing": {
+    "heroKicker": "// وحدة إبداع لبنان",
+    "heroGlitch": "اعثر على مشهدك",
+    "heroTitle": "اعثر على متعاونين. تابع ما يحدث. أنشر عملك.",
+    "heroSub": "دليل عملي للمبدعين في لبنان — ملفات، أعمال، تعاون، وليالي الـ Hub.",
+    "heroCta": "انضم لقائمة الانتظار",
+    "pillA": "ملفات",
+    "pillB": "أعمال",
+    "pillC": "تعاون",
+    "pillD": "ليالي Hub",
+    "consoleTitle": "المشهد الحي",
+    "consoleBody": "مبدعون مؤسسّون، أعمال مميزة، وليالي Hub قادمة — الدليل قبل كسر البداية الباردة.",
+    "bootLine": "hub init --locale lebanon --mode waitlist",
+    "section01": "01 / لمن",
+    "section02": "02 / كيف",
+    "section03": "03 / التأسيس",
+    "supportATitle": "لمن هذا",
+    "supportABody": "فنانون ومصممون وموسيقيون وصنّاع أفلام وكتّاب يحتاجون خريطة واضحة للناس والفرص القريبة.",
+    "supportBTitle": "كيف يعمل التواصل",
+    "supportBBody": "تصفّح الاستكشاف، تابع المبدعين، أرسل تواصلاً منظّماً، أو انضم لفرصة تعاون — ثم التقوا في ليالي الـ Hub.",
+    "foundingTitle": "كن مبدعاً مؤسِّساً",
+    "foundingBody": "فترة تأسيس مجانية أثناء بناء الدليل. بلا دفع — قائمة انتظار أو استرداد ملفك.",
+    "foundingCta": "اطلب وصول التأسيس",
+    "pricingBadge": "المرحلة 0",
+    "pricingPrice": "مجاني أثناء البناء",
+    "ctaTitle": "جاهز عندما تكون",
+    "ctaBody": "اترك بريدك وتخصصاتك. ندعوك عندما يمتلئ الاستكشاف.",
+    "email": "البريد",
+    "disciplines": "التخصصات",
+    "submit": "انضم",
+    "success": "أنت على القائمة. تحقق من بريدك.",
+    "footer": "Creative Hub — أداة لشبكة الإبداع في لبنان."
+  },
+  "explore": {
+    "title": "استكشف",
+    "featuredCreators": "مبدعون مميزون",
+    "featuredWorks": "أعمال مميزة",
+    "latest": "أحدث الأعمال",
+    "upcoming": "فعاليات قادمة",
+    "opportunities": "فرص تعاون مفتوحة"
+  },
+  "profile": {
+    "unclaimed": "ملف غير مسترد",
+    "unclaimedHint": "ملف مُنشأ مسبقاً. استرده لتعديله والنشر.",
+    "follow": "متابعة",
+    "unfollow": "إلغاء المتابعة",
+    "contact": "تواصل",
+    "works": "أعمال",
+    "report": "إبلاغ"
+  },
+  "auth": {
+    "signInTitle": "دخول",
+    "signUpTitle": "إنشاء حساب",
+    "email": "البريد",
+    "password": "كلمة المرور",
+    "displayName": "الاسم الظاهر",
+    "handle": "المعرّف",
+    "magicLink": "أرسل رابط الدخول",
+    "submit": "متابعة",
+    "claimTitle": "استرداد ملفك",
+    "claimBody": "عيّن بريداً وكلمة مرور لامتلاك هذا الملف."
+  },
+  "search": {
+    "title": "بحث",
+    "placeholder": "مبدعون، أعمال، فعاليات…",
+    "discipline": "تخصص",
+    "city": "مدينة",
+    "submit": "بحث"
+  },
+  "collab": {
+    "title": "تعاون",
+    "expressInterest": "أبدِ اهتماماً",
+    "empty": "لا فرص مفتوحة بعد."
+  },
+  "events": {
+    "title": "فعاليات",
+    "hubNight": "ليلة الـ Hub",
+    "empty": "لا فعاليات قادمة."
+  },
+  "admin": {
+    "title": "إدارة",
+    "creators": "مبدعون",
+    "reports": "بلاغات",
+    "stats": "إحصاءات",
+    "import": "استيراد JSON",
+    "claimLink": "إنشاء رابط الاسترداد",
+    "feature": "تمييز في الاستكشاف"
+  },
+  "create": {
+    "media": "الوسائط",
+    "photography": "تصوير",
+    "music": "موسيقى",
+    "film": "فيلم",
+    "writing": "كتابة",
+    "title": "العنوان",
+    "body": "النص",
+    "bodyHint": "اكتب النص — عادي أو ماركداون خفيف.",
+    "caption": "تعليق",
+    "captionHint": "ملاحظة اختيارية مع الصورة.",
+    "imageUrl": "رابط الصورة",
+    "imageUrlHint": "رابط JPG أو PNG أو WEBP حالياً.",
+    "notes": "ملاحظات",
+    "embed": "رابط التضمين",
+    "embedAudioHint": "رابط SoundCloud أو Bandcamp أو Spotify.",
+    "embedVideoHint": "رابط YouTube أو Vimeo مفضّل.",
+    "externalOptional": "رابط خارجي (اختياري)",
+    "publish": "نشر"
+  },
+  "common": {
+    "loading": "جارٍ التحميل…",
+    "error": "حدث خطأ.",
+    "back": "رجوع",
+    "save": "حفظ",
+    "cancel": "إلغاء"
+  }
+}

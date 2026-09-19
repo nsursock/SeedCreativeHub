@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Creative Hub Night — Soft Launch",
+    "description": "Founding creators meetup: show work, swap contacts, plan the season.",
+    "venue": "TBD — Beirut",
+    "city": "beirut",
+    "category": "hub_night",
+    "isHubNight": true,
+    "daysFromNow": 21
+  },
+  {
+    "name": "Open Studio Walk — Mar Mikhael",
+    "description": "Self-guided visits to open studios along the strip.",
+    "venue": "Mar Mikhael",
+    "city": "beirut",
+    "category": "community",
+    "isHubNight": false,
+    "daysFromNow": 35,
+    "externalUrl": "https://example.com/open-studio"
+  },
+  {
+    "name": "Film Screening: Local Shorts",
+    "description": "An evening of short films by Lebanon-based makers.",
+    "venue": "Metro al Madina",
+    "city": "beirut",
+    "category": "screening",
+    "isHubNight": false,
+    "daysFromNow": 45
+  }
+]

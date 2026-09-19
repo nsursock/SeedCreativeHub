@@ -1,0 +1,450 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  member
+  editor
+  admin
+}
+
+enum UserStatus {
+  active
+  suspended
+  deleted
+}
+
+enum ClaimStatus {
+  unclaimed
+  pending
+  claimed
+}
+
+enum WorkType {
+  text
+  image
+  audio
+  video
+}
+
+enum WorkStatus {
+  draft
+  published
+  archived
+  hidden
+}
+
+enum MediaKind {
+  image
+  audio
+  video
+  file
+  embed
+}
+
+enum ModerationStatus {
+  pending
+  approved
+  rejected
+}
+
+enum OpportunityStatus {
+  open
+  closed
+  draft
+}
+
+enum RemoteMode {
+  onsite
+  remote
+  hybrid
+}
+
+enum CompensationStatus {
+  paid
+  unpaid
+  negotiable
+  tbd
+}
+
+enum EventStatus {
+  draft
+  published
+  cancelled
+  past
+}
+
+enum ReportStatus {
+  open
+  resolved
+  dismissed
+}
+
+enum ReportEntityType {
+  profile
+  work
+  opportunity
+  event
+  user
+}
+
+enum EditorialEntityType {
+  profile
+  work
+  opportunity
+  event
+  collection
+}
+
+enum NotificationType {
+  collab_interest
+  contact_message
+  follow
+  security
+  claim
+  system
+}
+
+model User {
+  id              String     @id @default(uuid())
+  email           String     @unique
+  passwordHash    String?    @map("password_hash")
+  role            UserRole   @default(member)
+  status          UserStatus @default(active)
+  locale          String     @default("en")
+  emailVerifiedAt DateTime?  @map("email_verified_at")
+  createdAt       DateTime   @default(now()) @map("created_at")
+  updatedAt       DateTime   @updatedAt @map("updated_at")
+  deletedAt       DateTime?  @map("deleted_at")
+
+  profile           Profile?
+  magicLinks        MagicLink[]
+  followsOut        Follow[]             @relation("Follower")
+  followsIn         Follow[]             @relation("Following")
+  opportunities     Opportunity[]
+  interests         OpportunityInterest[]
+  events            Event[]
+  notifications     Notification[]
+  reportsFiled      Report[]             @relation("Reporter")
+  reportsResolved   Report[]             @relation("Resolver")
+  auditLogs         AuditLog[]
+  contactsSent      ContactMessage[]     @relation("ContactFrom")
+  contactsReceived  ContactMessage[]     @relation("ContactTo")
+
+  @@map("users")
+}
+
+model Profile {
+  id               String      @id @default(uuid())
+  userId           String?     @unique @map("user_id")
+  handle           String      @unique
+  displayName      String      @map("display_name")
+  bioShort         String?     @map("bio_short")
+  bioLong          String?     @map("bio_long")
+  avatarUrl        String?     @map("avatar_url")
+  coverUrl         String?     @map("cover_url")
+  country          String      @default("Lebanon")
+  city             String?
+  availability     String?
+  visibility       String      @default("public")
+  claimStatus      ClaimStatus @default(unclaimed) @map("claim_status")
+  websiteUrl       String?     @map("website_url")
+  instagramUrl     String?     @map("instagram_url")
+  verifiedAt       DateTime?   @map("verified_at")
+  completionScore  Int         @default(0) @map("completion_score")
+  isFounding       Boolean     @default(false) @map("is_founding")
+  createdAt        DateTime    @default(now()) @map("created_at")
+  updatedAt        DateTime    @updatedAt @map("updated_at")
+
+  user         User?         @relation(fields: [userId], references: [id])
+  disciplines  ProfileDiscipline[]
+  works        Work[]
+  claimTokens  ClaimToken[]
+  contactsTo   ContactMessage[] @relation("ContactProfile")
+
+  @@index([city])
+  @@index([claimStatus])
+  @@index([displayName])
+  @@map("profiles")
+}
+
+model Discipline {
+  id        String   @id @default(uuid())
+  slug      String   @unique
+  nameEn    String   @map("name_en")
+  nameFr    String   @map("name_fr")
+  nameAr    String   @map("name_ar")
+  nameHe    String   @map("name_he")
+  sortOrder Int      @default(0) @map("sort_order")
+
+  profiles ProfileDiscipline[]
+  works    Work[]
+
+  @@map("disciplines")
+}
+
+model ProfileDiscipline {
+  profileId    String @map("profile_id")
+  disciplineId String @map("discipline_id")
+
+  profile    Profile    @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  discipline Discipline @relation(fields: [disciplineId], references: [id], onDelete: Cascade)
+
+  @@id([profileId, disciplineId])
+  @@map("profile_disciplines")
+}
+
+model City {
+  id        String @id @default(uuid())
+  slug      String @unique
+  nameEn    String @map("name_en")
+  nameFr    String @map("name_fr")
+  nameAr    String @map("name_ar")
+  nameHe    String @map("name_he")
+  sortOrder Int    @default(0) @map("sort_order")
+
+  @@map("cities")
+}
+
+model Work {
+  id                String     @id @default(uuid())
+  profileId         String     @map("profile_id")
+  type              WorkType
+  title             String
+  slug              String     @unique
+  description       String?
+  status            WorkStatus @default(draft)
+  primaryDisciplineId String?  @map("primary_discipline_id")
+  externalUrl       String?    @map("external_url")
+  embedUrl          String?    @map("embed_url")
+  publishedAt       DateTime?  @map("published_at")
+  viewCount         Int        @default(0) @map("view_count")
+  createdAt         DateTime   @default(now()) @map("created_at")
+  updatedAt         DateTime   @updatedAt @map("updated_at")
+
+  profile           Profile      @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  primaryDiscipline Discipline?  @relation(fields: [primaryDisciplineId], references: [id])
+  media             MediaAsset[]
+
+  @@index([status, publishedAt])
+  @@index([title])
+  @@map("works")
+}
+
+model MediaAsset {
+  id               String           @id @default(uuid())
+  workId           String           @map("work_id")
+  kind             MediaKind
+  provider         String           @default("supabase")
+  storageKey       String?          @map("storage_key")
+  publicUrl        String?          @map("public_url")
+  externalUrl      String?          @map("external_url")
+  mimeType         String?          @map("mime_type")
+  sizeBytes        Int?             @map("size_bytes")
+  moderationStatus ModerationStatus @default(pending) @map("moderation_status")
+  createdAt        DateTime         @default(now()) @map("created_at")
+
+  work Work @relation(fields: [workId], references: [id], onDelete: Cascade)
+
+  @@map("media_assets")
+}
+
+model ClaimToken {
+  id        String    @id @default(uuid())
+  profileId String    @map("profile_id")
+  tokenHash String    @unique @map("token_hash")
+  expiresAt DateTime  @map("expires_at")
+  usedAt    DateTime? @map("used_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+  createdBy String?   @map("created_by")
+
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  @@index([profileId])
+  @@map("claim_tokens")
+}
+
+model WaitlistEntry {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  displayName  String?  @map("display_name")
+  disciplines  String[]
+  locale       String   @default("en")
+  referralCode String?  @map("referral_code")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@map("waitlist_entries")
+}
+
+model MagicLink {
+  id        String    @id @default(uuid())
+  userId    String    @map("user_id")
+  tokenHash String    @unique @map("token_hash")
+  expiresAt DateTime  @map("expires_at")
+  usedAt    DateTime? @map("used_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("magic_links")
+}
+
+model Follow {
+  id          String   @id @default(uuid())
+  followerId  String   @map("follower_id")
+  followingId String   @map("following_id")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  follower  User @relation("Follower", fields: [followerId], references: [id], onDelete: Cascade)
+  following User @relation("Following", fields: [followingId], references: [id], onDelete: Cascade)
+
+  @@unique([followerId, followingId])
+  @@map("follows")
+}
+
+model Opportunity {
+  id                  String              @id @default(uuid())
+  creatorId           String              @map("creator_id")
+  title               String
+  slug                String              @unique
+  description         String
+  roles               String?
+  discipline          String?
+  location            String?
+  remoteMode          RemoteMode?         @map("remote_mode")
+  compensationStatus  CompensationStatus? @map("compensation_status")
+  deadline            DateTime?
+  imageUrl            String?             @map("image_url")
+  status              OpportunityStatus   @default(open)
+  createdAt           DateTime            @default(now()) @map("created_at")
+  updatedAt           DateTime            @updatedAt @map("updated_at")
+
+  creator   User                  @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+  interests OpportunityInterest[]
+
+  @@index([status, createdAt])
+  @@map("opportunities")
+}
+
+model OpportunityInterest {
+  id            String   @id @default(uuid())
+  opportunityId String   @map("opportunity_id")
+  userId        String   @map("user_id")
+  message       String?
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  opportunity Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([opportunityId, userId])
+  @@map("opportunity_interests")
+}
+
+model Event {
+  id          String      @id @default(uuid())
+  organizerId String?     @map("organizer_id")
+  name        String
+  slug        String      @unique
+  description String?
+  startsAt    DateTime    @map("starts_at")
+  endsAt      DateTime?   @map("ends_at")
+  venue       String?
+  city        String?
+  category    String?
+  externalUrl String?     @map("external_url")
+  imageUrl    String?     @map("image_url")
+  status      EventStatus @default(published)
+  capacity    Int?
+  isHubNight  Boolean     @default(false) @map("is_hub_night")
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
+
+  organizer User? @relation(fields: [organizerId], references: [id])
+
+  @@index([status, startsAt])
+  @@map("events")
+}
+
+model Notification {
+  id        String           @id @default(uuid())
+  userId    String           @map("user_id")
+  type      NotificationType
+  title     String
+  body      String?
+  payload   Json?
+  readAt    DateTime?        @map("read_at")
+  createdAt DateTime         @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@map("notifications")
+}
+
+model Report {
+  id           String           @id @default(uuid())
+  reporterId   String           @map("reporter_id")
+  entityType   ReportEntityType @map("entity_type")
+  entityId     String           @map("entity_id")
+  reason       String
+  details      String?
+  status       ReportStatus     @default(open)
+  resolvedById String?          @map("resolved_by_id")
+  resolvedAt   DateTime?        @map("resolved_at")
+  createdAt    DateTime         @default(now()) @map("created_at")
+
+  reporter   User  @relation("Reporter", fields: [reporterId], references: [id])
+  resolvedBy User? @relation("Resolver", fields: [resolvedById], references: [id])
+
+  @@index([status, createdAt])
+  @@map("reports")
+}
+
+model EditorialFeature {
+  id         String              @id @default(uuid())
+  entityType EditorialEntityType @map("entity_type")
+  entityId   String              @map("entity_id")
+  placement  String
+  sortOrder  Int                 @default(0) @map("sort_order")
+  startsAt   DateTime?           @map("starts_at")
+  endsAt     DateTime?           @map("ends_at")
+  createdAt  DateTime            @default(now()) @map("created_at")
+
+  @@index([placement, sortOrder])
+  @@map("editorial_features")
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  actorId   String?  @map("actor_id")
+  action    String
+  target    String?
+  metadata  Json?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  actor User? @relation(fields: [actorId], references: [id])
+
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+model ContactMessage {
+  id          String   @id @default(uuid())
+  fromUserId  String   @map("from_user_id")
+  toUserId    String?  @map("to_user_id")
+  toProfileId String   @map("to_profile_id")
+  subject     String
+  message     String
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  fromUser  User    @relation("ContactFrom", fields: [fromUserId], references: [id])
+  toUser    User?   @relation("ContactTo", fields: [toUserId], references: [id])
+  toProfile Profile @relation("ContactProfile", fields: [toProfileId], references: [id])
+
+  @@map("contact_messages")
+}

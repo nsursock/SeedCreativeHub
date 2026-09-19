@@ -1,0 +1,130 @@
+{
+  "brand": "Creative Hub",
+  "nav": {
+    "explore": "Explorer",
+    "creators": "Créateurs",
+    "collaborate": "Collaborer",
+    "events": "Événements",
+    "search": "Rechercher",
+    "create": "Créer",
+    "signIn": "Connexion",
+    "signOut": "Déconnexion",
+    "admin": "Admin",
+    "notifications": "Alertes"
+  },
+  "landing": {
+    "heroKicker": "// Console créative Liban",
+    "heroGlitch": "TROUVE TA SCÈNE",
+    "heroTitle": "Trouvez des collaborateurs. Voyez ce qui se passe. Publiez.",
+    "heroSub": "Un annuaire pratique pour les créateurs au Liban — profils, œuvres, collabs et Hub Nights.",
+    "heroCta": "Rejoindre la liste d'attente",
+    "pillA": "Profils",
+    "pillB": "Œuvres",
+    "pillC": "Collabs",
+    "pillD": "Hub Nights",
+    "consoleTitle": "Scène live",
+    "consoleBody": "Créateurs seedés, œuvres en vedette et Hub Nights à venir — l'annuaire avant la rupture du cold start.",
+    "bootLine": "hub init --locale lebanon --mode waitlist",
+    "section01": "01 / Pour qui",
+    "section02": "02 / Comment",
+    "section03": "03 / Fondation",
+    "supportATitle": "Pour qui",
+    "supportABody": "Artistes, designers, musiciens, cinéastes et écrivains qui ont besoin d'une carte claire des personnes et opportunités proches.",
+    "supportBTitle": "Comment ça connecte",
+    "supportBBody": "Parcourez Explorer, suivez des créateurs, envoyez un contact structuré ou postulez à une collab — puis retrouvez-vous aux Hub Nights.",
+    "foundingTitle": "Devenir créateur fondateur",
+    "foundingBody": "Période fondatrice gratuite pendant le seeding. Pas de paiement — liste d'attente ou claim de profil.",
+    "foundingCta": "Demander l'accès fondateur",
+    "pricingBadge": "Phase 0",
+    "pricingPrice": "Gratuit pendant le seeding",
+    "ctaTitle": "Quand vous êtes prêt",
+    "ctaBody": "Laissez votre e-mail et vos disciplines. On vous invite quand Explorer se remplit.",
+    "email": "E-mail",
+    "disciplines": "Disciplines",
+    "submit": "Rejoindre",
+    "success": "Vous êtes sur la liste. Vérifiez votre boîte mail.",
+    "footer": "Creative Hub — outil pour le graphe créatif libanais."
+  },
+  "explore": {
+    "title": "Explorer",
+    "featuredCreators": "Créateurs en vedette",
+    "featuredWorks": "Œuvres en vedette",
+    "latest": "Dernières œuvres",
+    "upcoming": "Événements à venir",
+    "opportunities": "Collaborations ouvertes"
+  },
+  "profile": {
+    "unclaimed": "Profil non réclamé",
+    "unclaimedHint": "Profil seedé par Creative Hub. Réclamez-le pour éditer et publier.",
+    "follow": "Suivre",
+    "unfollow": "Ne plus suivre",
+    "contact": "Contacter",
+    "works": "Œuvres",
+    "report": "Signaler"
+  },
+  "auth": {
+    "signInTitle": "Connexion",
+    "signUpTitle": "Créer un compte",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "displayName": "Nom affiché",
+    "handle": "Identifiant",
+    "magicLink": "Lien magique par e-mail",
+    "submit": "Continuer",
+    "claimTitle": "Réclamer votre profil",
+    "claimBody": "Définissez e-mail et mot de passe pour prendre possession de ce profil seedé."
+  },
+  "search": {
+    "title": "Recherche",
+    "placeholder": "Créateurs, œuvres, événements…",
+    "discipline": "Discipline",
+    "city": "Ville",
+    "submit": "Rechercher"
+  },
+  "collab": {
+    "title": "Collaborer",
+    "expressInterest": "Manifestez votre intérêt",
+    "empty": "Aucune opportunité ouverte."
+  },
+  "events": {
+    "title": "Événements",
+    "hubNight": "Hub Night",
+    "empty": "Aucun événement à venir."
+  },
+  "admin": {
+    "title": "Admin",
+    "creators": "Créateurs",
+    "reports": "Signalements",
+    "stats": "Stats",
+    "import": "Importer JSON",
+    "claimLink": "Générer lien de claim",
+    "feature": "Mettre en avant"
+  },
+  "create": {
+    "media": "Média",
+    "photography": "Photo",
+    "music": "Musique",
+    "film": "Film",
+    "writing": "Écriture",
+    "title": "Titre",
+    "body": "Texte",
+    "bodyHint": "Écrivez le texte — brut ou Markdown léger.",
+    "caption": "Légende",
+    "captionHint": "Note optionnelle affichée avec la photo.",
+    "imageUrl": "URL de l'image",
+    "imageUrlHint": "Lien JPG, PNG ou WEBP pour l'instant.",
+    "notes": "Notes",
+    "embed": "URL d'embed",
+    "embedAudioHint": "Lien SoundCloud, Bandcamp ou Spotify.",
+    "embedVideoHint": "Lien YouTube ou Vimeo de préférence.",
+    "externalOptional": "Lien externe (optionnel)",
+    "publish": "Publier"
+  },
+  "common": {
+    "loading": "Chargement…",
+    "error": "Une erreur est survenue.",
+    "back": "Retour",
+    "save": "Enregistrer",
+    "cancel": "Annuler"
+  }
+}

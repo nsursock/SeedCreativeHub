@@ -1,0 +1,23 @@
+{
+  "name": "creative-hub",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@11.24.0",
+  "scripts": {
+    "dev": "pnpm -r --parallel --filter @creative-hub/web --filter @creative-hub/api run dev",
+    "dev:web": "pnpm --filter @creative-hub/web dev",
+    "dev:api": "pnpm --filter @creative-hub/api dev",
+    "build": "pnpm -r --filter @creative-hub/shared --filter @creative-hub/api --filter @creative-hub/web run build",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:migrate": "pnpm --filter @creative-hub/api db:migrate",
+    "db:seed": "pnpm --filter @creative-hub/api db:seed",
+    "db:reset": "pnpm --filter @creative-hub/api db:reset",
+    "lint": "pnpm -r --if-present run lint",
+    "test:e2e": "pnpm --filter @creative-hub/web test:e2e"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

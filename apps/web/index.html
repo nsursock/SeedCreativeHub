@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="retrowave">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Creative Hub — discover creators, collaborate, and find what's happening in Lebanon." />
+    <link rel="alternate" hreflang="en" href="/en" />
+    <link rel="alternate" hreflang="fr" href="/fr" />
+    <link rel="alternate" hreflang="ar" href="/ar" />
+    <link rel="alternate" hreflang="he" href="/he" />
+    <link rel="alternate" hreflang="x-default" href="/en" />
+    <script>
+      try {
+        var t = localStorage.getItem("creative-hub-theme");
+        var ok = [
+          "retrowave",
+          "synthwave84",
+          "fiesta",
+          "goldenTwilight",
+          "solarizedDark",
+          "ghibli",
+          "dawn",
+          "cottonCandy",
+          "brightContrasts",
+        ];
+        if (t && ok.indexOf(t) !== -1) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+    <title>Creative Hub</title>
+  </head>
+  <body class="min-h-screen antialiased">
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

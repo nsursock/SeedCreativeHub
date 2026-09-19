@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Looking for a sound designer",
+    "description": "Short film needs original score and foley. Beirut-based preferred; remote OK.",
+    "roles": "Sound designer",
+    "discipline": "music",
+    "location": "Beirut",
+    "remoteMode": "hybrid",
+    "compensationStatus": "negotiable"
+  },
+  {
+    "title": "Photographer for Hub Night recap",
+    "description": "Document our next Hub Night — candid + stage. Portfolio link appreciated.",
+    "roles": "Event photographer",
+    "discipline": "photography",
+    "location": "Beirut",
+    "remoteMode": "onsite",
+    "compensationStatus": "paid"
+  },
+  {
+    "title": "Writer for artist profiles",
+    "description": "Help interview founding creators for Creative Hub editorial.",
+    "roles": "Writer / interviewer",
+    "discipline": "writing",
+    "location": "Remote / Beirut",
+    "remoteMode": "hybrid",
+    "compensationStatus": "tbd"
+  },
+  {
+    "title": "Editor for local shorts reel",
+    "description": "Compile 3–5 short films into a Hub Night screening block.",
+    "roles": "Film editor",
+    "discipline": "film",
+    "location": "Beirut",
+    "remoteMode": "hybrid",
+    "compensationStatus": "negotiable"
+  }
+]

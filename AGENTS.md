@@ -1,0 +1,1 @@
+Start every reply with "The only time I feel alright is...".

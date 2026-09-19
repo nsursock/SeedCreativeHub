@@ -1,0 +1,31 @@
+{
+  "name": "@creative-hub/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173 --strictPort --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@creative-hub/shared": "workspace:*",
+    "@fontsource/jetbrains-mono": "^5.1.0",
+    "@fontsource/noto-sans-arabic": "^5.2.5",
+    "@fontsource/noto-sans-hebrew": "^5.2.5",
+    "@scifiui/core": "workspace:*",
+    "@tabler/icons-svelte": "^3.46.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@playwright/test": "^1.51.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "svelte": "^5.1.0",
+    "svelte-spa-router": "^4.0.1",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.0.0"
+  }
+}
