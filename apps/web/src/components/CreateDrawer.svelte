@@ -19,6 +19,7 @@
   let description = $state("");
   let externalUrl = $state("");
   let embedUrl = $state("");
+  let aiGenerated = $state(false);
   let error = $state("");
   let saving = $state(false);
   let mounted = $state(false);
@@ -54,6 +55,7 @@
     description = "";
     externalUrl = "";
     embedUrl = "";
+    aiGenerated = false;
     error = "";
     saving = false;
   }
@@ -127,6 +129,7 @@
             embedUrl: embedUrl || undefined,
             primaryDiscipline: discipline,
             status: "published",
+            aiGenerated,
           },
         },
       );
@@ -297,6 +300,14 @@
             />
           </label>
         {/if}
+
+        <label class="hub-create-drawer__ai flex cursor-pointer items-start gap-2.5">
+          <input class="checkbox checkbox-sm mt-0.5" type="checkbox" bind:checked={aiGenerated} />
+          <span>
+            <span class="label-kicker block text-scifi-muted">{t(messages, "create.aiGenerated")}</span>
+            <span class="mt-0.5 block text-xs text-scifi-muted">{t(messages, "create.aiGeneratedHint")}</span>
+          </span>
+        </label>
 
         {#if error}<p class="m-0 text-sm text-error">{error}</p>{/if}
 

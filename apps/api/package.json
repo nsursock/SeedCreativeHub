@@ -11,7 +11,8 @@
     "db:migrate": "prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
     "db:seed": "tsx prisma/seed.ts",
-    "db:reset": "prisma migrate reset --force",
+    "db:reset": "tsx prisma/hard-reset.ts",
+    "db:reset:prisma": "prisma migrate reset --force",
     "db:push": "prisma db push"
   },
   "dependencies": {

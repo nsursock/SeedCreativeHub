@@ -44,7 +44,7 @@ export const env = {
   seedAiCostMode: parseCostMode(process.env.SEED_AI_COST_MODE),
 
   openRouterApiKey: process.env.OPENROUTER_API_KEY ?? "",
-  /** Override text model; defaults by cost mode (free→openrouter/free, paid→gpt-4o-mini) */
+  /** Override text model; empty → TEXT_MODELS[costMode] (free: openrouter/free, paid: openai/gpt-4o-mini) */
   openRouterModel: process.env.OPENROUTER_MODEL ?? "",
   /** Override Lyria music model; defaults by cost mode (free→:free clip, paid→clip) */
   openRouterMusicModel: process.env.OPENROUTER_MUSIC_MODEL ?? "",
@@ -74,6 +74,8 @@ export const env = {
   elevenLabsPreferMusic: (process.env.ELEVENLABS_PREFER_MUSIC ?? "1").trim() !== "0",
   elevenLabsTimeoutMs: Number(process.env.ELEVENLABS_TIMEOUT_MS ?? 180_000),
 
+  /** How many creator profiles to generate via OpenRouter text (rest = stub/filler). */
+  seedAiTextCount: Number(process.env.SEED_AI_TEXT_COUNT ?? 8),
   seedAiImageCount: Number(process.env.SEED_AI_IMAGE_COUNT ?? 1),
   seedAiVideoCount: Number(process.env.SEED_AI_VIDEO_COUNT ?? 0),
   seedAiAudioCount: Number(process.env.SEED_AI_AUDIO_COUNT ?? 1),

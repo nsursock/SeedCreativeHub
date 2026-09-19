@@ -13,7 +13,11 @@
     "db:down": "docker compose down",
     "db:migrate": "pnpm --filter @creative-hub/api db:migrate",
     "db:seed": "pnpm --filter @creative-hub/api db:seed",
+    "db:seed:smoke": "pnpm env:smoke && pnpm db:seed",
+    "db:seed:normal": "pnpm env:normal && pnpm db:seed",
     "db:reset": "pnpm --filter @creative-hub/api db:reset",
+    "env:smoke": "cp apps/api/.env.smoke apps/api/.env",
+    "env:normal": "cp apps/api/.env.normal apps/api/.env",
     "lint": "pnpm -r --if-present run lint",
     "test:e2e": "pnpm --filter @creative-hub/web test:e2e"
   },

@@ -131,7 +131,14 @@
     "embedAudioHint": "Lien SoundCloud, Bandcamp ou Spotify.",
     "embedVideoHint": "Lien YouTube ou Vimeo de préférence.",
     "externalOptional": "Lien externe (optionnel)",
+    "aiGenerated": "Créé avec l'IA",
+    "aiGeneratedHint": "Cochez si l'IA a produit le texte ou le média principal.",
     "publish": "Publier"
+  },
+  "work": {
+    "aiMade": "Créé avec l'IA",
+    "aiMadeShort": "IA",
+    "aiMadeHint": "Le contenu principal a été produit avec une IA générative."
   },
   "common": {
     "loading": "Chargement…",

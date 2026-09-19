@@ -1,2 +1,1 @@
--- AlterTable
-ALTER TABLE "opportunities" ADD COLUMN "image_url" TEXT;
+ALTER TABLE "creative_hub"."opportunities" ADD COLUMN "image_url" TEXT;

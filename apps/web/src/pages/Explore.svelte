@@ -69,16 +69,16 @@
               disciplines { slug nameEn }
             }
             featuredWorks {
-              id slug title type publishedAt viewCount
+              id slug title type aiGenerated publishedAt viewCount
               profile { handle displayName }
               primaryDiscipline { slug nameEn }
-              media { publicUrl externalUrl }
+              media { kind mimeType publicUrl externalUrl }
             }
             latestWorks {
-              id slug title type publishedAt viewCount
+              id slug title type aiGenerated publishedAt viewCount
               profile { handle displayName }
               primaryDiscipline { slug nameEn }
-              media { publicUrl externalUrl }
+              media { kind mimeType publicUrl externalUrl }
             }
             featuredEvents { id slug name startsAt endsAt venue city category imageUrl isHubNight capacity }
             latestEvents { id slug name startsAt endsAt venue city category imageUrl isHubNight capacity }

@@ -131,7 +131,14 @@
     "embedAudioHint": "رابط SoundCloud أو Bandcamp أو Spotify.",
     "embedVideoHint": "رابط YouTube أو Vimeo مفضّل.",
     "externalOptional": "رابط خارجي (اختياري)",
+    "aiGenerated": "صُنع بالذكاء الاصطناعي",
+    "aiGeneratedHint": "فعّل إذا أنتج الذكاء الاصطناعي النص أو الوسائط الأساسية.",
     "publish": "نشر"
+  },
+  "work": {
+    "aiMade": "صُنع بالذكاء الاصطناعي",
+    "aiMadeShort": "AI",
+    "aiMadeHint": "المحتوى الأساسي أُنتج بذكاء اصطناعي توليدي."
   },
   "common": {
     "loading": "جارٍ التحميل…",

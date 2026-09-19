@@ -26,10 +26,10 @@
     const res = await gql<{ works: WorkRow[] }>(
       `query Works($discipline: String, $city: String, $type: WorkType, $q: String) {
         works(discipline: $discipline, city: $city, type: $type, q: $q, limit: 80) {
-          id slug title type publishedAt viewCount
+          id slug title type aiGenerated publishedAt viewCount
           profile { handle displayName }
           primaryDiscipline { slug nameEn }
-          media { publicUrl externalUrl }
+          media { kind mimeType publicUrl externalUrl }
         }
       }`,
       {

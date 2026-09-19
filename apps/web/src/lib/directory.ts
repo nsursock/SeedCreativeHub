@@ -21,11 +21,17 @@ export type WorkRow = {
   slug: string;
   title: string;
   type: "text" | "image" | "audio" | "video" | string;
+  aiGenerated?: boolean;
   publishedAt?: string | null;
   viewCount?: number;
   profile: { handle: string; displayName: string };
   primaryDiscipline?: { slug: string; nameEn: string } | null;
-  media: Array<{ publicUrl?: string | null; externalUrl?: string | null }>;
+  media: Array<{
+    kind?: string | null;
+    mimeType?: string | null;
+    publicUrl?: string | null;
+    externalUrl?: string | null;
+  }>;
 };
 
 export type EventRow = {

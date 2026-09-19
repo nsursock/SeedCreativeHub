@@ -81,6 +81,7 @@ export const typeDefs = /* GraphQL */ `
     embedUrl: String
     publishedAt: DateTime
     viewCount: Int!
+    aiGenerated: Boolean!
     profile: Profile!
     media: [MediaAsset!]!
     primaryDiscipline: Discipline
@@ -282,6 +283,7 @@ export const typeDefs = /* GraphQL */ `
     externalUrl: String
     embedUrl: String
     status: WorkStatus
+    aiGenerated: Boolean
   }
 
   input CreateOpportunityInput {

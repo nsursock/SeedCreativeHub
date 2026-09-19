@@ -26,7 +26,7 @@
       `query($q: String!, $discipline: String, $city: String) {
         search(q: $q, discipline: $discipline, city: $city) {
           creators { handle displayName city avatarUrl }
-          works { slug title media { publicUrl externalUrl } }
+          works { slug title media { kind mimeType publicUrl externalUrl } }
           events { slug name }
           opportunities { slug title }
         }

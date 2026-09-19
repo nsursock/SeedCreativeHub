@@ -3,7 +3,8 @@
   import { getMessages, localePath, t } from "../lib/i18n";
   import { locale as localeStore } from "../lib/stores";
   import { gql } from "../lib/gql";
-  import { reveal, hueOf, initialsOf, workMediaUrl } from "../lib/reveal";
+  import { reveal, hueOf, initialsOf, workMediaUrl, workCoverUrl } from "../lib/reveal";
+  import AiMadeBadge from "../components/AiMadeBadge.svelte";
 
   let { params }: { params?: { slug?: string } } = $props();
   let locale = $derived($localeStore);
@@ -24,6 +25,7 @@
     description?: string | null;
     externalUrl?: string | null;
     status: string;
+    aiGenerated: boolean;
     media: MediaRow[];
     profile: { handle: string; displayName: string; avatarUrl?: string | null };
   } | null>(null);
@@ -42,7 +44,7 @@
         const res = await gql<{ work: typeof work }>(
           `query($slug: String!) {
             work(slug: $slug) {
-              id title slug type description externalUrl status
+              id title slug type description externalUrl status aiGenerated
               media { kind publicUrl externalUrl mimeType }
               profile { handle displayName avatarUrl }
             }
@@ -69,7 +71,12 @@
       <div class="skeleton h-16"></div>
     </div>
   {:else}
-    <p class="label-kicker neon-flicker text-scifi-primary mb-4">// work · {work.type}</p>
+    <p class="label-kicker neon-flicker text-scifi-primary mb-4 flex flex-wrap items-center gap-2">
+      <span>// work · {work.type}</span>
+      {#if work.aiGenerated}
+        <AiMadeBadge />
+      {/if}
+    </p>
 
     {#if work.type === "image"}
       <figure class="work-photo" use:reveal style="--h: {hueOf(work.slug)}">
@@ -133,7 +140,11 @@
     {:else if work.type === "audio"}
       <div class="work-deck console-panel" use:reveal style="--h: {hueOf(work.slug)}">
         <div class="work-deck__art" aria-hidden="true">
-          <span class="work-deck__glyph">♪</span>
+          {#if workCoverUrl(work)}
+            <img class="work-deck__cover" src={workCoverUrl(work)} alt="" />
+          {:else}
+            <span class="work-deck__glyph">♪</span>
+          {/if}
         </div>
         <div class="work-deck__body">
           <div class="work-deck__head">

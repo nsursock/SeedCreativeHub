@@ -138,7 +138,14 @@
     "embedAudioHint": "SoundCloud, Bandcamp, or Spotify link.",
     "embedVideoHint": "YouTube or Vimeo link preferred.",
     "externalOptional": "External link (optional)",
+    "aiGenerated": "Made with AI",
+    "aiGeneratedHint": "Check if generative AI produced the primary text or media.",
     "publish": "Publish"
+  },
+  "work": {
+    "aiMade": "Made with AI",
+    "aiMadeShort": "AI",
+    "aiMadeHint": "Primary content was produced with generative AI."
   },
   "common": {
     "loading": "Loading…",

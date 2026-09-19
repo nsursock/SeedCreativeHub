@@ -179,6 +179,8 @@ async function ensureWork(
     mediaUrl?: string;
     mediaMime?: string;
     mediaProvider?: string;
+    /** Generative AI produced primary copy and/or media for this work. */
+    aiGenerated?: boolean;
   },
   index: number,
 ) {
@@ -189,6 +191,7 @@ async function ensureWork(
     work.type === "text" && work.body
       ? work.body
       : (work.description ?? "Seeded work for Creative Hub.");
+  const aiGenerated = work.aiGenerated ?? false;
 
   if (!row) {
     const discipline = work.primaryDiscipline
@@ -205,12 +208,13 @@ async function ensureWork(
         publishedAt: new Date(),
         primaryDisciplineId: discipline?.id,
         description,
+        aiGenerated,
       },
     });
   } else {
     await prisma.work.update({
       where: { id: row.id },
-      data: { description, type: work.type, status: "published" },
+      data: { description, type: work.type, status: "published", aiGenerated },
     });
   }
 
@@ -266,6 +270,21 @@ async function ensureWork(
         },
       });
     }
+    // Cover art for audio/video so directory thumbs + work deck aren't empty/broken
+    if (work.type === "audio" || work.type === "video") {
+      const coverUrl = picsumWork(`${slug}-cover`);
+      await prisma.mediaAsset.create({
+        data: {
+          workId: row.id,
+          kind: "image",
+          provider: "picsum",
+          publicUrl: coverUrl,
+          externalUrl: coverUrl,
+          mimeType: "image/jpeg",
+          moderationStatus: "approved",
+        },
+      });
+    }
   }
   return row;
 }
@@ -274,8 +293,11 @@ async function seedCreatorsFromAi(targetCount: number) {
   const costMode = env.seedAiCostMode;
   const liveMode = resolveLiveMode(env.seedAiMode, Boolean(env.openRouterApiKey.trim()));
   const textModel = env.openRouterModel.trim() || TEXT_MODELS[costMode];
+  const liveTextCount = Math.max(0, Math.min(env.seedAiTextCount, targetCount));
   console.log(`AI seed: live=${liveMode} cost=${costMode} — ${COST_MODE_BLURBS[costMode]}`);
-  console.log(`AI seed text model: ${textModel}`);
+  console.log(
+    `AI seed text: model=${textModel} · live LLM creators=${liveTextCount}/${targetCount} (SEED_AI_TEXT_COUNT)`,
+  );
 
   const gateway = createSeedMediaGateway(costMode, {
     openRouterApiKey: env.openRouterApiKey,
@@ -305,9 +327,9 @@ async function seedCreatorsFromAi(targetCount: number) {
   });
 
   const bundle = await generateSeedCreators({
-    liveMode,
+    liveMode: liveTextCount === 0 ? "stub" : liveMode,
     costMode,
-    count: targetCount,
+    count: liveTextCount > 0 ? liveTextCount : Math.min(targetCount, 4),
     openRouterApiKey: env.openRouterApiKey,
     openRouterModel: textModel,
     openRouterTimeoutMs: env.openRouterTimeoutMs,
@@ -419,6 +441,8 @@ async function seedCreatorsFromAi(targetCount: number) {
           mediaUrl,
           mediaMime,
           mediaProvider,
+          // Seed-AI pipeline (LLM copy ± generative media)
+          aiGenerated: true,
         },
         i,
       );

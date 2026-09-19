@@ -183,16 +183,18 @@ pnpm db:up
 # 2. Install (from SeedCreativeHub root; needs ../ScifiUI present)
 pnpm install
 
-# 3. Env
-cp .env.example apps/api/.env
-# Edit secrets, SEED_AI_COST_MODE, and provider keys as needed
+# 3. Env (smoke + normal profiles)
+cp .env.smoke.example apps/api/.env.smoke
+cp .env.normal.example apps/api/.env.normal
+# Fill provider keys in both (same secrets). Activate either for the API:
+pnpm env:smoke    # or: pnpm env:normal
 
 # 4. Shared package
 pnpm --filter @creative-hub/shared build
 
-# 5. Database
+# 5. Database (reset = empty schema; seed is a separate choice)
 pnpm --filter @creative-hub/api exec prisma migrate dev
-pnpm db:seed
+pnpm db:seed:smoke    # or: pnpm db:seed:normal
 
 # 6. Dev servers (web :5173 · api :3001)
 pnpm dev
@@ -211,7 +213,21 @@ Open **http://localhost:5173** → redirects to `/#/en` landing.
 
 ## Environment variables
 
-Canonical template: [`.env.example`](./.env.example). Copy into `apps/api/.env` (and web public vars as needed).
+Canonical template: [`.env.example`](./.env.example). Seed profiles: [`.env.smoke.example`](./.env.smoke.example) (tiny) · [`.env.normal.example`](./.env.normal.example) (fuller).
+
+Local files: `apps/api/.env.smoke` / `apps/api/.env.normal` → activate with `pnpm env:smoke` or `pnpm env:normal` (copies onto `apps/api/.env`).
+
+`pnpm db:reset` leaves a **migrated empty DB** (no demo data). Seed when you want:
+
+```bash
+pnpm db:reset
+pnpm db:seed:smoke    # or: pnpm db:seed:normal
+```
+
+| Profile | Creators / works | Text / image / video / audio |
+|---|---|---|
+| **smoke** | 2 / 2 | 2 / 0 / 0 / 1 |
+| **normal** | 8 / 8 | 8 / 1 / 1 / 1 |
 
 ### App & CORS
 
@@ -229,7 +245,7 @@ Canonical template: [`.env.example`](./.env.example). Copy into `apps/api/.env` 
 
 | Variable | Purpose |
 |---|---|
-| `DATABASE_URL` | Postgres (`creativehub` on port **5433**) |
+| `DATABASE_URL` | Postgres connection (schema **`creative_hub`**) | Local docker on **5433**; staging = Supabase “My Stuff”; VPS later = same schema, new host |
 | `REDIS_URL` | Redis for sessions + rate limits |
 
 ### Auth
@@ -273,9 +289,11 @@ Set in `apps/api/.env`:
 ```bash
 SEED_AI_COST_MODE=free   # or paid
 SEED_AI_MODE=            # live | stub  (omit → live when OPENROUTER_API_KEY is set)
+SEED_AI_TEXT_COUNT=8     # OpenRouter creator packs (bios + work copy)
 SEED_AI_IMAGE_COUNT=1
 SEED_AI_VIDEO_COUNT=1
 SEED_AI_AUDIO_COUNT=1
+# OPENROUTER_MODEL=      # optional; empty → openrouter/free (free) or openai/gpt-4o-mini (paid)
 ```
 
 ### Cost mode matrix
@@ -314,8 +332,10 @@ From the repo root (`package.json`):
 | `pnpm build` | Build shared → api → web |
 | `pnpm db:up` / `db:down` | Docker Compose Postgres + Redis |
 | `pnpm db:migrate` | Prisma migrate deploy |
-| `pnpm db:seed` | Taxonomy + admin + AI/demo creators |
-| `pnpm db:reset` | Hard reset DB + re-seed |
+| `pnpm db:reset` | Hard reset (`creative_hub` + public leftovers) + migrate — **empty DB, no seed** |
+| `pnpm db:seed` | Seed using whatever is in `apps/api/.env` |
+| `pnpm db:seed:smoke` | Activate smoke env, then seed |
+| `pnpm db:seed:normal` | Activate normal env, then seed |
 | `pnpm lint` | Workspace lint (where present) |
 | `pnpm test:e2e` | Playwright against web |
 
@@ -452,6 +472,7 @@ Also: [`docs/marketing/plan.md`](./docs/marketing/plan.md).
 | Symptom | Likely fix |
 |---|---|
 | `pnpm install` fails on `@scifiui/core` | Ensure `WD/ScifiUI` exists beside this repo (see `pnpm-workspace.yaml`) |
+| `pnpm db:reset` / seed P2021 `creative_hub.*` missing | Stock Prisma reset only drops `creative_hub` and can leave stale `public` tables + `_prisma_migrations`. Use `pnpm db:reset` (hard reset script), or wipe docker volumes: `pnpm db:down && docker volume rm … && pnpm db:up` |
 | DB connection errors | `pnpm db:up`; confirm `DATABASE_URL` port **5433** |
 | Redis / session issues | Confirm Redis on **6379** and `REDIS_URL` |
 | Empty / stub media after seed | Set `SEED_AI_COST_MODE` + provider keys, or accept sample fallbacks |

@@ -4,6 +4,7 @@
   import { locale as localeStore } from "../../lib/stores";
   import { reveal, hueOf, workCoverUrl, initialsOf } from "../../lib/reveal";
   import { dayOf, monthOf, labelOf, cityLabel, type CreatorRow, type WorkRow, type EventRow, type CollabRow } from "../../lib/directory";
+  import AiMadeBadge from "../AiMadeBadge.svelte";
 
   let {
     creators,
@@ -40,7 +41,10 @@
     </div>
     <div class="relative grid gap-6 p-6 sm:grid-cols-[1.2fr_1fr] sm:p-8">
       <div class="min-w-0 space-y-3">
-        <p class="label-kicker m-0 text-scifi-primary">// this week</p>
+        <p class="label-kicker m-0 flex flex-wrap items-center gap-2 text-scifi-primary">
+          <span>// this week</span>
+          {#if heroWork.aiGenerated}<AiMadeBadge />{/if}
+        </p>
         <h2 class="m-0 text-2xl font-extrabold tracking-tight sm:text-3xl">{heroWork.title}</h2>
         <p class="m-0 text-sm text-scifi-muted">
           by
@@ -67,6 +71,9 @@
           <img src={workCoverUrl(heroWork)} alt="" loading="lazy" />
         {/if}
         <span class="work-thumb__type">{heroWork.type}</span>
+        {#if heroWork.aiGenerated}
+          <span class="work-thumb__ai"><AiMadeBadge compact /></span>
+        {/if}
       </a>
     </div>
   </section>
@@ -104,6 +111,9 @@
       <a use:link class="pane overflow-hidden p-0 card-lift" href={localePath(locale, `works/${w.slug}`)}>
         <div class="work-thumb h-28" class:work-thumb--photo={!!workCoverUrl(w)} style="--h: {hueOf(w.slug)}">
           {#if workCoverUrl(w)}<img src={workCoverUrl(w)} alt="" loading="lazy" />{/if}
+          {#if w.aiGenerated}
+            <span class="work-thumb__ai"><AiMadeBadge compact /></span>
+          {/if}
         </div>
         <div class="p-3">
           <div class="truncate font-semibold">{w.title}</div>

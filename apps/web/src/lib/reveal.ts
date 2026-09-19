@@ -59,20 +59,48 @@ export function initialsOf(name: string): string {
   return (parts[0][0] ?? "") + (parts[1][0] ?? "");
 }
 
-/** First usable media URL on a work (Picsum / upload / sample). */
-export function workCoverUrl(work: {
-  media?: Array<{ publicUrl?: string | null; externalUrl?: string | null }> | null;
-}): string | null {
-  const m = work.media?.[0];
-  return m?.publicUrl || m?.externalUrl || null;
+/** True when a media URL is safe to use as an <img> src. */
+export function isImageMediaUrl(url?: string | null, kind?: string | null, mimeType?: string | null): boolean {
+  if (kind === "image") return Boolean(url);
+  if (kind === "audio" || kind === "video" || kind === "file" || kind === "embed") return false;
+  if (mimeType?.startsWith("image/")) return Boolean(url);
+  if (!url) return false;
+  try {
+    const path = new URL(url, "http://local").pathname.toLowerCase();
+    if (/\.(avif|bmp|gif|jpe?g|png|svg|webp)(\?|$)/i.test(path)) return true;
+    if (/\.(mp3|wav|ogg|m4a|aac|flac|mp4|webm|mov|m4v)(\?|$)/i.test(path)) return false;
+  } catch {
+    /* ignore */
+  }
+  // Hosted picsum / pravatar / common CDNs without extension
+  if (/picsum\.photos|pravatar|images\.unsplash|imagedelivery/i.test(url)) return true;
+  return false;
 }
 
-/** Prefer image-like assets for thumbnails; otherwise first URL. */
+/** First usable *image* URL for thumbnails / featured art (never audio/video files). */
+export function workCoverUrl(work: {
+  type?: string;
+  media?: Array<{
+    kind?: string | null;
+    mimeType?: string | null;
+    publicUrl?: string | null;
+    externalUrl?: string | null;
+  }> | null;
+}): string | null {
+  for (const m of work.media ?? []) {
+    const url = m.publicUrl || m.externalUrl || null;
+    if (url && isImageMediaUrl(url, m.kind, m.mimeType)) return url;
+  }
+  return null;
+}
+
+/** Prefer media matching work type (audio/video/image); cover images via workCoverUrl. */
 export function workMediaUrl(
   work: {
     type?: string;
     media?: Array<{
       kind?: string | null;
+      mimeType?: string | null;
       publicUrl?: string | null;
       externalUrl?: string | null;
     }> | null;
@@ -80,10 +108,14 @@ export function workMediaUrl(
   preferKind?: string,
 ): string | null {
   const rows = work.media ?? [];
-  const kind = preferKind ?? (work.type === "image" ? "image" : work.type === "video" ? "video" : work.type === "audio" ? "audio" : undefined);
+  const kind =
+    preferKind ??
+    (work.type === "image" ? "image" : work.type === "video" ? "video" : work.type === "audio" ? "audio" : undefined);
   if (kind) {
     const match = rows.find((m) => m.kind === kind && (m.publicUrl || m.externalUrl));
     if (match) return match.publicUrl || match.externalUrl || null;
   }
-  return workCoverUrl(work);
+  if (work.type === "image") return workCoverUrl(work);
+  const first = rows[0];
+  return first?.publicUrl || first?.externalUrl || null;
 }

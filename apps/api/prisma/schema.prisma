@@ -5,24 +5,33 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  // Isolate Creative Hub inside shared Supabase "My Stuff".
+  // VPS later: keep this schema (or dump/restore) — swap DATABASE_URL only.
+  schemas  = ["creative_hub"]
 }
 
 enum UserRole {
   member
   editor
   admin
+
+  @@schema("creative_hub")
 }
 
 enum UserStatus {
   active
   suspended
   deleted
+
+  @@schema("creative_hub")
 }
 
 enum ClaimStatus {
   unclaimed
   pending
   claimed
+
+  @@schema("creative_hub")
 }
 
 enum WorkType {
@@ -30,6 +39,8 @@ enum WorkType {
   image
   audio
   video
+
+  @@schema("creative_hub")
 }
 
 enum WorkStatus {
@@ -37,6 +48,8 @@ enum WorkStatus {
   published
   archived
   hidden
+
+  @@schema("creative_hub")
 }
 
 enum MediaKind {
@@ -45,24 +58,32 @@ enum MediaKind {
   video
   file
   embed
+
+  @@schema("creative_hub")
 }
 
 enum ModerationStatus {
   pending
   approved
   rejected
+
+  @@schema("creative_hub")
 }
 
 enum OpportunityStatus {
   open
   closed
   draft
+
+  @@schema("creative_hub")
 }
 
 enum RemoteMode {
   onsite
   remote
   hybrid
+
+  @@schema("creative_hub")
 }
 
 enum CompensationStatus {
@@ -70,6 +91,8 @@ enum CompensationStatus {
   unpaid
   negotiable
   tbd
+
+  @@schema("creative_hub")
 }
 
 enum EventStatus {
@@ -77,12 +100,16 @@ enum EventStatus {
   published
   cancelled
   past
+
+  @@schema("creative_hub")
 }
 
 enum ReportStatus {
   open
   resolved
   dismissed
+
+  @@schema("creative_hub")
 }
 
 enum ReportEntityType {
@@ -91,6 +118,8 @@ enum ReportEntityType {
   opportunity
   event
   user
+
+  @@schema("creative_hub")
 }
 
 enum EditorialEntityType {
@@ -99,6 +128,8 @@ enum EditorialEntityType {
   opportunity
   event
   collection
+
+  @@schema("creative_hub")
 }
 
 enum NotificationType {
@@ -108,6 +139,8 @@ enum NotificationType {
   security
   claim
   system
+
+  @@schema("creative_hub")
 }
 
 model User {
@@ -137,6 +170,8 @@ model User {
   contactsReceived  ContactMessage[]     @relation("ContactTo")
 
   @@map("users")
+
+  @@schema("creative_hub")
 }
 
 model Profile {
@@ -171,6 +206,8 @@ model Profile {
   @@index([claimStatus])
   @@index([displayName])
   @@map("profiles")
+
+  @@schema("creative_hub")
 }
 
 model Discipline {
@@ -186,6 +223,8 @@ model Discipline {
   works    Work[]
 
   @@map("disciplines")
+
+  @@schema("creative_hub")
 }
 
 model ProfileDiscipline {
@@ -197,6 +236,8 @@ model ProfileDiscipline {
 
   @@id([profileId, disciplineId])
   @@map("profile_disciplines")
+
+  @@schema("creative_hub")
 }
 
 model City {
@@ -209,6 +250,8 @@ model City {
   sortOrder Int    @default(0) @map("sort_order")
 
   @@map("cities")
+
+  @@schema("creative_hub")
 }
 
 model Work {
@@ -224,6 +267,8 @@ model Work {
   embedUrl          String?    @map("embed_url")
   publishedAt       DateTime?  @map("published_at")
   viewCount         Int        @default(0) @map("view_count")
+  /** True when primary content (copy and/or media) was produced with generative AI. */
+  aiGenerated       Boolean    @default(false) @map("ai_generated")
   createdAt         DateTime   @default(now()) @map("created_at")
   updatedAt         DateTime   @updatedAt @map("updated_at")
 
@@ -233,7 +278,10 @@ model Work {
 
   @@index([status, publishedAt])
   @@index([title])
+  @@index([aiGenerated])
   @@map("works")
+
+  @@schema("creative_hub")
 }
 
 model MediaAsset {
@@ -252,6 +300,8 @@ model MediaAsset {
   work Work @relation(fields: [workId], references: [id], onDelete: Cascade)
 
   @@map("media_assets")
+
+  @@schema("creative_hub")
 }
 
 model ClaimToken {
@@ -267,6 +317,8 @@ model ClaimToken {
 
   @@index([profileId])
   @@map("claim_tokens")
+
+  @@schema("creative_hub")
 }
 
 model WaitlistEntry {
@@ -279,6 +331,8 @@ model WaitlistEntry {
   createdAt    DateTime @default(now()) @map("created_at")
 
   @@map("waitlist_entries")
+
+  @@schema("creative_hub")
 }
 
 model MagicLink {
@@ -292,6 +346,8 @@ model MagicLink {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("magic_links")
+
+  @@schema("creative_hub")
 }
 
 model Follow {
@@ -305,6 +361,8 @@ model Follow {
 
   @@unique([followerId, followingId])
   @@map("follows")
+
+  @@schema("creative_hub")
 }
 
 model Opportunity {
@@ -329,6 +387,8 @@ model Opportunity {
 
   @@index([status, createdAt])
   @@map("opportunities")
+
+  @@schema("creative_hub")
 }
 
 model OpportunityInterest {
@@ -343,6 +403,8 @@ model OpportunityInterest {
 
   @@unique([opportunityId, userId])
   @@map("opportunity_interests")
+
+  @@schema("creative_hub")
 }
 
 model Event {
@@ -368,6 +430,8 @@ model Event {
 
   @@index([status, startsAt])
   @@map("events")
+
+  @@schema("creative_hub")
 }
 
 model Notification {
@@ -384,6 +448,8 @@ model Notification {
 
   @@index([userId, createdAt])
   @@map("notifications")
+
+  @@schema("creative_hub")
 }
 
 model Report {
@@ -403,6 +469,8 @@ model Report {
 
   @@index([status, createdAt])
   @@map("reports")
+
+  @@schema("creative_hub")
 }
 
 model EditorialFeature {
@@ -417,6 +485,8 @@ model EditorialFeature {
 
   @@index([placement, sortOrder])
   @@map("editorial_features")
+
+  @@schema("creative_hub")
 }
 
 model AuditLog {
@@ -431,6 +501,8 @@ model AuditLog {
 
   @@index([createdAt])
   @@map("audit_logs")
+
+  @@schema("creative_hub")
 }
 
 model ContactMessage {
@@ -447,4 +519,6 @@ model ContactMessage {
   toProfile Profile @relation("ContactProfile", fields: [toProfileId], references: [id])
 
   @@map("contact_messages")
+
+  @@schema("creative_hub")
 }

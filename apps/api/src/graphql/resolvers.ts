@@ -747,6 +747,7 @@ export const resolvers = {
         externalUrl?: string;
         embedUrl?: string;
         status?: "draft" | "published" | "archived" | "hidden";
+        aiGenerated?: boolean;
       };
       const slug = await uniqueSlug(input.title, async (s) => !!(await ctx.prisma.work.findUnique({ where: { slug: s } })));
       const discipline = input.primaryDiscipline
@@ -765,6 +766,7 @@ export const resolvers = {
           status,
           primaryDisciplineId: discipline?.id,
           publishedAt: status === "published" ? new Date() : null,
+          aiGenerated: input.aiGenerated ?? false,
         },
       });
     },
@@ -782,6 +784,7 @@ export const resolvers = {
         externalUrl?: string;
         embedUrl?: string;
         status?: "draft" | "published" | "archived" | "hidden";
+        aiGenerated?: boolean;
       };
       const discipline = input.primaryDiscipline
         ? await ctx.prisma.discipline.findUnique({ where: { slug: input.primaryDiscipline } })
@@ -797,6 +800,7 @@ export const resolvers = {
           status: input.status,
           primaryDisciplineId: discipline?.id,
           publishedAt: input.status === "published" ? work.publishedAt ?? new Date() : work.publishedAt,
+          aiGenerated: input.aiGenerated ?? work.aiGenerated,
         },
       });
     },
@@ -1182,6 +1186,7 @@ export const resolvers = {
         externalUrl?: string;
         embedUrl?: string;
         status?: "draft" | "published" | "archived" | "hidden";
+        aiGenerated?: boolean;
       };
       const slug = await uniqueSlug(input.title, async (s) => !!(await ctx.prisma.work.findUnique({ where: { slug: s } })));
       const discipline = input.primaryDiscipline
@@ -1200,6 +1205,7 @@ export const resolvers = {
           status,
           primaryDisciplineId: discipline?.id,
           publishedAt: status === "published" ? new Date() : null,
+          aiGenerated: input.aiGenerated ?? false,
         },
       });
     },

@@ -131,7 +131,14 @@
     "embedAudioHint": "קישור SoundCloud, Bandcamp או Spotify.",
     "embedVideoHint": "קישור YouTube או Vimeo מועדף.",
     "externalOptional": "קישור חיצוני (אופציונלי)",
+    "aiGenerated": "נוצר עם AI",
+    "aiGeneratedHint": "סמנו אם AI יצר את הטקסט או המדיה העיקרית.",
     "publish": "פרסום"
+  },
+  "work": {
+    "aiMade": "נוצר עם AI",
+    "aiMadeShort": "AI",
+    "aiMadeHint": "התוכן העיקרי נוצר בעזרת AI גנרטיבי."
   },
   "common": {
     "loading": "טוען…",

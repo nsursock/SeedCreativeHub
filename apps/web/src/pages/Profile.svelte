@@ -6,6 +6,7 @@
   import { gql } from "../lib/gql";
   import { requireAccount } from "../lib/authGate";
   import { reveal, hueOf, initialsOf, workCoverUrl } from "../lib/reveal";
+  import AiMadeBadge from "../components/AiMadeBadge.svelte";
   import { cityLabel } from "../lib/directory";
 
   let { params }: { params?: { handle?: string } } = $props();
@@ -28,7 +29,7 @@
           id handle displayName bioShort bioLong city claimStatus websiteUrl instagramUrl
           avatarUrl coverUrl isFounding followerCount isFollowing
           disciplines { slug nameEn }
-          works { id slug title type status media { publicUrl externalUrl } }
+          works { id slug title type status aiGenerated media { kind mimeType publicUrl externalUrl } }
         }
       }`,
       { handle },
@@ -181,6 +182,9 @@
                   <img src={workCoverUrl(w)} alt="" loading="lazy" />
                 {/if}
                 <span class="work-thumb__type">{w.type}</span>
+                {#if w.aiGenerated}
+                  <span class="work-thumb__ai"><AiMadeBadge compact /></span>
+                {/if}
               </div>
               <div class="p-3.5">
                 <div class="truncate font-semibold">{w.title}</div>

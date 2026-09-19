@@ -5,6 +5,7 @@
   import { viewMode } from "../../lib/viewMode";
   import { reveal, hueOf, workCoverUrl } from "../../lib/reveal";
   import { shortDate, type WorkRow } from "../../lib/directory";
+  import AiMadeBadge from "../AiMadeBadge.svelte";
 
   let {
     items,
@@ -56,6 +57,9 @@
             </td>
             <td>
               <span class="badge badge-outline badge-sm">{w.type}</span>
+              {#if w.aiGenerated}
+                <AiMadeBadge compact />
+              {/if}
             </td>
             <td class="text-scifi-muted">{w.primaryDiscipline?.nameEn ?? "—"}</td>
             <td>
@@ -85,6 +89,9 @@
             <img src={workCoverUrl(w)} alt="" loading="lazy" />
           {/if}
           <span class="work-thumb__type">{w.type}</span>
+          {#if w.aiGenerated}
+            <span class="work-thumb__ai"><AiMadeBadge compact /></span>
+          {/if}
         </div>
         <div class="p-3.5">
           <div class="truncate font-semibold">{w.title}</div>

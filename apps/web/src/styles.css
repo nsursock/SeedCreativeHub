@@ -898,6 +898,35 @@ a.creator-card.pane {
   padding: 0.15rem 0.55rem;
   backdrop-filter: blur(6px);
 }
+.work-thumb__ai {
+  position: absolute;
+  inset-inline-end: 0.55rem;
+  top: 0.5rem;
+  z-index: 1;
+}
+
+.ai-made-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(var(--scifi-primary-rgb), 0.95);
+  background: rgba(var(--scifi-primary-rgb), 0.14);
+  border: 1px solid rgba(var(--scifi-primary-rgb), 0.35);
+  border-radius: 99px;
+  padding: 0.2rem 0.55rem;
+  white-space: nowrap;
+}
+.ai-made-badge--compact {
+  letter-spacing: 0.08em;
+  padding: 0.12rem 0.4rem;
+  font-size: 0.58rem;
+  background: rgba(var(--scifi-bg-deep-rgb), 0.65);
+  backdrop-filter: blur(6px);
+}
 
 /* event date block */
 .date-block {
@@ -1434,15 +1463,26 @@ html.perf-lite .hub-app-bar__orb::after {
   }
 }
 .work-deck__art {
+  position: relative;
   display: grid;
   place-items: center;
   min-height: 7.5rem;
+  overflow: hidden;
   background:
     radial-gradient(circle at 40% 30%, hsl(var(--h) 85% 58% / 0.65), transparent 55%),
     linear-gradient(160deg, rgba(var(--scifi-primary-rgb), 0.35), rgba(var(--scifi-bg-deep-rgb), 0.95));
   border-inline-end: 1px solid var(--scifi-border);
 }
+.work-deck__cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .work-deck__glyph {
+  position: relative;
+  z-index: 1;
   font-size: 2.5rem;
   opacity: 0.85;
   text-shadow: 0 0 18px rgba(var(--scifi-primary-rgb), 0.7);
