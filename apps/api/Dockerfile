@@ -3,7 +3,19 @@ WORKDIR /app
 RUN corepack enable && apk add --no-cache openssl libc6-compat
 COPY package.json pnpm-lock.yaml ./
 # API image does not need sibling ScifiUI (web-only workspace package).
-RUN printf 'packages:\n  - "apps/*"\n  - "packages/*"\n' > pnpm-workspace.yaml
+# Keep allowBuilds so prisma/argon2 native scripts are not ignored by pnpm 11+.
+RUN printf '%s\n' \
+  'packages:' \
+  '  - "apps/*"' \
+  '  - "packages/*"' \
+  '' \
+  'allowBuilds:' \
+  '  "@prisma/client": true' \
+  '  "@prisma/engines": true' \
+  '  argon2: true' \
+  '  esbuild: true' \
+  '  prisma: true' \
+  > pnpm-workspace.yaml
 COPY apps/api/package.json apps/api/
 COPY packages/shared/package.json packages/shared/
 RUN pnpm install --filter @creative-hub/api --filter @creative-hub/shared --frozen-lockfile
