@@ -31,7 +31,9 @@ export class SupabaseStorageAdapter implements MediaStorage {
       storageKey,
       uploadUrl,
       headers: {
+        // Legacy JWT service_role accepts Bearer; new sb_secret_* keys need apikey.
         Authorization: `Bearer ${this.secretKey}`,
+        apikey: this.secretKey,
         "Content-Type": intent.mimeType,
         "x-upsert": "true",
       },
@@ -53,7 +55,10 @@ export class SupabaseStorageAdapter implements MediaStorage {
     if (!this.baseUrl || !this.secretKey) return;
     await fetch(`${this.baseUrl}/storage/v1/object/${this.bucket}/${storageKey}`, {
       method: "DELETE",
-      headers: { Authorization: `Bearer ${this.secretKey}` },
+      headers: {
+        Authorization: `Bearer ${this.secretKey}`,
+        apikey: this.secretKey,
+      },
     });
   }
 }
