@@ -5,7 +5,8 @@
   "type": "module",
   "packageManager": "pnpm@11.24.0",
   "scripts": {
-    "preinstall": "node scripts/ensure-scifiui.mjs",
+    "ensure:scifiui": "node scripts/ensure-scifiui.mjs",
+    "preinstall": "node -e \"const fs=require('fs');const{spawnSync}=require('child_process');if(!fs.existsSync('scripts/ensure-scifiui.mjs'))process.exit(0);const r=spawnSync(process.execPath,['scripts/ensure-scifiui.mjs'],{stdio:'inherit'});process.exit(r.status??1)\"",
     "dev": "pnpm -r --parallel --filter @creative-hub/web --filter @creative-hub/api run dev",
     "dev:web": "pnpm --filter @creative-hub/web dev",
     "dev:api": "pnpm --filter @creative-hub/api dev",
