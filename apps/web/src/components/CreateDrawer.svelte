@@ -109,10 +109,6 @@
     };
   });
 
-  function onBackdropClick(e: MouseEvent) {
-    if (e.target === e.currentTarget) requestClose();
-  }
-
   async function submit(e: Event) {
     e.preventDefault();
     error = "";
@@ -145,19 +141,25 @@
 </script>
 
 {#if mounted}
-  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
   <div
     use:portal
     class="hub-create-drawer"
     class:is-leaving={leaving}
-    role="dialog"
-    aria-modal="true"
-    aria-label={t(messages, "nav.create")}
-    tabindex="-1"
-    onclick={onBackdropClick}
     onanimationend={onBackdropAnimEnd}
   >
-    <aside class="hub-create-drawer__panel drawer-panel">
+    <button
+      type="button"
+      class="hub-create-drawer__dismiss"
+      aria-label={t(messages, "common.cancel")}
+      onclick={requestClose}
+    ></button>
+    <div
+      class="hub-create-drawer__panel drawer-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-label={t(messages, "nav.create")}
+      tabindex="-1"
+    >
       <header class="hub-create-drawer__head">
         <div>
           <p class="label-kicker neon-flicker m-0 text-scifi-primary">// publish</p>
@@ -305,6 +307,6 @@
           </button>
         </div>
       </form>
-    </aside>
+    </div>
   </div>
 {/if}

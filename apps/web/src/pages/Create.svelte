@@ -3,12 +3,13 @@
   import { push } from "svelte-spa-router";
   import { createDrawerOpen, locale as localeStore, me } from "../lib/stores";
   import { localePath } from "../lib/i18n";
+  import { requireAccount } from "../lib/authGate";
 
   let locale = $derived($localeStore);
 
   onMount(() => {
     if (!$me) {
-      push(localePath(locale, "auth"));
+      requireAccount(locale);
       return;
     }
     createDrawerOpen.set(true);

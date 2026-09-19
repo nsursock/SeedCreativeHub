@@ -6,6 +6,7 @@ import {
   DISCIPLINES,
   DISCIPLINE_WORK_TYPE,
   LEBANESE_CITIES,
+  CITY_LABELS,
   type DisciplineSlug,
   type WorkType,
 } from "@creative-hub/shared";
@@ -37,21 +38,6 @@ const DISCIPLINE_LABELS: Record<
   photography: { en: "Photography", fr: "Photographie", ar: "تصوير", he: "צילום" },
   film: { en: "Film", fr: "Cinéma", ar: "سينما", he: "קולנוע" },
   writing: { en: "Writing", fr: "Écriture", ar: "كتابة", he: "כתיבה" },
-};
-
-const CITY_LABELS: Record<string, { en: string; fr: string; ar: string; he: string }> = {
-  beirut: { en: "Beirut", fr: "Beyrouth", ar: "بيروت", he: "ביירות" },
-  tripoli: { en: "Tripoli", fr: "Tripoli", ar: "طرابلس", he: "טריפולי" },
-  saida: { en: "Saida", fr: "Saïda", ar: "صيدا", he: "צידון" },
-  tyre: { en: "Tyre", fr: "Tyr", ar: "صور", he: "צור" },
-  byblos: { en: "Byblos", fr: "Byblos", ar: "جبيل", he: "ביבלוס" },
-  zahle: { en: "Zahle", fr: "Zahlé", ar: "زحلة", he: "זחלה" },
-  jounieh: { en: "Jounieh", fr: "Jounieh", ar: "جونيه", he: "ג'וניה" },
-  baalbek: { en: "Baalbek", fr: "Baalbek", ar: "بعلبك", he: "בעלבק" },
-  nabatieh: { en: "Nabatieh", fr: "Nabatiyeh", ar: "النبطية", he: "נבטיה" },
-  batroun: { en: "Batroun", fr: "Batroun", ar: "البترون", he: "בטרון" },
-  diaspora: { en: "Diaspora", fr: "Diaspora", ar: "الشتات", he: "תפוצות" },
-  other: { en: "Other", fr: "Autre", ar: "أخرى", he: "אחר" },
 };
 
 function pravatar(seed: string, size = 400) {
@@ -463,7 +449,7 @@ async function seedCreatorsFromAi(targetCount: number) {
       create: {
         handle,
         displayName: `Creator ${n + 1}`,
-        bioShort: `${disc} maker around ${city}.`,
+        bioShort: `${disc} maker around ${CITY_LABELS[city].en}.`,
         city,
         claimStatus: "unclaimed",
         isFounding: true,

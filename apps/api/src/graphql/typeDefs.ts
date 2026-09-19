@@ -210,6 +210,7 @@ export const typeDefs = /* GraphQL */ `
     explore: ExplorePayload!
     search(q: String!, discipline: String, city: String, limit: Int = 20): SearchPayload!
     creators(discipline: String, city: String, claimStatus: ClaimStatus, isFounding: Boolean, q: String, limit: Int = 40, offset: Int = 0): [Profile!]!
+    works(discipline: String, city: String, type: WorkType, q: String, limit: Int = 40, offset: Int = 0): [Work!]!
     opportunities(status: OpportunityStatus = open, limit: Int = 40): [Opportunity!]!
     opportunity(slug: String!): Opportunity
     events(limit: Int = 40, upcomingOnly: Boolean = true): [Event!]!

@@ -7,6 +7,7 @@
   import { locale as localeStore } from "../lib/stores";
   import { gql } from "../lib/gql";
   import { reveal, hueOf, initialsOf } from "../lib/reveal";
+  import { cityLabel } from "../lib/directory";
 
   let locale = $derived($localeStore);
   let messages = $derived(getMessages(locale));
@@ -69,7 +70,7 @@
         <span class="label-kicker mb-1 block text-scifi-muted">{t(messages, "search.city")}</span>
         <select class="select select-bordered select-sm" bind:value={city}>
           <option value="">All</option>
-          {#each LEBANESE_CITIES as c}<option value={c}>{c}</option>{/each}
+          {#each LEBANESE_CITIES as c}<option value={c}>{cityLabel(c, locale)}</option>{/each}
         </select>
       </label>
       <button class="btn-cta btn-sm px-4 py-2 text-xs" type="submit">{t(messages, "search.submit")}</button>
@@ -103,7 +104,7 @@
                 </span>
                 <span class="min-w-0">
                   <span class="block truncate font-medium">{c.displayName}</span>
-                  <span class="block truncate text-xs text-scifi-muted">@{c.handle} · {c.city ?? "—"}</span>
+                  <span class="block truncate text-xs text-scifi-muted">@{c.handle} · {cityLabel(c.city, locale)}</span>
                 </span>
               </a>
             </li>

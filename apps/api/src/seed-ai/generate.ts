@@ -2,6 +2,7 @@ import {
   DISCIPLINES,
   DISCIPLINE_WORK_TYPE,
   LEBANESE_CITIES,
+  CITY_LABELS,
   type DisciplineSlug,
   type WorkType,
 } from "@creative-hub/shared";
@@ -85,7 +86,7 @@ function stubCreators(count: number): GeneratedSeedCreator[] {
     out.push({
       handle,
       displayName: `${person.first} ${person.last}`,
-      bioShort: `${person.first} makes ${disc} work from ${city} — seeded stub.`,
+      bioShort: `${person.first} makes ${disc} work from ${CITY_LABELS[city].en} — seeded stub.`,
       city,
       disciplineSlugs: [disc],
       works: [

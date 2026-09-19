@@ -340,6 +340,43 @@ export const resolvers = {
       });
     },
 
+    works: async (
+      _: unknown,
+      args: {
+        discipline?: string;
+        city?: string;
+        type?: string;
+        q?: string;
+        limit?: number;
+        offset?: number;
+      },
+      ctx: Ctx,
+    ) => {
+      const discipline = args.discipline
+        ? await ctx.prisma.discipline.findUnique({ where: { slug: args.discipline } })
+        : null;
+      const q = args.q?.trim();
+      return ctx.prisma.work.findMany({
+        where: {
+          status: "published",
+          ...(args.type ? { type: args.type as "text" | "image" | "audio" | "video" } : {}),
+          ...(discipline ? { primaryDisciplineId: discipline.id } : {}),
+          ...(args.city ? { profile: { city: args.city } } : {}),
+          ...(q
+            ? {
+                OR: [
+                  { title: { contains: q, mode: "insensitive" } },
+                  { description: { contains: q, mode: "insensitive" } },
+                ],
+              }
+            : {}),
+        },
+        orderBy: { publishedAt: "desc" },
+        take: args.limit ?? 40,
+        skip: args.offset ?? 0,
+      });
+    },
+
     opportunities: (_: unknown, args: { status?: string; limit?: number }, ctx: Ctx) =>
       ctx.prisma.opportunity.findMany({
         where: { status: (args.status as "open") ?? "open" },

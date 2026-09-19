@@ -3,11 +3,13 @@
   "nav": {
     "explore": "استكشف",
     "creators": "مبدعون",
+    "works": "أعمال",
     "collaborate": "تعاون",
     "events": "فعاليات",
     "search": "بحث",
     "create": "إنشاء",
     "signIn": "دخول",
+    "getStarted": "ابدأ",
     "signOut": "خروج",
     "admin": "إدارة",
     "notifications": "تنبيهات"
@@ -47,6 +49,7 @@
   },
   "explore": {
     "title": "استكشف",
+    "modeSub": "اختر عدسة — الأدلة في القائمة.",
     "featuredCreators": "مبدعون مميزون",
     "featuredWorks": "أعمال مميزة",
     "latest": "أحدث الأعمال",

@@ -3,27 +3,21 @@
   import { link } from "svelte-spa-router";
   import PageHero from "../components/PageHero.svelte";
   import ViewModeToggle from "../components/ViewModeToggle.svelte";
+  import EventsList from "../components/directory/EventsList.svelte";
   import { getMessages, localePath, t } from "../lib/i18n";
   import { locale as localeStore } from "../lib/stores";
-  import { viewMode } from "../lib/viewMode";
   import { gql } from "../lib/gql";
   import { reveal } from "../lib/reveal";
+  import { dayOf, monthOf, cityLabel, type EventRow } from "../lib/directory";
 
   let { params }: { params?: { slug?: string } } = $props();
   let locale = $derived($localeStore);
   let messages = $derived(getMessages(locale));
 
-  let list = $state<any[]>([]);
+  let list = $state<EventRow[]>([]);
   let detail = $state<any>(null);
   let loading = $state(true);
   let hubOnly = $state(false);
-
-  function dayOf(iso: string) {
-    return new Date(iso).getDate().toString().padStart(2, "0");
-  }
-  function monthOf(iso: string) {
-    return new Date(iso).toLocaleString(locale, { month: "short" });
-  }
 
   let visible = $derived(hubOnly ? list.filter((e) => e.isHubNight) : list);
 
@@ -32,15 +26,19 @@
       const res = await gql<{ event: any }>(
         `query($slug: String!) {
           event(slug: $slug) {
-            id name slug description startsAt endsAt venue city externalUrl imageUrl isHubNight
+            id name slug description startsAt endsAt venue city category externalUrl imageUrl isHubNight capacity
           }
         }`,
         { slug: params.slug },
       );
       detail = res.event;
     } else {
-      const res = await gql<{ events: any[] }>(
-        `query { events(limit: 40) { id slug name startsAt venue city imageUrl isHubNight } }`,
+      const res = await gql<{ events: EventRow[] }>(
+        `query {
+          events(limit: 40) {
+            id slug name startsAt endsAt venue city category imageUrl isHubNight capacity
+          }
+        }`,
       );
       list = res.events;
     }
@@ -88,12 +86,12 @@
       <div class="relative flex gap-5 p-6 sm:p-8">
         <span class="date-block h-fit">
           <span class="date-block__day">{dayOf(detail.startsAt)}</span>
-          <span class="date-block__month">{monthOf(detail.startsAt)}</span>
+          <span class="date-block__month">{monthOf(detail.startsAt, locale)}</span>
         </span>
         <div class="min-w-0 space-y-3">
           <h2 class="text-2xl font-extrabold tracking-tight sm:text-3xl">{detail.name}</h2>
           <p class="m-0 text-sm text-scifi-muted">
-            {new Date(detail.startsAt).toLocaleString(locale)} · {detail.venue} · {detail.city}
+            {new Date(detail.startsAt).toLocaleString(locale)} · {detail.venue} · {cityLabel(detail.city, locale)}
           </p>
           <p class="m-0 leading-relaxed text-scifi-muted">{detail.description}</p>
           {#if detail.externalUrl}
@@ -104,67 +102,7 @@
         </div>
       </div>
     </article>
-  {:else if visible.length === 0}
-    <p class="text-scifi-muted">{t(messages, "events.empty")}</p>
-  {:else if $viewMode === "table"}
-    <div class="hub-table-wrap" use:reveal>
-      <table class="hub-table">
-        <thead>
-          <tr>
-            <th>When</th>
-            <th>Name</th>
-            <th>Venue</th>
-            <th>City</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {#each visible as e}
-            <tr>
-              <td class="whitespace-nowrap text-scifi-muted">{dayOf(e.startsAt)} {monthOf(e.startsAt)}</td>
-              <td class="font-medium">
-                <a use:link class="hover:text-scifi-primary" href={localePath(locale, `events/${e.slug}`)}>{e.name}</a>
-              </td>
-              <td class="text-scifi-muted">{e.venue ?? "—"}</td>
-              <td class="text-scifi-muted">{e.city ?? "—"}</td>
-              <td>
-                {#if e.isHubNight}<span class="badge badge-primary badge-sm">{t(messages, "events.hubNight")}</span>{/if}
-              </td>
-            </tr>
-          {/each}
-        </tbody>
-      </table>
-    </div>
   {:else}
-    <ul class="m-0 grid list-none gap-4 p-0 sm:grid-cols-2">
-      {#each visible as e, i}
-        <li use:reveal={(i % 6) * 50}>
-          <a
-            use:link
-            class="pane pane-bracketed card-lift flex h-full flex-col overflow-hidden p-0"
-            href={localePath(locale, `events/${e.slug}`)}
-          >
-            <div class="feature-thumb">
-              {#if e.imageUrl}
-                <img src={e.imageUrl} alt="" loading="lazy" />
-              {/if}
-            </div>
-            <span class="flex flex-1 items-center gap-4 p-4 sm:p-5">
-              <span class="date-block">
-                <span class="date-block__day">{dayOf(e.startsAt)}</span>
-                <span class="date-block__month">{monthOf(e.startsAt)}</span>
-              </span>
-              <span class="min-w-0">
-                <span class="block truncate text-base font-semibold">{e.name}</span>
-                <span class="mt-0.5 block truncate text-sm text-scifi-muted">{e.venue} · {e.city}</span>
-                {#if e.isHubNight}
-                  <span class="badge badge-primary badge-sm mt-1.5">{t(messages, "events.hubNight")}</span>
-                {/if}
-              </span>
-            </span>
-          </a>
-        </li>
-      {/each}
-    </ul>
+    <EventsList items={visible} empty={t(messages, "events.empty")} />
   {/if}
 </main>

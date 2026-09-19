@@ -43,6 +43,33 @@ export const LEBANESE_CITIES = [
 ] as const;
 export type CitySlug = (typeof LEBANESE_CITIES)[number];
 
+/** Display labels for city slugs (profiles/events store the slug). */
+export const CITY_LABELS: Record<
+  CitySlug,
+  { en: string; fr: string; ar: string; he: string }
+> = {
+  beirut: { en: "Beirut", fr: "Beyrouth", ar: "بيروت", he: "ביירות" },
+  tripoli: { en: "Tripoli", fr: "Tripoli", ar: "طرابلس", he: "טריפולי" },
+  saida: { en: "Saida", fr: "Saïda", ar: "صيدا", he: "צידון" },
+  tyre: { en: "Tyre", fr: "Tyr", ar: "صور", he: "צור" },
+  byblos: { en: "Byblos", fr: "Byblos", ar: "جبيل", he: "ביבלוס" },
+  zahle: { en: "Zahle", fr: "Zahlé", ar: "زحلة", he: "זחלה" },
+  jounieh: { en: "Jounieh", fr: "Jounieh", ar: "جونيه", he: "ג'וניה" },
+  baalbek: { en: "Baalbek", fr: "Baalbek", ar: "بعلبك", he: "בעלבק" },
+  nabatieh: { en: "Nabatieh", fr: "Nabatiyeh", ar: "النبطية", he: "נבטיה" },
+  batroun: { en: "Batroun", fr: "Batroun", ar: "البترون", he: "בטרון" },
+  diaspora: { en: "Diaspora", fr: "Diaspora", ar: "الشتات", he: "תפוצות" },
+  other: { en: "Other", fr: "Autre", ar: "أخرى", he: "אחר" },
+};
+
+export function cityLabel(slug?: string | null, locale: string = "en"): string {
+  if (!slug) return "—";
+  const labels = CITY_LABELS[slug as CitySlug];
+  if (!labels) return slug.charAt(0).toUpperCase() + slug.slice(1);
+  const key = (LOCALES as readonly string[]).includes(locale) ? (locale as Locale) : "en";
+  return labels[key] ?? labels.en;
+}
+
 export const USER_ROLES = ["member", "editor", "admin"] as const;
 export type UserRole = (typeof USER_ROLES)[number];
 

@@ -12,8 +12,13 @@ test.describe("P0 smoke", () => {
     expect(serious, JSON.stringify(serious, null, 2)).toEqual([]);
   });
 
-  test("explore route renders", async ({ page }) => {
+  test("explore route renders for guests", async ({ page }) => {
     await page.goto("/#/en/explore");
     await expect(page.getByRole("heading", { name: /explore/i })).toBeVisible({ timeout: 15_000 });
+  });
+
+  test("landing brand is reachable at locale root", async ({ page }) => {
+    await page.goto("/#/en");
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible({ timeout: 15_000 });
   });
 });

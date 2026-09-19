@@ -5,6 +5,7 @@
   import { locale as localeStore } from "../lib/stores";
   import { gql } from "../lib/gql";
   import { reveal } from "../lib/reveal";
+  import { cityLabel } from "../lib/directory";
 
   let locale = $derived($localeStore);
   let messages = $derived(getMessages(locale));
@@ -184,7 +185,7 @@
               <tr>
                 <td class="font-mono text-scifi-cyan">@{p.handle}</td>
                 <td class="font-medium">{p.displayName}</td>
-                <td class="text-scifi-muted">{p.city ?? "—"}</td>
+                <td class="text-scifi-muted">{cityLabel(p.city, locale)}</td>
                 <td>
                   <span class="badge badge-sm {p.claimStatus === 'claimed' ? 'badge-success' : 'badge-warning'}">{p.claimStatus}</span>
                 </td>

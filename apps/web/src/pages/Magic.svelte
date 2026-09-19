@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { push } from "svelte-spa-router";
   import { getMessages, localePath, t } from "../lib/i18n";
   import { locale as localeStore, refreshSession } from "../lib/stores";
   import { gql, setCsrfToken } from "../lib/gql";
@@ -23,11 +24,12 @@
       );
       setCsrfToken(res.consumeMagicLink.csrfToken);
       await refreshSession();
-      location.hash = localePath(locale, "explore");
+      push(localePath(locale, "explore"));
     } catch (e) {
       status = e instanceof Error ? e.message : t(messages, "common.error");
     }
-  });</script>
+  });
+</script>
 
 <main class="hub-page hub-page--narrow py-16 text-center">
   <p class="label-kicker neon-flicker text-scifi-primary mb-4">// magic link</p>

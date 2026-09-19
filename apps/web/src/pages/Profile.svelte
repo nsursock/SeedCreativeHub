@@ -4,7 +4,9 @@
   import { getMessages, localePath, t } from "../lib/i18n";
   import { locale as localeStore, me } from "../lib/stores";
   import { gql } from "../lib/gql";
+  import { requireAccount } from "../lib/authGate";
   import { reveal, hueOf, initialsOf, workCoverUrl } from "../lib/reveal";
+  import { cityLabel } from "../lib/directory";
 
   let { params }: { params?: { handle?: string } } = $props();
   let locale = $derived($localeStore);
@@ -37,13 +39,33 @@
   onMount(load);
 
   async function toggleFollow() {
-    if (!$me || !profile) return;
+    if (!profile) return;
+    if (!$me) {
+      requireAccount(locale);
+      return;
+    }
     if (profile.isFollowing) {
       await gql(`mutation($id: ID!) { unfollow(profileId: $id) }`, { id: profile.id });
     } else {
       await gql(`mutation($id: ID!) { follow(profileId: $id) }`, { id: profile.id });
     }
     await load();
+  }
+
+  function openContact() {
+    if (!$me) {
+      requireAccount(locale);
+      return;
+    }
+    contactOpen = true;
+  }
+
+  function openReport() {
+    if (!$me) {
+      requireAccount(locale);
+      return;
+    }
+    reportOpen = true;
   }
 
   async function sendContact() {
@@ -106,7 +128,7 @@
             <span class="brand-mark">{profile.displayName}</span>
           </h1>
           <p class="mt-1 text-sm text-scifi-muted">
-            @{profile.handle} · {profile.city ?? "—"} · {profile.followerCount} followers
+            @{profile.handle} · {cityLabel(profile.city, locale)} · {profile.followerCount} followers
           </p>
           <div class="mt-3 flex flex-wrap gap-1.5">
             {#each profile.disciplines as d}
@@ -118,19 +140,17 @@
           </div>
         </div>
         <div class="flex shrink-0 flex-wrap gap-2 sm:flex-col sm:justify-start">
-          {#if $me && profile.claimStatus === "claimed"}
+          {#if profile.claimStatus === "claimed"}
             <button class="btn-cta btn-sm px-4 py-2 text-sm" type="button" onclick={toggleFollow}>
               {profile.isFollowing ? t(messages, "profile.unfollow") : t(messages, "profile.follow")}
             </button>
-            <button class="cta-secondary px-4 py-2 text-sm" type="button" onclick={() => (contactOpen = true)}
+            <button class="cta-secondary px-4 py-2 text-sm" type="button" onclick={openContact}
               >{t(messages, "profile.contact")}</button
             >
           {/if}
-          {#if $me}
-            <button class="btn btn-ghost btn-sm" type="button" onclick={() => (reportOpen = true)}
-              >{t(messages, "profile.report")}</button
-            >
-          {/if}
+          <button class="btn btn-ghost btn-sm" type="button" onclick={openReport}
+            >{t(messages, "profile.report")}</button
+          >
         </div>
       </div>
       {#if profile.bioShort}
@@ -175,17 +195,20 @@
 </main>
 
 {#if contactOpen}
-  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-  <div
-    class="modal-backdrop"
-    role="dialog"
-    aria-modal="true"
-    aria-label={t(messages, "profile.contact")}
-    onclick={(e) => {
-      if (e.target === e.currentTarget) contactOpen = false;
-    }}
-  >
-    <div class="modal space-y-3">
+  <div class="modal-backdrop">
+    <button
+      type="button"
+      class="modal-backdrop__dismiss"
+      aria-label={t(messages, "common.cancel")}
+      onclick={() => (contactOpen = false)}
+    ></button>
+    <div
+      class="modal space-y-3"
+      role="dialog"
+      aria-modal="true"
+      aria-label={t(messages, "profile.contact")}
+      tabindex="-1"
+    >
       <h3 class="modal-title">{t(messages, "profile.contact")}</h3>
       <label class="form-control w-full">
         <span class="label-kicker mb-1.5 block text-scifi-muted">subject</span>
@@ -201,17 +224,20 @@
 {/if}
 
 {#if reportOpen}
-  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-  <div
-    class="modal-backdrop"
-    role="dialog"
-    aria-modal="true"
-    aria-label={t(messages, "profile.report")}
-    onclick={(e) => {
-      if (e.target === e.currentTarget) reportOpen = false;
-    }}
-  >
-    <div class="modal space-y-3">
+  <div class="modal-backdrop">
+    <button
+      type="button"
+      class="modal-backdrop__dismiss"
+      aria-label={t(messages, "common.cancel")}
+      onclick={() => (reportOpen = false)}
+    ></button>
+    <div
+      class="modal space-y-3"
+      role="dialog"
+      aria-modal="true"
+      aria-label={t(messages, "profile.report")}
+      tabindex="-1"
+    >
       <h3 class="modal-title">{t(messages, "profile.report")}</h3>
       <textarea class="textarea textarea-bordered w-full" rows="3" bind:value={reason}></textarea>
       <div class="modal-actions">

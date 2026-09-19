@@ -3,11 +3,13 @@
   "nav": {
     "explore": "Explorer",
     "creators": "Créateurs",
-    "collaborate": "Collaborer",
+    "works": "Œuvres",
+    "collaborate": "Collabs",
     "events": "Événements",
     "search": "Rechercher",
     "create": "Créer",
     "signIn": "Connexion",
+    "getStarted": "Commencer",
     "signOut": "Déconnexion",
     "admin": "Admin",
     "notifications": "Alertes"
@@ -47,6 +49,7 @@
   },
   "explore": {
     "title": "Explorer",
+    "modeSub": "Choisissez une lentille — les annuaires sont dans la nav.",
     "featuredCreators": "Créateurs en vedette",
     "featuredWorks": "Œuvres en vedette",
     "latest": "Dernières œuvres",

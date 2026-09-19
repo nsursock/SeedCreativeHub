@@ -3,11 +3,13 @@
   "nav": {
     "explore": "גלה",
     "creators": "יוצרים",
-    "collaborate": "שיתופי פעולה",
+    "works": "עבודות",
+    "collaborate": "שיתופים",
     "events": "אירועים",
     "search": "חיפוש",
     "create": "יצירה",
     "signIn": "התחברות",
+    "getStarted": "התחילו",
     "signOut": "התנתקות",
     "admin": "ניהול",
     "notifications": "התראות"
@@ -47,6 +49,7 @@
   },
   "explore": {
     "title": "גלה",
+    "modeSub": "בחרו עדשה — הספריות בתפריט.",
     "featuredCreators": "יוצרים מומלצים",
     "featuredWorks": "עבודות מומלצות",
     "latest": "עבודות אחרונות",

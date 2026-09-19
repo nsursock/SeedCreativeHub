@@ -1,14 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { DISCIPLINES, LEBANESE_CITIES } from "@creative-hub/shared";
+  import { DISCIPLINES, LEBANESE_CITIES, WORK_TYPES } from "@creative-hub/shared";
   import PageHero from "../components/PageHero.svelte";
   import ViewModeToggle from "../components/ViewModeToggle.svelte";
-  import CreatorsList from "../components/directory/CreatorsList.svelte";
+  import WorksList from "../components/directory/WorksList.svelte";
   import { getMessages, t } from "../lib/i18n";
   import { locale as localeStore } from "../lib/stores";
   import { gql } from "../lib/gql";
   import { reveal } from "../lib/reveal";
-  import { cityLabel, type CreatorRow } from "../lib/directory";
+  import { cityLabel, type WorkRow } from "../lib/directory";
 
   let locale = $derived($localeStore);
   let messages = $derived(getMessages(locale));
@@ -16,28 +16,29 @@
   let q = $state("");
   let discipline = $state("");
   let city = $state("");
-  let claimStatus = $state("");
-  let foundingOnly = $state(false);
+  let type = $state("");
   let loading = $state(true);
-  let creators = $state<CreatorRow[]>([]);
+  let works = $state<WorkRow[]>([]);
 
   async function load() {
     loading = true;
-    const res = await gql<{ creators: CreatorRow[] }>(
-      `query Creators($discipline: String, $city: String, $claimStatus: ClaimStatus, $isFounding: Boolean, $q: String) {
-        creators(discipline: $discipline, city: $city, claimStatus: $claimStatus, isFounding: $isFounding, q: $q, limit: 80) {
-          id handle displayName city claimStatus avatarUrl coverUrl isFounding worksCount
+    const res = await gql<{ works: WorkRow[] }>(
+      `query Works($discipline: String, $city: String, $type: WorkType, $q: String) {
+        works(discipline: $discipline, city: $city, type: $type, q: $q, limit: 80) {
+          id slug title type publishedAt viewCount
+          profile { handle displayName }
+          primaryDiscipline { slug nameEn }
+          media { publicUrl externalUrl }
         }
       }`,
       {
         discipline: discipline || null,
         city: city || null,
-        claimStatus: claimStatus || null,
-        isFounding: foundingOnly ? true : null,
+        type: type || null,
         q: q.trim() || null,
       },
     );
-    creators = res.creators;
+    works = res.works;
     loading = false;
   }
 
@@ -45,8 +46,7 @@
     q = "";
     discipline = "";
     city = "";
-    claimStatus = "";
-    foundingOnly = false;
+    type = "";
     load();
   }
 
@@ -54,13 +54,13 @@
 </script>
 
 <main class="hub-page">
-  <PageHero kicker="roster" title={t(messages, "nav.creators")} sub="Filter by craft, city, claim status, or founding cohort." />
+  <PageHero kicker="catalog" title={t(messages, "nav.works")} sub="Browse published work across music, photo, film, and writing." />
 
   <div class="console-panel mb-8" use:reveal>
     <div class="pane-header">
       <span class="pane-title"><span class="pane-title-bar"></span> filter</span>
       <div class="flex items-center gap-2">
-        <span class="status-chip"><span class="dot"></span> {creators.length} live</span>
+        <span class="status-chip"><span class="dot"></span> {works.length} live</span>
         <ViewModeToggle />
       </div>
     </div>
@@ -69,7 +69,7 @@
         <span class="label-kicker mb-1 block text-scifi-muted">search</span>
         <input
           class="input input-bordered input-sm w-full"
-          placeholder="name or handle"
+          placeholder="title"
           bind:value={q}
           onkeydown={(e) => e.key === "Enter" && load()}
         />
@@ -82,24 +82,18 @@
         </select>
       </label>
       <label class="form-control">
+        <span class="label-kicker mb-1 block text-scifi-muted">type</span>
+        <select class="select select-bordered select-sm" bind:value={type} onchange={load}>
+          <option value="">All</option>
+          {#each WORK_TYPES as wt}<option value={wt}>{wt}</option>{/each}
+        </select>
+      </label>
+      <label class="form-control">
         <span class="label-kicker mb-1 block text-scifi-muted">{t(messages, "search.city")}</span>
         <select class="select select-bordered select-sm" bind:value={city} onchange={load}>
           <option value="">All</option>
           {#each LEBANESE_CITIES as c}<option value={c}>{cityLabel(c, locale)}</option>{/each}
         </select>
-      </label>
-      <label class="form-control">
-        <span class="label-kicker mb-1 block text-scifi-muted">claim</span>
-        <select class="select select-bordered select-sm" bind:value={claimStatus} onchange={load}>
-          <option value="">All</option>
-          <option value="claimed">claimed</option>
-          <option value="pending">pending</option>
-          <option value="unclaimed">unclaimed</option>
-        </select>
-      </label>
-      <label class="flex cursor-pointer items-center gap-2 pb-2 text-xs text-scifi-muted">
-        <input type="checkbox" class="checkbox checkbox-xs checkbox-primary" bind:checked={foundingOnly} onchange={load} />
-        founding only
       </label>
       <button class="btn-cta btn-sm px-4 py-2 text-xs" type="button" onclick={load}>Apply</button>
       <button class="btn btn-ghost btn-sm" type="button" onclick={clearFilters}>Clear</button>
@@ -107,12 +101,12 @@
   </div>
 
   {#if loading}
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {#each Array(6) as _}
-        <div class="skeleton h-56"></div>
+    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      {#each Array(8) as _}
+        <div class="skeleton h-48"></div>
       {/each}
     </div>
   {:else}
-    <CreatorsList items={creators} empty="No creators match these filters." />
+    <WorksList items={works} empty="No works match these filters." />
   {/if}
 </main>

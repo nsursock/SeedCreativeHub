@@ -3,11 +3,13 @@
   "nav": {
     "explore": "Explore",
     "creators": "Creators",
-    "collaborate": "Collaborate",
+    "works": "Works",
+    "collaborate": "Collabs",
     "events": "Events",
     "search": "Search",
     "create": "Create",
     "signIn": "Sign in",
+    "getStarted": "Get started",
     "signOut": "Sign out",
     "admin": "Admin",
     "notifications": "Alerts"
@@ -47,6 +49,7 @@
   },
   "explore": {
     "title": "Explore",
+    "modeSub": "Pick a lens — directories live in the nav.",
     "tabCreators": "Creators",
     "tabWorks": "Works",
     "tabEvents": "Events",

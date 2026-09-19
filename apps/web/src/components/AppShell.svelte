@@ -1,7 +1,7 @@
 <script lang="ts">
   import { link, location } from "svelte-spa-router";
-  import IconCompass from "@tabler/icons-svelte/icons/compass";
   import IconUsers from "@tabler/icons-svelte/icons/users";
+  import IconPhoto from "@tabler/icons-svelte/icons/photo";
   import IconHandshake from "@tabler/icons-svelte/icons/heart-handshake";
   import IconCalendar from "@tabler/icons-svelte/icons/calendar-event";
   import IconSearch from "@tabler/icons-svelte/icons/search";
@@ -13,10 +13,12 @@
   import IconSettings from "@tabler/icons-svelte/icons/settings";
   import IconShield from "@tabler/icons-svelte/icons/shield";
   import IconLogout from "@tabler/icons-svelte/icons/logout";
+  import IconCompass from "@tabler/icons-svelte/icons/compass";
   import type { Messages, Locale } from "../lib/i18n";
   import { localePath, t } from "../lib/i18n";
   import { me, createDrawerOpen } from "../lib/stores";
   import { gql } from "../lib/gql";
+  import { goLanding, requireAccount } from "../lib/authGate";
   import SettingsModal from "./SettingsModal.svelte";
   import CreateDrawer from "./CreateDrawer.svelte";
 
@@ -31,9 +33,14 @@
   let menuOpen = $state(false);
   let settingsOpen = $state(false);
 
+  function openSettings() {
+    settingsOpen = true;
+    menuOpen = false;
+  }
+
   function openCreate() {
     if (!$me) {
-      window.location.hash = pathOf("auth");
+      requireAccount(locale);
       return;
     }
     createDrawerOpen.set(true);
@@ -41,10 +48,14 @@
   }
 
   async function signOut() {
-    await gql(`mutation { signOut }`);
+    try {
+      await gql(`mutation { signOut }`);
+    } catch {
+      /* still clear local session */
+    }
     me.set(null);
-    location.hash = localePath(locale, "");
     menuOpen = false;
+    goLanding(locale);
   }
 
   function pathOf(segment = "") {
@@ -75,11 +86,14 @@
       <a use:link class="btn btn-ghost btn-sm gap-1 hub-nav-link" href={pathOf("creators")} aria-current={isActive("creators") ? "page" : undefined}
         ><IconUsers size={15} stroke={1.75} />{t(messages, "nav.creators")}</a
       >
-      <a use:link class="btn btn-ghost btn-sm gap-1 hub-nav-link" href={pathOf("collaborate")} aria-current={isActive("collaborate") ? "page" : undefined}
-        ><IconHandshake size={15} stroke={1.75} />{t(messages, "nav.collaborate")}</a
+      <a use:link class="btn btn-ghost btn-sm gap-1 hub-nav-link" href={pathOf("works")} aria-current={isActive("works") ? "page" : undefined}
+        ><IconPhoto size={15} stroke={1.75} />{t(messages, "nav.works")}</a
       >
       <a use:link class="btn btn-ghost btn-sm gap-1 hub-nav-link" href={pathOf("events")} aria-current={isActive("events") ? "page" : undefined}
         ><IconCalendar size={15} stroke={1.75} />{t(messages, "nav.events")}</a
+      >
+      <a use:link class="btn btn-ghost btn-sm gap-1 hub-nav-link" href={pathOf("collaborate")} aria-current={isActive("collaborate") ? "page" : undefined}
+        ><IconHandshake size={15} stroke={1.75} />{t(messages, "nav.collaborate")}</a
       >
       <a use:link class="btn btn-ghost btn-sm gap-1 hub-nav-link" href={pathOf("search")} aria-current={isActive("search") ? "page" : undefined}
         ><IconSearch size={15} stroke={1.75} />{t(messages, "nav.search")}</a
@@ -93,10 +107,7 @@
       class="icon-btn"
       aria-label="Settings"
       title="Settings"
-      onclick={() => {
-        settingsOpen = true;
-        menuOpen = false;
-      }}
+      onclick={openSettings}
     >
       <IconSettings size={16} stroke={1.75} />
     </button>
@@ -122,7 +133,7 @@
       >
     {:else}
       <a use:link class="btn btn-primary btn-sm hidden sm:inline-flex" href={pathOf("auth")}
-        >{t(messages, "nav.signIn")}</a
+        >{t(messages, "nav.getStarted")}</a
       >
     {/if}
     <button
@@ -143,28 +154,28 @@
     ></button>
     <div class="console-panel absolute inset-x-3 top-[4.25rem] p-3" role="dialog" aria-modal="true" aria-label="Menu">
       <nav class="flex flex-col gap-1">
+        <a use:link class="btn btn-ghost justify-start gap-2" href={pathOf()} onclick={() => (menuOpen = false)}
+          >{t(messages, "brand")} · landing</a
+        >
         <a use:link class="btn btn-ghost justify-start gap-2" href={pathOf("explore")} onclick={() => (menuOpen = false)}
           ><IconCompass size={16} />{t(messages, "nav.explore")}</a
         >
         <a use:link class="btn btn-ghost justify-start gap-2" href={pathOf("creators")} onclick={() => (menuOpen = false)}
           ><IconUsers size={16} />{t(messages, "nav.creators")}</a
         >
-        <a use:link class="btn btn-ghost justify-start gap-2" href={pathOf("collaborate")} onclick={() => (menuOpen = false)}
-          ><IconHandshake size={16} />{t(messages, "nav.collaborate")}</a
+        <a use:link class="btn btn-ghost justify-start gap-2" href={pathOf("works")} onclick={() => (menuOpen = false)}
+          ><IconPhoto size={16} />{t(messages, "nav.works")}</a
         >
         <a use:link class="btn btn-ghost justify-start gap-2" href={pathOf("events")} onclick={() => (menuOpen = false)}
           ><IconCalendar size={16} />{t(messages, "nav.events")}</a
         >
+        <a use:link class="btn btn-ghost justify-start gap-2" href={pathOf("collaborate")} onclick={() => (menuOpen = false)}
+          ><IconHandshake size={16} />{t(messages, "nav.collaborate")}</a
+        >
         <a use:link class="btn btn-ghost justify-start gap-2" href={pathOf("search")} onclick={() => (menuOpen = false)}
           ><IconSearch size={16} />{t(messages, "nav.search")}</a
         >
-        <button
-          class="btn btn-ghost justify-start gap-2"
-          type="button"
-          onclick={() => {
-            menuOpen = false;
-            settingsOpen = true;
-          }}
+        <button class="btn btn-ghost justify-start gap-2" type="button" onclick={openSettings}
           ><IconSettings size={16} />Settings</button
         >
         {#if $me}
@@ -181,7 +192,7 @@
           >
         {:else}
           <a use:link class="btn btn-primary justify-start" href={pathOf("auth")} onclick={() => (menuOpen = false)}
-            >{t(messages, "nav.signIn")}</a
+            >{t(messages, "nav.getStarted")}</a
           >
         {/if}
       </nav>
@@ -194,32 +205,21 @@
     <IconCompass size={18} stroke={1.75} />
     <span>{t(messages, "nav.explore")}</span>
   </a>
-  <a use:link href={pathOf("collaborate")} aria-current={isActive("collaborate") ? "page" : undefined}>
-    <IconHandshake size={18} stroke={1.75} />
-    <span>{t(messages, "nav.collaborate")}</span>
+  <a use:link href={pathOf("creators")} aria-current={isActive("creators") ? "page" : undefined}>
+    <IconUsers size={18} stroke={1.75} />
+    <span>{t(messages, "nav.creators")}</span>
   </a>
-  {#if $me}
-    <button type="button" aria-current={$createDrawerOpen ? "page" : undefined} onclick={openCreate}>
-      <IconPlus size={18} stroke={1.75} />
-      <span>{t(messages, "nav.create")}</span>
-    </button>
-  {:else}
-    <a use:link href={pathOf("auth")}>
-      <IconPlus size={18} stroke={1.75} />
-      <span>{t(messages, "nav.create")}</span>
-    </a>
-  {/if}
+  <button type="button" aria-current={$createDrawerOpen ? "page" : undefined} onclick={openCreate}>
+    <IconPlus size={18} stroke={1.75} />
+    <span>{t(messages, "nav.create")}</span>
+  </button>
   <a use:link href={pathOf("events")} aria-current={isActive("events") ? "page" : undefined}>
     <IconCalendar size={18} stroke={1.75} />
     <span>{t(messages, "nav.events")}</span>
   </a>
-  <a
-    use:link
-    href={$me ? pathOf("notifications") : pathOf("auth")}
-    aria-current={isActive("notifications") || isActive("auth") ? "page" : undefined}
-  >
-    {#if $me}<IconBell size={18} stroke={1.75} />{:else}<IconUsers size={18} stroke={1.75} />{/if}
-    <span>{$me ? t(messages, "nav.notifications") : t(messages, "nav.signIn")}</span>
+  <a use:link href={pathOf("collaborate")} aria-current={isActive("collaborate") ? "page" : undefined}>
+    <IconHandshake size={18} stroke={1.75} />
+    <span>{t(messages, "nav.collaborate")}</span>
   </a>
 </nav>
 

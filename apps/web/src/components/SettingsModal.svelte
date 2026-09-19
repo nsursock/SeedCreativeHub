@@ -122,25 +122,17 @@
     viewMode.set(next);
   }
 
-  function onBackdropClick(e: MouseEvent) {
-    if (e.target === e.currentTarget) requestClose();
-  }
 </script>
 
 {#if mounted}
-  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
   <div
     use:portal
     class="modal-backdrop"
     class:is-leaving={leaving}
-    role="dialog"
-    aria-modal="true"
-    aria-label="Settings"
-    tabindex="-1"
-    onclick={onBackdropClick}
     onanimationend={onBackdropAnimEnd}
   >
-    <div class="modal hub-settings">
+    <button type="button" class="modal-backdrop__dismiss" aria-label="Close" onclick={requestClose}></button>
+    <div class="modal hub-settings" role="dialog" aria-modal="true" aria-label="Settings" tabindex="-1">
       <div class="flex items-start justify-between gap-3">
         <h3 class="modal-title mb-0">Settings</h3>
         <button type="button" class="icon-btn shrink-0" aria-label="Close" onclick={requestClose}>

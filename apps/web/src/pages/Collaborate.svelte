@@ -3,17 +3,19 @@
   import { link } from "svelte-spa-router";
   import PageHero from "../components/PageHero.svelte";
   import ViewModeToggle from "../components/ViewModeToggle.svelte";
+  import CollabsList from "../components/directory/CollabsList.svelte";
   import { getMessages, localePath, t } from "../lib/i18n";
   import { locale as localeStore, me } from "../lib/stores";
-  import { viewMode } from "../lib/viewMode";
   import { gql } from "../lib/gql";
   import { reveal } from "../lib/reveal";
+  import { labelOf, type CollabRow } from "../lib/directory";
+  import { requireAccount } from "../lib/authGate";
 
   let { params }: { params?: { slug?: string } } = $props();
   let locale = $derived($localeStore);
   let messages = $derived(getMessages(locale));
 
-  let list = $state<any[]>([]);
+  let list = $state<CollabRow[]>([]);
   let detail = $state<any>(null);
   let interestMsg = $state("");
   let loading = $state(true);
@@ -29,15 +31,19 @@
       const res = await gql<{ opportunity: any }>(
         `query($slug: String!) {
           opportunity(slug: $slug) {
-            id title slug description roles discipline location compensationStatus status interestCount imageUrl
+            id title slug description roles discipline location remoteMode compensationStatus deadline status interestCount imageUrl
           }
         }`,
         { slug: params.slug },
       );
       detail = res.opportunity;
     } else {
-      const res = await gql<{ opportunities: any[] }>(
-        `query { opportunities(limit: 40) { id slug title location discipline compensationStatus imageUrl } }`,
+      const res = await gql<{ opportunities: CollabRow[] }>(
+        `query {
+          opportunities(limit: 40) {
+            id slug title location discipline remoteMode compensationStatus deadline interestCount imageUrl
+          }
+        }`,
       );
       list = res.opportunities;
     }
@@ -47,7 +53,11 @@
   onMount(load);
 
   async function express() {
-    if (!detail || !$me) return;
+    if (!detail) return;
+    if (!$me) {
+      requireAccount(locale);
+      return;
+    }
     await gql(`mutation($id: ID!, $message: String) { expressInterest(opportunityId: $id, message: $message) { id } }`, {
       id: detail.id,
       message: interestMsg,
@@ -92,7 +102,7 @@
       <div class="pane-scan"></div>
       <div class="pane-header">
         <span class="pane-title"><span class="pane-title-bar"></span> opportunity</span>
-        <span class="badge badge-primary">{detail.compensationStatus}</span>
+        <span class="badge badge-primary">{labelOf(detail.compensationStatus)}</span>
       </div>
       <div class="relative space-y-4 p-6 sm:p-8">
         {#if detail.imageUrl}
@@ -103,7 +113,7 @@
         {/if}
         <h2 class="text-2xl font-extrabold tracking-tight sm:text-3xl">{detail.title}</h2>
         <div class="flex flex-wrap gap-1.5">
-          <span class="feature-pill">{detail.discipline?.replaceAll("_", " ")}</span>
+          <span class="feature-pill">{labelOf(detail.discipline)}</span>
           <span class="feature-pill">{detail.location}</span>
           <span class="feature-pill">{detail.interestCount} interested</span>
         </div>
@@ -116,65 +126,13 @@
             <button class="btn-cta" type="button" onclick={express}>{t(messages, "collab.expressInterest")}</button>
           </div>
         {:else}
-          <a use:link class="cta-secondary w-fit" href={localePath(locale, "auth")}>{t(messages, "nav.signIn")} →</a>
+          <button class="btn-cta w-fit" type="button" onclick={() => requireAccount(locale)}
+            >{t(messages, "nav.signIn")} to express interest</button
+          >
         {/if}
       </div>
     </article>
-  {:else if visible.length === 0}
-    <p class="text-scifi-muted">{t(messages, "collab.empty")}</p>
-  {:else if $viewMode === "table"}
-    <div class="hub-table-wrap" use:reveal>
-      <table class="hub-table">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Location</th>
-            <th>Discipline</th>
-            <th>Pay</th>
-          </tr>
-        </thead>
-        <tbody>
-          {#each visible as o}
-            <tr>
-              <td class="font-medium">
-                <a use:link class="hover:text-scifi-primary" href={localePath(locale, `collaborate/${o.slug}`)}>{o.title}</a>
-              </td>
-              <td class="text-scifi-muted">{o.location ?? "—"}</td>
-              <td class="text-scifi-muted">{o.discipline?.replaceAll("_", " ") ?? "—"}</td>
-              <td>
-                {#if o.compensationStatus}
-                  <span class="badge badge-outline badge-sm">{o.compensationStatus}</span>
-                {/if}
-              </td>
-            </tr>
-          {/each}
-        </tbody>
-      </table>
-    </div>
   {:else}
-    <ul class="m-0 grid list-none gap-4 p-0 sm:grid-cols-2">
-      {#each visible as o, i}
-        <li use:reveal={(i % 6) * 50}>
-          <a
-            use:link
-            class="pane pane-bracketed card-lift flex h-full flex-col overflow-hidden p-0"
-            href={localePath(locale, `collaborate/${o.slug}`)}
-          >
-            <div class="feature-thumb">
-              {#if o.imageUrl}
-                <img src={o.imageUrl} alt="" loading="lazy" />
-              {/if}
-            </div>
-            <span class="block flex-1 p-4 sm:p-5">
-              <span class="block truncate text-base font-semibold">{o.title}</span>
-              <span class="mt-1.5 flex flex-wrap items-center gap-2 text-sm text-scifi-muted">
-                {o.location} · {o.discipline?.replaceAll("_", " ")}
-                <span class="badge badge-outline badge-sm">{o.compensationStatus}</span>
-              </span>
-            </span>
-          </a>
-        </li>
-      {/each}
-    </ul>
+    <CollabsList items={visible} empty={t(messages, "collab.empty")} />
   {/if}
 </main>

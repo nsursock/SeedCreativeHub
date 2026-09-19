@@ -1,10 +1,11 @@
 <script lang="ts">
-  import Router, { push } from "svelte-spa-router";
+  import Router, { push, location } from "svelte-spa-router";
   import { onMount } from "svelte";
   import AppShell from "./components/AppShell.svelte";
   import Landing from "./pages/Landing.svelte";
   import Explore from "./pages/Explore.svelte";
   import Creators from "./pages/Creators.svelte";
+  import Works from "./pages/Works.svelte";
   import Profile from "./pages/Profile.svelte";
   import Auth from "./pages/Auth.svelte";
   import Claim from "./pages/Claim.svelte";
@@ -16,8 +17,9 @@
   import Create from "./pages/Create.svelte";
   import Notifications from "./pages/Notifications.svelte";
   import Magic from "./pages/Magic.svelte";
-  import { applyDocumentLocale, detectLocale, getMessages, type Locale } from "./lib/i18n";
-  import { locale as localeStore, perfLite, refreshSession } from "./lib/stores";
+  import { applyDocumentLocale, detectLocale, getMessages, localePath, type Locale } from "./lib/i18n";
+  import { locale as localeStore, me, perfLite, refreshSession, sessionReady } from "./lib/stores";
+  import { rememberAuthNext, routeRest } from "./lib/authGate";
   import { initClientObservability } from "./lib/analytics";
 
   let locale = $state<Locale>(detectLocale());
@@ -45,6 +47,7 @@
     "/:locale": Landing,
     "/:locale/explore": Explore,
     "/:locale/creators": Creators,
+    "/:locale/works": Works,
     "/:locale/u/:handle": Profile,
     "/:locale/auth": Auth,
     "/:locale/auth/magic": Magic,
@@ -59,6 +62,23 @@
     "/:locale/create": Create,
     "/:locale/notifications": Notifications,
   };
+
+  /** Browse is public. Only account/admin surfaces require a session. */
+  $effect(() => {
+    if (!$sessionReady) return;
+    const rest = routeRest($location || "/");
+    const needsAccount = rest === "create" || rest === "notifications" || rest === "admin";
+    if (!needsAccount) return;
+
+    if (!$me) {
+      rememberAuthNext(`/${locale}${rest ? `/${rest}` : ""}`);
+      push(localePath(locale, "auth"));
+      return;
+    }
+    if (rest === "admin" && $me.role !== "admin" && $me.role !== "editor") {
+      push(localePath(locale, "explore"));
+    }
+  });
 
   onMount(() => {
     initClientObservability();
@@ -89,6 +109,12 @@
   </div>
   <div class="hub-content">
     <AppShell {locale} {messages} />
-    <Router {routes} />
+    {#if !$sessionReady}
+      <div class="hub-page flex justify-center py-20">
+        <div class="skeleton h-10 w-48"></div>
+      </div>
+    {:else}
+      <Router {routes} />
+    {/if}
   </div>
 </div>
