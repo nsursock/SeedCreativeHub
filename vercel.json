@@ -14,7 +14,7 @@
       "destination": "https://api-production-8fa47.up.railway.app/health"
     },
     {
-      "source": "/((?!assets/).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]

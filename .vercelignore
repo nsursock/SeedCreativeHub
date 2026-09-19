@@ -1,0 +1,19 @@
+# Keep Vercel uploads lean and avoid shipping a local ScifiUI symlink/dir
+# (CI clones a fresh copy via scripts/ensure-scifiui.mjs).
+ScifiUI
+node_modules
+.pnpm-store
+apps/api/.env
+apps/api/.env.*
+.env
+.env.*
+!.env.example
+!.env.smoke.example
+!.env.normal.example
+!.env.staging.example
+dist
+.turbo
+.vercel
+playwright-report
+test-results
+apps/api/data/seed-cache
