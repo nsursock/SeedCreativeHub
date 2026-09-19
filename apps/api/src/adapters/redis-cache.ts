@@ -1,4 +1,4 @@
-import Redis from "ioredis";
+import { Redis } from "ioredis";
 import { env } from "../env.js";
 import type { Cache } from "./cache.js";
 

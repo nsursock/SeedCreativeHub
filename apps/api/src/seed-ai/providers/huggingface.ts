@@ -127,7 +127,7 @@ export class HuggingFaceMusicClient implements MediaProvider {
 
     // Some custom endpoints return JSON with base64 / float arrays
     if (ct.includes("json") || (buf[0] === 0x7b /* { */)) {
-      buf = decodeJsonAudio(buf);
+      buf = Buffer.from(decodeJsonAudio(buf));
     }
 
     if (buf.length < 100) {

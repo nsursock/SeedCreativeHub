@@ -1,4 +1,4 @@
-import type { PrismaClient, Profile, User } from "@prisma/client";
+import type { PrismaClient, Profile, User, WorkStatus } from "@prisma/client";
 import {
   joinWaitlistSchema,
   signUpSchema,
@@ -89,7 +89,7 @@ export const resolvers = {
           OR: [
             { status: "published" },
             ...(ctx.user && (isStaff(ctx.user) || parent.userId === ctx.user.id)
-              ? [{ status: { in: ["draft", "published", "archived", "hidden"] as const } }]
+              ? [{ status: { in: ["draft", "published", "archived", "hidden"] as WorkStatus[] } }]
               : []),
           ],
         },
