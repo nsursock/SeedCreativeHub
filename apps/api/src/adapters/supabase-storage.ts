@@ -6,7 +6,7 @@ import type { MediaStorage, UploadIntent, UploadSession } from "./media-storage.
 export class SupabaseStorageAdapter implements MediaStorage {
   constructor(
     private readonly baseUrl = env.supabaseUrl,
-    private readonly serviceKey = env.supabaseServiceRoleKey,
+    private readonly secretKey = env.supabaseSecretKey,
     private readonly bucket = env.supabaseStorageBucket,
   ) {}
 
@@ -15,7 +15,7 @@ export class SupabaseStorageAdapter implements MediaStorage {
     const safeName = intent.filename.replace(/[^a-zA-Z0-9._-]/g, "_");
     const storageKey = `${intent.folder ?? "uploads"}/${assetId}-${safeName}`;
 
-    if (!this.baseUrl || !this.serviceKey) {
+    if (!this.baseUrl || !this.secretKey) {
       // Local/dev fallback: client POSTs to our thin REST upload endpoint instead.
       return {
         assetId,
@@ -31,7 +31,7 @@ export class SupabaseStorageAdapter implements MediaStorage {
       storageKey,
       uploadUrl,
       headers: {
-        Authorization: `Bearer ${this.serviceKey}`,
+        Authorization: `Bearer ${this.secretKey}`,
         "Content-Type": intent.mimeType,
         "x-upsert": "true",
       },
@@ -50,10 +50,10 @@ export class SupabaseStorageAdapter implements MediaStorage {
   }
 
   async deleteObject(storageKey: string): Promise<void> {
-    if (!this.baseUrl || !this.serviceKey) return;
+    if (!this.baseUrl || !this.secretKey) return;
     await fetch(`${this.baseUrl}/storage/v1/object/${this.bucket}/${storageKey}`, {
       method: "DELETE",
-      headers: { Authorization: `Bearer ${this.serviceKey}` },
+      headers: { Authorization: `Bearer ${this.secretKey}` },
     });
   }
 }

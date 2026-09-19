@@ -2,6 +2,28 @@ import "dotenv/config";
 import { defaultCountryForMarket, resolveMarketScope } from "@creative-hub/shared";
 import { parseCostMode } from "./seed-ai/costMode.js";
 
+/** Assemble DATABASE_URL from parts + DATABASE_PASSWORD when needed. */
+function resolveDatabaseUrl(): string {
+  const password = (process.env.DATABASE_PASSWORD ?? process.env.SUPABASE_DB_PASSWORD ?? "").trim();
+  let url = (process.env.DATABASE_URL ?? "").trim();
+  if (url) {
+    if (password) {
+      url = url
+        .replaceAll("${DATABASE_PASSWORD}", encodeURIComponent(password))
+        .replaceAll("${SUPABASE_DB_PASSWORD}", encodeURIComponent(password))
+        .replaceAll("[YOUR-PASSWORD]", encodeURIComponent(password))
+        .replaceAll("YOUR_DB_PASSWORD", encodeURIComponent(password));
+    }
+    return url;
+  }
+  const host = (process.env.DATABASE_HOST ?? "").trim();
+  const port = (process.env.DATABASE_PORT ?? "5432").trim();
+  const database = (process.env.DATABASE_NAME ?? "postgres").trim();
+  const user = (process.env.DATABASE_USER ?? "").trim();
+  if (!host || !user || !password) return "";
+  return `postgresql://${encodeURIComponent(user)}:${encodeURIComponent(password)}@${host}:${port}/${database}`;
+}
+
 const nodeEnv = process.env.NODE_ENV ?? "development";
 const marketScope = resolveMarketScope(process.env.HUB_MARKET ?? process.env.MARKET_SCOPE, {
   isProduction: nodeEnv === "production",
@@ -18,7 +40,7 @@ export const env = {
   publicAppUrl: process.env.PUBLIC_APP_URL ?? "http://localhost:5173",
   publicApiUrl: process.env.PUBLIC_API_URL ?? "http://localhost:3001",
   corsOrigins: (process.env.CORS_ORIGINS ?? "http://localhost:5173").split(",").map((s) => s.trim()),
-  databaseUrl: process.env.DATABASE_URL ?? "",
+  databaseUrl: resolveDatabaseUrl(),
   redisUrl: process.env.REDIS_URL ?? "redis://localhost:6379",
   sessionSecret: process.env.SESSION_SECRET ?? "dev-session-secret-change-me-32chars",
   sessionTtlSeconds: Number(process.env.SESSION_TTL_SECONDS ?? 604800),
@@ -27,7 +49,9 @@ export const env = {
   claimTokenTtlDays: Number(process.env.CLAIM_TOKEN_TTL_DAYS ?? 7),
   storageProvider: process.env.STORAGE_PROVIDER ?? "supabase",
   supabaseUrl: process.env.SUPABASE_URL ?? "",
-  supabaseServiceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY ?? "",
+  /** Prefer new Secret key; legacy service_role still accepted. */
+  supabaseSecretKey:
+    process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY ?? "",
   supabaseStorageBucket: process.env.SUPABASE_STORAGE_BUCKET ?? "media",
   mailProvider: process.env.MAIL_PROVIDER ?? "resend",
   resendApiKey: process.env.RESEND_API_KEY ?? "",

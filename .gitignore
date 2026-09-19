@@ -36,6 +36,10 @@ out/
 !.env.example
 !.env.smoke.example
 !.env.normal.example
+!.env.staging.example
+
+# Railway local link metadata (if present)
+.railway/
 
 # Logs & debug
 *.log

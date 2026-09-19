@@ -263,7 +263,7 @@ pnpm db:seed:smoke    # or: pnpm db:seed:normal
 | Variable | Purpose |
 |---|---|
 | `STORAGE_PROVIDER` | `supabase` (MVP) |
-| `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` / `SUPABASE_STORAGE_BUCKET` | Object storage |
+| `SUPABASE_URL` / `SUPABASE_SECRET_KEY` / `SUPABASE_STORAGE_BUCKET` | Object storage (Secret key from dashboard; legacy `SUPABASE_SERVICE_ROLE_KEY` still accepted) |
 | `MAIL_PROVIDER` | `resend` |
 | `RESEND_API_KEY` / `MAIL_FROM` | Transactional email |
 
