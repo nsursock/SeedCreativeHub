@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Creative Hub">
+  <defs>
+    <linearGradient id="orb" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff2e9a" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#2ee6ff" stop-opacity="0.22"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- App-bar orb mark (retrowave defaults) -->
+  <rect width="32" height="32" rx="8" fill="#0a0418"/>
+  <rect x="1.5" y="1.5" width="29" height="29" rx="7" fill="url(#orb)" stroke="#ff2e9a" stroke-opacity="0.55" stroke-width="1.25"/>
+  <!-- Tabler sparkles (outline), centered & stroked like the nav icon -->
+  <g transform="translate(4 4)" fill="none" stroke="#ff2e9a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6"/>
+  </g>
+</svg>

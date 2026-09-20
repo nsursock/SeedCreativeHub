@@ -131,7 +131,7 @@
 
 <main bind:this={root} class="relative overflow-x-clip">
   <!-- ============ HERO ============ -->
-  <section class="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pb-16 pt-10 sm:px-6 sm:pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:pb-24 lg:pt-20">
+  <section class="relative mx-auto grid max-w-[88rem] items-center gap-12 px-2.5 pb-16 pt-10 sm:px-4 sm:pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:pb-24 lg:pt-20">
     <div class="relative">
       <span class="ghost-word" aria-hidden="true">HUB</span>
       <p class="label-kicker neon-flicker text-scifi-primary mb-3">{t(messages, "landing.heroKicker")}</p>
@@ -211,7 +211,7 @@
   </div>
 
   <!-- ============ SUPPORT A / B ============ -->
-  <section class="relative mx-auto mb-20 grid max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-2 lg:mb-28">
+  <section class="relative mx-auto mb-20 grid max-w-[88rem] gap-6 px-2.5 sm:px-4 md:grid-cols-2 lg:mb-28">
     <article class="pane pane-bracketed card-lift relative p-6 sm:p-7" use:reveal>
       <span class="ghost-word" aria-hidden="true">01</span>
       <p class="label-kicker hub-section-kicker text-scifi-cyan">{t(messages, "landing.section01")}</p>
@@ -235,7 +235,7 @@
   <!-- ============ PRICING / FOUNDING ============ -->
   <section class="relative mb-20 w-full lg:mb-28" use:reveal>
     <div class="border-y border-[var(--scifi-border)] bg-[rgba(var(--scifi-primary-rgb),0.06)]">
-      <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12">
+      <div class="mx-auto max-w-[88rem] px-2.5 py-10 sm:px-4 sm:py-12">
         <div class="console-panel relative overflow-hidden">
           <div class="pane-scan"></div>
           <div class="pane-header">
@@ -261,7 +261,7 @@
   <hr class="divider-spectrum mx-auto mb-20 max-w-4xl lg:mb-28" />
 
   <!-- ============ WAITLIST CTA ============ -->
-  <section id="waitlist" class="relative mx-auto max-w-xl scroll-mt-28 px-4 py-4 sm:px-6" use:reveal>
+  <section id="waitlist" class="relative mx-auto max-w-xl scroll-mt-28 px-2.5 py-4 sm:px-4" use:reveal>
     <div class="mb-6 text-center">
       <p class="label-kicker neon-flicker text-scifi-primary mb-2">// {t(messages, "landing.ctaTitle")}</p>
       <h2 class="hero-title text-3xl font-extrabold tracking-tight sm:text-4xl">{t(messages, "landing.ctaTitle")}</h2>
@@ -309,7 +309,7 @@
 
   <!-- ============ FOOTER ============ -->
   <footer class="hub-footer mt-20 lg:mt-28">
-    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-[1.2fr_1fr_1fr] sm:px-6">
+    <div class="mx-auto grid max-w-[88rem] gap-8 px-2.5 py-12 sm:grid-cols-[1.2fr_1fr_1fr] sm:px-4">
       <div>
         <span class="brand-mark text-lg">{t(messages, "brand")}</span>
         <p class="mt-3 max-w-xs text-xs leading-relaxed text-scifi-muted">{t(messages, "landing.footer")}</p>

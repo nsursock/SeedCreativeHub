@@ -196,16 +196,22 @@ body {
 
 .hub-page {
   margin-inline: auto;
-  max-width: 72rem;
-  padding: 2.5rem 1rem 4rem;
+  max-width: 88rem;
+  padding: 2.5rem 0.65rem 4rem;
+}
+
+@media (min-width: 640px) {
+  .hub-page {
+    padding-inline: 1rem;
+  }
 }
 
 .hub-page--narrow {
-  max-width: 44rem;
+  max-width: 48rem;
 }
 
 .hub-page--wide {
-  max-width: 80rem;
+  max-width: 96rem;
 }
 
 .hub-section-kicker {
@@ -1101,6 +1107,14 @@ a.creator-card.pane {
   position: sticky;
   top: 0;
   z-index: 40;
+  /* Match page gutters (scifiui defaults to 1rem). */
+  padding-inline: 0.65rem;
+}
+
+@media (min-width: 640px) {
+  .hub-app-bar {
+    padding-inline: 1rem;
+  }
 }
 
 .hub-app-bar__nav a {
@@ -1327,7 +1341,7 @@ html.perf-lite .hub-app-bar__orb::after {
 /* ============ Work detail — type-native layouts (ScifiUI) ============ */
 
 .hub-page--work {
-  max-width: 56rem;
+  max-width: 64rem;
 }
 
 .work-creator {
