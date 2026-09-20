@@ -12,6 +12,7 @@ import { buildFollowEdges } from "./followGraph.js";
 import {
   attachDisciplines,
   ensureFixtureWork,
+  mediaRowsForWork,
   picsumCover,
   picsumEvent,
   picsumOpp,
@@ -19,7 +20,19 @@ import {
   upsertTaxonomy,
 } from "./helpers.js";
 import type { SeedFixtures } from "./load.js";
+import { mapPool, seedConcurrency } from "./pool.js";
 import type { SeedHandleIndex } from "./types.js";
+
+/** Argon2id is intentionally slow — never hash the same seed password 100×. */
+const passwordHashCache = new Map<string, string>();
+
+async function cachedHashPassword(password: string): Promise<string> {
+  const hit = passwordHashCache.get(password);
+  if (hit) return hit;
+  const hash = await hashPassword(password);
+  passwordHashCache.set(password, hash);
+  return hash;
+}
 
 export function emptyIndex(): SeedHandleIndex {
   return {
@@ -36,7 +49,7 @@ export async function phaseTaxonomy(prisma: PrismaClient) {
 }
 
 export async function phaseAdmin(prisma: PrismaClient, index: SeedHandleIndex) {
-  const passwordHash = await hashPassword(env.adminPassword);
+  const passwordHash = await cachedHashPassword(env.adminPassword);
   const user = await prisma.user.upsert({
     where: { email: env.adminEmail.toLowerCase() },
     create: {
@@ -95,7 +108,7 @@ async function upsertClaimedProfile(
 ) {
   let userId: string | undefined;
   if (opts.createUser) {
-    const passwordHash = await hashPassword(opts.password);
+    const passwordHash = await cachedHashPassword(opts.password);
     const user = await prisma.user.upsert({
       where: { email: opts.email },
       create: {
@@ -162,7 +175,9 @@ export async function phaseCreators(
   fixtures: SeedFixtures,
   index: SeedHandleIndex,
 ) {
-  for (const c of fixtures.creators) {
+  const concurrency = seedConcurrency();
+  console.log(`[seed] creators ${fixtures.creators.length} (concurrency=${concurrency})`);
+  await mapPool(fixtures.creators, concurrency, async (c) => {
     // Only claimed profiles get a User (required for follows / opps / contacts).
     // pending/unclaimed stay user-less for the claim-token flow.
     await upsertClaimedProfile(prisma, index, {
@@ -184,7 +199,7 @@ export async function phaseCreators(
       userStatus: c.userStatus,
       createUser: c.claimStatus === "claimed",
     });
-  }
+  });
 }
 
 export async function phaseExplorers(
@@ -192,7 +207,9 @@ export async function phaseExplorers(
   fixtures: SeedFixtures,
   index: SeedHandleIndex,
 ) {
-  for (const e of fixtures.explorers) {
+  const concurrency = seedConcurrency();
+  console.log(`[seed] explorers ${fixtures.explorers.length} (concurrency=${concurrency})`);
+  await mapPool(fixtures.explorers, concurrency, async (e) => {
     await upsertClaimedProfile(prisma, index, {
       handle: e.handle,
       email: seedEmail(e.handle),
@@ -208,7 +225,7 @@ export async function phaseExplorers(
       userStatus: e.userStatus,
       createUser: true,
     });
-  }
+  });
 }
 
 export async function phaseWorks(
@@ -221,15 +238,48 @@ export async function phaseWorks(
   if (metaBySlug.size) {
     console.log(`[seed] work metadata sidecar entries: ${metaBySlug.size} (not written to DB)`);
   }
+  if (!process.env.SEED_HOST_MEDIA) {
+    console.log(`[seed] SEED_HOST_MEDIA unset — using external media URLs (fast path)`);
+  }
 
-  for (const w of fixtures.works) {
+  const discs = await prisma.discipline.findMany({ select: { id: true, slug: true } });
+  const disciplineIdBySlug = new Map(discs.map((d) => [d.slug, d.id]));
+  const concurrency = seedConcurrency();
+  const total = fixtures.works.length;
+  let done = 0;
+
+  const upserted = await mapPool(fixtures.works, concurrency, async (w) => {
     const profileId = index.profileIdByHandle.get(w.creatorHandle);
     if (!profileId) {
       console.warn(`[seed] skip work ${w.slug}: unknown creator ${w.creatorHandle}`);
-      continue;
+      return null;
     }
-    const row = await ensureFixtureWork(prisma, profileId, w);
-    index.workIdBySlug.set(w.slug, row.id);
+    const row = await ensureFixtureWork(prisma, profileId, w, disciplineIdBySlug);
+    done += 1;
+    if (done === 1 || done === total || done % 50 === 0) {
+      console.log(`[seed] works ${done}/${total}`);
+    }
+    return { slug: w.slug, work: w, row };
+  });
+
+  const ok = upserted.filter((x): x is NonNullable<typeof x> => x != null);
+  for (const { slug, row } of ok) {
+    index.workIdBySlug.set(slug, row.id);
+  }
+
+  const workIds = ok.map((x) => x.row.id);
+  if (workIds.length) {
+    await prisma.mediaAsset.deleteMany({ where: { workId: { in: workIds } } });
+  }
+  const media = (
+    await Promise.all(ok.map(({ work, row }) => mediaRowsForWork(row.id, work)))
+  ).flat();
+  if (media.length) {
+    const chunk = 100;
+    for (let i = 0; i < media.length; i += chunk) {
+      await prisma.mediaAsset.createMany({ data: media.slice(i, i + chunk) });
+    }
+    console.log(`[seed] media assets ${media.length}`);
   }
 }
 
@@ -238,10 +288,11 @@ export async function phaseOpportunities(
   fixtures: SeedFixtures,
   index: SeedHandleIndex,
 ) {
-  for (const row of fixtures.opportunities) {
+  const concurrency = seedConcurrency();
+  await mapPool(fixtures.opportunities, concurrency, async (row) => {
     const creatorId =
       index.userIdByHandle.get(row.creatorHandle) ?? index.userIdByHandle.get("admin");
-    if (!creatorId) continue;
+    if (!creatorId) return;
     const imageUrl = picsumOpp(row.slug);
     const opp = await prisma.opportunity.upsert({
       where: { slug: row.slug },
@@ -275,7 +326,7 @@ export async function phaseOpportunities(
       },
     });
     index.opportunityIdBySlug.set(row.slug, opp.id);
-  }
+  });
 }
 
 export async function phaseInterests(
@@ -283,16 +334,16 @@ export async function phaseInterests(
   fixtures: SeedFixtures,
   index: SeedHandleIndex,
 ) {
-  for (const row of fixtures.interests) {
+  await mapPool(fixtures.interests, seedConcurrency(), async (row) => {
     const opportunityId = index.opportunityIdBySlug.get(row.opportunitySlug);
     const userId = index.userIdByHandle.get(row.fromHandle);
-    if (!opportunityId || !userId) continue;
+    if (!opportunityId || !userId) return;
     await prisma.opportunityInterest.upsert({
       where: { opportunityId_userId: { opportunityId, userId } },
       create: { opportunityId, userId, message: row.message },
       update: { message: row.message },
     });
-  }
+  });
 }
 
 export async function phaseEvents(
@@ -300,7 +351,7 @@ export async function phaseEvents(
   fixtures: SeedFixtures,
   index: SeedHandleIndex,
 ) {
-  for (const row of fixtures.events) {
+  await mapPool(fixtures.events, seedConcurrency(), async (row) => {
     const organizerId =
       index.userIdByHandle.get(row.organizerHandle) ?? index.userIdByHandle.get("admin");
     const startsAt = daysFromEpoch(row.daysFromEpoch);
@@ -336,7 +387,7 @@ export async function phaseEvents(
       },
     });
     index.eventIdBySlug.set(row.slug, ev.id);
-  }
+  });
 }
 
 export async function phaseFollows(
@@ -368,20 +419,19 @@ export async function phaseFollows(
     });
   }
 
-  let created = 0;
+  const data: { followerId: string; followingId: string }[] = [];
   for (const edge of edges) {
     const followerId = index.userIdByHandle.get(edge.followerHandle);
     const followingId = index.userIdByHandle.get(edge.followingHandle);
     if (!followerId || !followingId || followerId === followingId) continue;
-    await prisma.follow.upsert({
-      where: { followerId_followingId: { followerId, followingId } },
-      create: { followerId, followingId },
-      update: {},
-    });
-    created++;
+    data.push({ followerId, followingId });
   }
-  console.log(`[seed] follows: ${created} (persona-driven)`);
-  return created;
+  const chunk = 200;
+  for (let i = 0; i < data.length; i += chunk) {
+    await prisma.follow.createMany({ data: data.slice(i, i + chunk), skipDuplicates: true });
+  }
+  console.log(`[seed] follows: ${data.length} (persona-driven)`);
+  return data.length;
 }
 
 export async function phaseContacts(
@@ -397,20 +447,24 @@ export async function phaseContacts(
     });
   }
 
-  for (const row of fixtures.contacts) {
-    const fromUserId = index.userIdByHandle.get(row.fromHandle);
-    const toUserId = index.userIdByHandle.get(row.toHandle);
-    const toProfileId = index.profileIdByHandle.get(row.toHandle);
-    if (!fromUserId || !toProfileId) continue;
-    await prisma.contactMessage.create({
-      data: {
+  const data = fixtures.contacts
+    .map((row) => {
+      const fromUserId = index.userIdByHandle.get(row.fromHandle);
+      const toUserId = index.userIdByHandle.get(row.toHandle);
+      const toProfileId = index.profileIdByHandle.get(row.toHandle);
+      if (!fromUserId || !toProfileId) return null;
+      return {
         fromUserId,
         toUserId: toUserId ?? null,
         toProfileId,
         subject: row.subject,
         message: row.message,
-      },
-    });
+      };
+    })
+    .filter((x): x is NonNullable<typeof x> => x != null);
+
+  if (data.length) {
+    await prisma.contactMessage.createMany({ data });
   }
 }
 
@@ -426,19 +480,23 @@ export async function phaseNotifications(
     });
   }
 
-  for (const row of fixtures.notifications) {
-    const userId = index.userIdByHandle.get(row.userHandle);
-    if (!userId) continue;
-    await prisma.notification.create({
-      data: {
+  const data = fixtures.notifications
+    .map((row) => {
+      const userId = index.userIdByHandle.get(row.userHandle);
+      if (!userId) return null;
+      return {
         userId,
         type: row.type,
         title: row.title,
         body: row.body,
         payload: row.payload ?? undefined,
         readAt: row.read ? daysFromEpoch(0) : null,
-      },
-    });
+      };
+    })
+    .filter((x): x is NonNullable<typeof x> => x != null);
+
+  if (data.length) {
+    await prisma.notification.createMany({ data });
   }
 }
 

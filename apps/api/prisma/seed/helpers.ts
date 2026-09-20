@@ -105,8 +105,13 @@ export async function upsertTaxonomy(prisma: PrismaClient) {
   }
 }
 
+let cachedDisciplines: { id: string; slug: string }[] | null = null;
+
 export async function attachDisciplines(prisma: PrismaClient, profileId: string, slugs: string[]) {
-  const discs = await prisma.discipline.findMany({ where: { slug: { in: slugs } } });
+  if (!cachedDisciplines) {
+    cachedDisciplines = await prisma.discipline.findMany({ select: { id: true, slug: true } });
+  }
+  const discs = cachedDisciplines.filter((d) => slugs.includes(d.slug));
   await prisma.profileDiscipline.deleteMany({ where: { profileId } });
   if (discs.length) {
     await prisma.profileDiscipline.createMany({
@@ -115,53 +120,28 @@ export async function attachDisciplines(prisma: PrismaClient, profileId: string,
   }
 }
 
-export async function ensureFixtureWork(
-  prisma: PrismaClient,
-  profileId: string,
+/** Opt-in: download each media URL into seed-cache (slow over remote). Default: keep external URLs. */
+const hostMediaEnabled = process.env.SEED_HOST_MEDIA === "1";
+
+export type MediaAssetSeedRow = {
+  workId: string;
+  kind: string;
+  provider: string;
+  publicUrl: string | null;
+  externalUrl: string;
+  mimeType: string;
+  moderationStatus: "approved";
+};
+
+/** Resolve media URLs for a fixture (no DB). Used for batched createMany. */
+export async function mediaRowsForWork(
+  workId: string,
   work: SeedWorkFixture,
-) {
-  const description =
-    work.type === "text" && work.body
-      ? work.body
-      : (work.description ?? "Seeded work for Creative Hub.");
-  const discipline = await prisma.discipline.findUnique({
-    where: { slug: work.primaryDiscipline },
-  });
-
-  const row = await prisma.work.upsert({
-    where: { slug: work.slug },
-    create: {
-      profileId,
-      title: work.title,
-      slug: work.slug,
-      type: work.type,
-      externalUrl: work.externalUrl,
-      status: work.status ?? "published",
-      publishedAt: work.status === "draft" ? null : new Date("2026-08-15T12:00:00.000Z"),
-      primaryDisciplineId: discipline?.id,
-      description,
-      aiGenerated: work.aiGenerated ?? false,
-      viewCount: work.viewCount ?? 0,
-    },
-    update: {
-      title: work.title,
-      description,
-      type: work.type,
-      status: work.status ?? "published",
-      aiGenerated: work.aiGenerated ?? false,
-      viewCount: work.viewCount ?? 0,
-      primaryDisciplineId: discipline?.id,
-      profileId,
-    },
-  });
-
+): Promise<MediaAssetSeedRow[]> {
   const kind =
     work.type === "audio" ? "audio" : work.type === "video" ? "video" : work.type === "image" ? "image" : "file";
 
-  let url: string | null =
-    work.mediaUrl ??
-    (work.mediaMode === "url" ? null : null);
-
+  let url: string | null = work.mediaUrl ?? (work.mediaMode === "url" ? null : null);
   if (!url) {
     if (work.type === "audio") url = SAMPLE_MEDIA.audio;
     else if (work.type === "video") url = SAMPLE_MEDIA.video;
@@ -179,52 +159,92 @@ export async function ensureFixtureWork(
           ? "image/jpeg"
           : "text/plain");
 
-  await prisma.mediaAsset.deleteMany({ where: { workId: row.id } });
-
+  const rows: MediaAssetSeedRow[] = [];
   if (url) {
     let hostedUrl = url;
     let hostedMime = mime;
     let provider = work.mediaMode === "picsum" || work.type === "image" ? "picsum" : "sample";
-    try {
-      const hosted = await hostMediaLocally({
-        url,
-        cacheDir: seedCacheDir,
-        publicApiUrl: env.publicApiUrl,
-        prefix: kind,
-      });
-      hostedUrl = hosted.localUrl;
-      hostedMime = hosted.mimeType || mime;
-      provider = "seed-cache";
-    } catch (e) {
-      console.warn(`[seed] host local failed for ${work.slug}:`, e instanceof Error ? e.message : e);
+    if (hostMediaEnabled) {
+      try {
+        const hosted = await hostMediaLocally({
+          url,
+          cacheDir: seedCacheDir,
+          publicApiUrl: env.publicApiUrl,
+          prefix: kind,
+        });
+        hostedUrl = hosted.localUrl;
+        hostedMime = hosted.mimeType || mime;
+        provider = "seed-cache";
+      } catch (e) {
+        console.warn(`[seed] host local failed for ${work.slug}:`, e instanceof Error ? e.message : e);
+      }
     }
-    await prisma.mediaAsset.create({
-      data: {
-        workId: row.id,
-        kind,
-        provider,
-        publicUrl: work.type === "text" ? null : hostedUrl,
-        externalUrl: hostedUrl,
-        mimeType: hostedMime,
-        moderationStatus: "approved",
-      },
+    rows.push({
+      workId,
+      kind,
+      provider,
+      publicUrl: work.type === "text" ? null : hostedUrl,
+      externalUrl: hostedUrl,
+      mimeType: hostedMime,
+      moderationStatus: "approved",
     });
   }
 
   if (work.type === "audio" || work.type === "video" || work.type === "text") {
     const coverUrl = picsumWork(`${work.slug}-cover`);
-    await prisma.mediaAsset.create({
-      data: {
-        workId: row.id,
-        kind: "image",
-        provider: "picsum",
-        publicUrl: coverUrl,
-        externalUrl: coverUrl,
-        mimeType: "image/jpeg",
-        moderationStatus: "approved",
-      },
+    rows.push({
+      workId,
+      kind: "image",
+      provider: "picsum",
+      publicUrl: coverUrl,
+      externalUrl: coverUrl,
+      mimeType: "image/jpeg",
+      moderationStatus: "approved",
     });
   }
+  return rows;
+}
 
-  return row;
+export async function ensureFixtureWork(
+  prisma: PrismaClient,
+  profileId: string,
+  work: SeedWorkFixture,
+  disciplineIdBySlug?: Map<string, string>,
+) {
+  const description =
+    work.type === "text" && work.body
+      ? work.body
+      : (work.description ?? "Seeded work for Creative Hub.");
+  const primaryDisciplineId =
+    disciplineIdBySlug?.get(work.primaryDiscipline) ??
+    (
+      await prisma.discipline.findUnique({ where: { slug: work.primaryDiscipline } })
+    )?.id;
+
+  return prisma.work.upsert({
+    where: { slug: work.slug },
+    create: {
+      profileId,
+      title: work.title,
+      slug: work.slug,
+      type: work.type,
+      externalUrl: work.externalUrl,
+      status: work.status ?? "published",
+      publishedAt: work.status === "draft" ? null : new Date("2026-08-15T12:00:00.000Z"),
+      primaryDisciplineId,
+      description,
+      aiGenerated: work.aiGenerated ?? false,
+      viewCount: work.viewCount ?? 0,
+    },
+    update: {
+      title: work.title,
+      description,
+      type: work.type,
+      status: work.status ?? "published",
+      aiGenerated: work.aiGenerated ?? false,
+      viewCount: work.viewCount ?? 0,
+      primaryDisciplineId,
+      profileId,
+    },
+  });
 }

@@ -31,31 +31,54 @@ import {
   phaseWorks,
 } from "./seed/phases.js";
 import { SEED_EPOCH } from "./seed/epoch.js";
+import { timedPhase } from "./seed/pool.js";
 
-const prisma = new PrismaClient();
+function seedDatabaseUrl(): string {
+  const base = process.env.DATABASE_URL ?? "";
+  if (!base) return base;
+  const u = new URL(base);
+  // Prefer transaction pooler for concurrent upserts — session mode (5432) is
+  // shared with Railway and capped at ~15 clients.
+  if (u.hostname.includes("pooler.supabase.com") && u.port === "5432") {
+    u.port = "6543";
+  }
+  u.searchParams.set("pgbouncer", "true");
+  if (!u.searchParams.has("connection_limit")) u.searchParams.set("connection_limit", "5");
+  if (!u.searchParams.has("pool_timeout")) u.searchParams.set("pool_timeout", "30");
+  return u.toString();
+}
+
+const prisma = new PrismaClient({
+  datasources: { db: { url: seedDatabaseUrl() } },
+});
 
 async function main() {
   console.log("Seeding Creative Hub (fixture-first staging)…");
   console.log(`SEED_EPOCH=${SEED_EPOCH.toISOString()}`);
+  console.log(`SEED_CONCURRENCY=${process.env.SEED_CONCURRENCY ?? "8 (default)"}`);
+  {
+    const u = new URL(seedDatabaseUrl());
+    console.log(`SEED_DB=${u.hostname}:${u.port} (pgbouncer=${u.searchParams.get("pgbouncer")})`);
+  }
 
   const fixtures = loadSeedFixtures();
   const index = emptyIndex();
 
-  await phaseTaxonomy(prisma);
-  await phaseAdmin(prisma, index);
-  await phaseCreators(prisma, fixtures, index);
-  await phaseExplorers(prisma, fixtures, index);
-  await phaseWorks(prisma, fixtures, index);
-  await phaseOpportunities(prisma, fixtures, index);
-  await phaseInterests(prisma, fixtures, index);
-  await phaseEvents(prisma, fixtures, index);
-  await phaseFollows(prisma, fixtures, index);
-  await phaseContacts(prisma, fixtures, index);
-  await phaseNotifications(prisma, fixtures, index);
-  await phaseModeration(prisma, fixtures, index);
-  await phaseEditorial(prisma, fixtures, index);
-  await phaseClaims(prisma, fixtures, index);
-  await phaseReconcile(prisma, fixtures);
+  await timedPhase("taxonomy", () => phaseTaxonomy(prisma));
+  await timedPhase("admin", () => phaseAdmin(prisma, index));
+  await timedPhase("creators", () => phaseCreators(prisma, fixtures, index));
+  await timedPhase("explorers", () => phaseExplorers(prisma, fixtures, index));
+  await timedPhase("works", () => phaseWorks(prisma, fixtures, index));
+  await timedPhase("opportunities", () => phaseOpportunities(prisma, fixtures, index));
+  await timedPhase("interests", () => phaseInterests(prisma, fixtures, index));
+  await timedPhase("events", () => phaseEvents(prisma, fixtures, index));
+  await timedPhase("follows", () => phaseFollows(prisma, fixtures, index));
+  await timedPhase("contacts", () => phaseContacts(prisma, fixtures, index));
+  await timedPhase("notifications", () => phaseNotifications(prisma, fixtures, index));
+  await timedPhase("moderation", () => phaseModeration(prisma, fixtures, index));
+  await timedPhase("editorial", () => phaseEditorial(prisma, fixtures, index));
+  await timedPhase("claims", () => phaseClaims(prisma, fixtures, index));
+  await timedPhase("reconcile", () => phaseReconcile(prisma, fixtures));
 
   const claimed = fixtures.creators.filter((c) => c.claimStatus === "claimed").length;
   const pending = fixtures.creators.filter((c) => c.claimStatus === "pending").length;

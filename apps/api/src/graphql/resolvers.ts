@@ -44,6 +44,41 @@ function toSessionUser(u: User): SessionUser {
   };
 }
 
+/** Eager-load shapes so list queries avoid N+1 field resolvers over remote Postgres. */
+const profileListInclude = {
+  disciplines: { include: { discipline: true } },
+  _count: { select: { works: { where: { status: "published" as const } } } },
+} as const;
+
+const workListInclude = {
+  profile: true,
+  primaryDiscipline: true,
+  media: true,
+} as const;
+
+const opportunityListInclude = {
+  _count: { select: { interests: true } },
+} as const;
+
+type ProfileListRow = Profile & {
+  disciplines?: Array<{ discipline: unknown }>;
+  _count?: { works: number };
+};
+
+type WorkListRow = {
+  id: string;
+  profileId: string;
+  primaryDisciplineId: string | null;
+  profile?: Profile;
+  primaryDiscipline?: unknown;
+  media?: unknown[];
+};
+
+type OpportunityListRow = {
+  id: string;
+  _count?: { interests: number };
+};
+
 function assertCsrf(ctx: Ctx) {
   // Cookie sessions: CSRF checked when session exists and mutation runs.
   // Dev clients may omit until cookie round-trip; require when session present.
@@ -75,7 +110,8 @@ export const resolvers = {
   },
 
   Profile: {
-    disciplines: async (parent: Profile, _: unknown, ctx: Ctx) => {
+    disciplines: async (parent: ProfileListRow, _: unknown, ctx: Ctx) => {
+      if (parent.disciplines) return parent.disciplines.map((r) => r.discipline);
       const rows = await ctx.prisma.profileDiscipline.findMany({
         where: { profileId: parent.id },
         include: { discipline: true },
@@ -95,9 +131,12 @@ export const resolvers = {
         },
         orderBy: { publishedAt: "desc" },
         take: args.limit ?? 12,
+        include: workListInclude,
       }),
-    worksCount: (parent: Profile, _: unknown, ctx: Ctx) =>
-      ctx.prisma.work.count({ where: { profileId: parent.id, status: "published" } }),
+    worksCount: (parent: ProfileListRow, _: unknown, ctx: Ctx) => {
+      if (parent._count?.works != null) return parent._count.works;
+      return ctx.prisma.work.count({ where: { profileId: parent.id, status: "published" } });
+    },
     followerCount: async (parent: Profile, _: unknown, ctx: Ctx) => {
       if (!parent.userId) return 0;
       return ctx.prisma.follow.count({ where: { followingId: parent.userId } });
@@ -123,21 +162,25 @@ export const resolvers = {
       if (parent.type === "embed" || parent.type === "mixed") return "image";
       return "image";
     },
-    profile: (parent: { profileId: string }, _: unknown, ctx: Ctx) =>
-      ctx.prisma.profile.findUniqueOrThrow({ where: { id: parent.profileId } }),
-    media: (parent: { id: string }, _: unknown, ctx: Ctx) =>
-      ctx.prisma.mediaAsset.findMany({ where: { workId: parent.id } }),
-    primaryDiscipline: (parent: { primaryDisciplineId: string | null }, _: unknown, ctx: Ctx) =>
-      parent.primaryDisciplineId
+    profile: (parent: WorkListRow, _: unknown, ctx: Ctx) =>
+      parent.profile ?? ctx.prisma.profile.findUniqueOrThrow({ where: { id: parent.profileId } }),
+    media: (parent: WorkListRow, _: unknown, ctx: Ctx) =>
+      parent.media ?? ctx.prisma.mediaAsset.findMany({ where: { workId: parent.id } }),
+    primaryDiscipline: (parent: WorkListRow, _: unknown, ctx: Ctx) => {
+      if (parent.primaryDiscipline !== undefined) return parent.primaryDiscipline;
+      return parent.primaryDisciplineId
         ? ctx.prisma.discipline.findUnique({ where: { id: parent.primaryDisciplineId } })
-        : null,
+        : null;
+    },
   },
 
   Opportunity: {
     creator: (parent: { creatorId: string }, _: unknown, ctx: Ctx) =>
       ctx.prisma.user.findUniqueOrThrow({ where: { id: parent.creatorId } }),
-    interestCount: (parent: { id: string }, _: unknown, ctx: Ctx) =>
-      ctx.prisma.opportunityInterest.count({ where: { opportunityId: parent.id } }),
+    interestCount: (parent: OpportunityListRow, _: unknown, ctx: Ctx) => {
+      if (parent._count?.interests != null) return parent._count.interests;
+      return ctx.prisma.opportunityInterest.count({ where: { opportunityId: parent.id } });
+    },
   },
 
   Query: {
@@ -146,9 +189,15 @@ export const resolvers = {
       ctx.user ? ctx.prisma.user.findUnique({ where: { id: ctx.user.id } }) : null,
     csrfToken: (_: unknown, __: unknown, ctx: Ctx) => ctx.csrfToken,
     profile: (_: unknown, args: { handle: string }, ctx: Ctx) =>
-      ctx.prisma.profile.findUnique({ where: { handle: args.handle.toLowerCase() } }),
+      ctx.prisma.profile.findUnique({
+        where: { handle: args.handle.toLowerCase() },
+        include: profileListInclude,
+      }),
     work: (_: unknown, args: { slug: string }, ctx: Ctx) =>
-      ctx.prisma.work.findUnique({ where: { slug: args.slug } }),
+      ctx.prisma.work.findUnique({
+        where: { slug: args.slug },
+        include: workListInclude,
+      }),
     disciplines: (_: unknown, __: unknown, ctx: Ctx) =>
       ctx.prisma.discipline.findMany({ orderBy: { sortOrder: "asc" } }),
     cities: (_: unknown, __: unknown, ctx: Ctx) => {
@@ -178,20 +227,36 @@ export const resolvers = {
         latestOpportunities,
       ] = await Promise.all([
         featuredCreatorIds.length
-          ? ctx.prisma.profile.findMany({ where: { id: { in: featuredCreatorIds } } })
-          : ctx.prisma.profile.findMany({ take: 8, orderBy: { createdAt: "desc" } }),
-        ctx.prisma.profile.findMany({ take: 12, orderBy: { createdAt: "desc" } }),
+          ? ctx.prisma.profile.findMany({
+              where: { id: { in: featuredCreatorIds } },
+              include: profileListInclude,
+            })
+          : ctx.prisma.profile.findMany({
+              take: 8,
+              orderBy: { createdAt: "desc" },
+              include: profileListInclude,
+            }),
+        ctx.prisma.profile.findMany({
+          take: 12,
+          orderBy: { createdAt: "desc" },
+          include: profileListInclude,
+        }),
         featuredWorkIds.length
-          ? ctx.prisma.work.findMany({ where: { id: { in: featuredWorkIds }, status: "published" } })
+          ? ctx.prisma.work.findMany({
+              where: { id: { in: featuredWorkIds }, status: "published" },
+              include: workListInclude,
+            })
           : ctx.prisma.work.findMany({
               where: { status: "published" },
               orderBy: { publishedAt: "desc" },
               take: 8,
+              include: workListInclude,
             }),
         ctx.prisma.work.findMany({
           where: { status: "published" },
           orderBy: { publishedAt: "desc" },
           take: 12,
+          include: workListInclude,
         }),
         featuredEventIds.length
           ? ctx.prisma.event.findMany({ where: { id: { in: featuredEventIds }, status: "published" } })
@@ -206,16 +271,21 @@ export const resolvers = {
           take: 12,
         }),
         featuredOppIds.length
-          ? ctx.prisma.opportunity.findMany({ where: { id: { in: featuredOppIds }, status: "open" } })
+          ? ctx.prisma.opportunity.findMany({
+              where: { id: { in: featuredOppIds }, status: "open" },
+              include: opportunityListInclude,
+            })
           : ctx.prisma.opportunity.findMany({
               where: { status: "open" },
               orderBy: { createdAt: "desc" },
               take: 8,
+              include: opportunityListInclude,
             }),
         ctx.prisma.opportunity.findMany({
           where: { status: "open" },
           orderBy: { createdAt: "desc" },
           take: 12,
+          include: opportunityListInclude,
         }),
       ]);
 
@@ -261,6 +331,7 @@ export const resolvers = {
           ],
         },
         take: limit,
+        include: profileListInclude,
       });
 
       const works = await ctx.prisma.work.findMany({
@@ -278,6 +349,7 @@ export const resolvers = {
           ],
         },
         take: limit,
+        include: workListInclude,
       });
 
       const events = await ctx.prisma.event.findMany({
@@ -301,6 +373,7 @@ export const resolvers = {
           ],
         },
         take: limit,
+        include: opportunityListInclude,
       });
 
       return { creators, works, events, opportunities };
@@ -342,6 +415,7 @@ export const resolvers = {
         orderBy: { displayName: "asc" },
         take: args.limit ?? 40,
         skip: args.offset ?? 0,
+        include: profileListInclude,
       });
     },
 
@@ -379,6 +453,7 @@ export const resolvers = {
         orderBy: { publishedAt: "desc" },
         take: args.limit ?? 40,
         skip: args.offset ?? 0,
+        include: workListInclude,
       });
     },
 
@@ -387,9 +462,13 @@ export const resolvers = {
         where: { status: (args.status as "open") ?? "open" },
         orderBy: { createdAt: "desc" },
         take: args.limit ?? 40,
+        include: opportunityListInclude,
       }),
     opportunity: (_: unknown, args: { slug: string }, ctx: Ctx) =>
-      ctx.prisma.opportunity.findUnique({ where: { slug: args.slug } }),
+      ctx.prisma.opportunity.findUnique({
+        where: { slug: args.slug },
+        include: opportunityListInclude,
+      }),
     events: (_: unknown, args: { limit?: number; upcomingOnly?: boolean }, ctx: Ctx) => {
       const upcomingOnly = args.upcomingOnly === true;
       return ctx.prisma.event.findMany({
