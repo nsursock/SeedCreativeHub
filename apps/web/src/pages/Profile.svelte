@@ -8,6 +8,7 @@
   import { reveal, hueOf, initialsOf, workCoverUrl } from "../lib/reveal";
   import AiMadeBadge from "../components/AiMadeBadge.svelte";
   import { cityLabel } from "../lib/directory";
+  import { track } from "../lib/analytics";
 
   let { params }: { params?: { handle?: string } } = $props();
   let locale = $derived($localeStore);
@@ -48,8 +49,10 @@
     }
     if (profile.isFollowing) {
       await gql(`mutation($id: ID!) { unfollow(profileId: $id) }`, { id: profile.id });
+      track("unfollow");
     } else {
       await gql(`mutation($id: ID!) { follow(profileId: $id) }`, { id: profile.id });
+      track("follow");
     }
     await load();
   }
@@ -75,6 +78,7 @@
       `mutation($input: ContactInput!) { sendContact(input: $input) }`,
       { input: { toProfileId: profile.id, subject, message } },
     );
+    track("contact_send");
     contactOpen = false;
     flash = "Sent";
   }
@@ -84,6 +88,7 @@
       `mutation($input: ReportInput!) { createReport(input: $input) { id } }`,
       { input: { entityType: "profile", entityId: profile.id, reason } },
     );
+    track("report_create", { entity_type: "profile" });
     reportOpen = false;
     flash = "Reported";
   }

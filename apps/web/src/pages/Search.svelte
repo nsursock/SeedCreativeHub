@@ -9,6 +9,7 @@
   import { gql } from "../lib/gql";
   import { reveal, hueOf, initialsOf } from "../lib/reveal";
   import { cityLabel } from "../lib/directory";
+  import { track } from "../lib/analytics";
 
   let locale = $derived($localeStore);
   let messages = $derived(getMessages(locale));
@@ -34,6 +35,15 @@
       { q, discipline: discipline || null, city: city || null },
     );
     result = res.search;
+    track("search_run", {
+      has_query: q.trim().length > 0,
+      has_discipline: Boolean(discipline),
+      has_city: Boolean(city),
+      creators: result?.creators?.length ?? 0,
+      works: result?.works?.length ?? 0,
+      events: result?.events?.length ?? 0,
+      opportunities: result?.opportunities?.length ?? 0,
+    });
     searching = false;
   }
 </script>

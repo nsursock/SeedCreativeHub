@@ -11,6 +11,7 @@
   import { locale as localeStore } from "../lib/stores";
   import { gql } from "../lib/gql";
   import { reveal, hueOf, initialsOf } from "../lib/reveal";
+  import { track } from "../lib/analytics";
 
   let locale = $derived($localeStore);
   let messages = $derived(getMessages(locale));
@@ -62,6 +63,10 @@
         }`,
         { input: { email, disciplines: selected, locale } },
       );
+      track("waitlist_join", {
+        discipline_count: selected.length,
+        locale,
+      });
       status = "ok";
       email = "";
     } catch (err) {

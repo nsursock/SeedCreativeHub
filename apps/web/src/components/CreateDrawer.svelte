@@ -8,6 +8,7 @@
   import { getMessages, localePath, t } from "../lib/i18n";
   import { createDrawerOpen, locale as localeStore } from "../lib/stores";
   import { gql } from "../lib/gql";
+  import { track } from "../lib/analytics";
 
   let locale = $derived($localeStore);
   let messages = $derived(getMessages(locale));
@@ -133,6 +134,11 @@
           },
         },
       );
+      track("work_create", {
+        type,
+        discipline,
+        ai_generated: aiGenerated,
+      });
       finishClose();
       location.hash = localePath(locale, `works/${res.createWork.slug}`);
     } catch (err) {

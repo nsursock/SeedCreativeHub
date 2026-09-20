@@ -1,12 +1,27 @@
-/** Browser analytics / Sentry hooks — no-ops until PUBLIC_* keys are set. */
-export function initClientObservability() {
-  const sentry = import.meta.env.VITE_PUBLIC_SENTRY_DSN ?? "";
-  const analytics = import.meta.env.VITE_PUBLIC_ANALYTICS_KEY ?? "";
-  if (sentry) console.info("[observability] Sentry DSN present");
-  if (analytics) console.info("[observability] Analytics key present");
+/** Browser analytics — Statsman custom events + optional Sentry hook. */
+
+declare global {
+  interface Window {
+    statsman?: {
+      track: (event: string, props?: Record<string, string | number | boolean>) => void;
+    };
+  }
 }
 
-export function track(event: string, props?: Record<string, unknown>) {
+export function initClientObservability() {
+  const sentry = import.meta.env.VITE_PUBLIC_SENTRY_DSN ?? "";
+  if (sentry) console.info("[observability] Sentry DSN present");
+}
+
+/**
+ * Product events for Statsman. Never pass emails, passwords, tokens, or message bodies.
+ * Automatic pageview / engagement / scroll / outbound come from tracker.js.
+ */
+export function track(event: string, props?: Record<string, string | number | boolean>) {
   if (import.meta.env.DEV) console.info("[product]", event, props ?? {});
-  // Wire PostHog/Plausible when VITE_PUBLIC_ANALYTICS_KEY is set.
+  try {
+    window.statsman?.track(event, props);
+  } catch {
+    /* tracker optional / blocked */
+  }
 }

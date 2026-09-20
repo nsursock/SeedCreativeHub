@@ -4,6 +4,7 @@
   import { locale as localeStore } from "../lib/stores";
   import { gql, setCsrfToken } from "../lib/gql";
   import { refreshSession } from "../lib/stores";
+  import { track } from "../lib/analytics";
 
   let locale = $derived($localeStore);
   let messages = $derived(getMessages(locale));
@@ -36,6 +37,7 @@
           { input: { email, password } },
         );
         setCsrfToken(res.signIn.csrfToken);
+        track("sign_in", { method: "password" });
       } else {
         const res = await gql<{ signUp: { csrfToken: string } }>(
           `mutation($input: SignUpInput!) { signUp(input: $input) { csrfToken user { id } } }`,
@@ -51,6 +53,7 @@
           },
         );
         setCsrfToken(res.signUp.csrfToken);
+        track("signup", { method: "password", locale });
       }
       await refreshSession();
       push(localePath(locale, "explore"));
@@ -71,6 +74,7 @@
     loading = true;
     try {
       await gql(`mutation($email: String!) { requestMagicLink(email: $email) { ok } }`, { email });
+      track("magic_link_request");
       success = "Check your email for a magic link.";
     } catch (err) {
       error = err instanceof Error ? err.message : t(messages, "common.error");

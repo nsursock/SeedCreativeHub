@@ -10,6 +10,7 @@
   import { reveal } from "../lib/reveal";
   import { labelOf, type CollabRow } from "../lib/directory";
   import { requireAccount } from "../lib/authGate";
+  import { track } from "../lib/analytics";
 
   let { params }: { params?: { slug?: string } } = $props();
   let locale = $derived($localeStore);
@@ -61,6 +62,9 @@
     await gql(`mutation($id: ID!, $message: String) { expressInterest(opportunityId: $id, message: $message) { id } }`, {
       id: detail.id,
       message: interestMsg,
+    });
+    track("collab_interest", {
+      paid: detail.compensationStatus === "paid",
     });
     interestMsg = "";
     await load();

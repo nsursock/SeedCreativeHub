@@ -2,6 +2,7 @@
   import { getMessages, localePath, t } from "../lib/i18n";
   import { locale as localeStore, refreshSession } from "../lib/stores";
   import { gql, setCsrfToken } from "../lib/gql";
+  import { track } from "../lib/analytics";
 
   let { params }: { params?: { token?: string } } = $props();
   let locale = $derived($localeStore);
@@ -23,6 +24,7 @@
         { input: { token, email, password, acceptTerms: true } },
       );
       setCsrfToken(res.claimProfile.csrfToken);
+      track("profile_claim");
       await refreshSession();
       location.hash = localePath(locale, "explore");
     } catch (err) {

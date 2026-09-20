@@ -4,6 +4,7 @@
   import { getMessages, localePath, t } from "../lib/i18n";
   import { locale as localeStore, refreshSession } from "../lib/stores";
   import { gql, setCsrfToken } from "../lib/gql";
+  import { track } from "../lib/analytics";
 
   let locale = $derived($localeStore);
   let messages = $derived(getMessages(locale));
@@ -23,6 +24,7 @@
         { token },
       );
       setCsrfToken(res.consumeMagicLink.csrfToken);
+      track("magic_link_consume");
       await refreshSession();
       push(localePath(locale, "explore"));
     } catch (e) {
