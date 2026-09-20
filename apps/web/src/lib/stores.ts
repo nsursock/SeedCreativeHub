@@ -19,17 +19,26 @@ export const sessionReady = writable(false);
 /** Opens the create-work drawer from AppShell (also used by /create deep link). */
 export const createDrawerOpen = writable(false);
 
+/** Load session in the background. Times out so hung APIs don't block gated routes forever. */
 export async function refreshSession() {
   try {
-    const data = await gql<{ me: Me | null; csrfToken: string | null }>(`
+    const data = await Promise.race([
+      gql<{ me: Me | null; csrfToken: string | null }>(`
       query Me {
         me { id email role locale profile { handle displayName } }
         csrfToken
       }
-    `);
+    `),
+      new Promise<never>((_, reject) => {
+        setTimeout(() => reject(new Error("session timeout")), 4_000);
+      }),
+    ]);
     me.set(data.me);
     setCsrfToken(data.csrfToken);
     return data.me;
+  } catch {
+    me.set(null);
+    return null;
   } finally {
     sessionReady.set(true);
   }

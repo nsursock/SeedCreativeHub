@@ -6,7 +6,7 @@
   import IconUsers from "@tabler/icons-svelte/icons/users";
   import IconNetwork from "@tabler/icons-svelte/icons/affiliate";
   import IconArrowDown from "@tabler/icons-svelte/icons/arrow-down";
-  import { enterShell, playLandingIntro, typewriter, countUp } from "@scifiui/core/js";
+  import { enterShell, gsap, typewriter } from "@scifiui/core/js";
   import { getMessages, localePath, resolveHubMarket, t } from "../lib/i18n";
   import { locale as localeStore } from "../lib/stores";
   import { gql } from "../lib/gql";
@@ -23,7 +23,7 @@
   let root: HTMLElement | undefined = $state();
   let bootLine = $state("");
   let booted = $state(false);
-  let stats = $state({ creators: 0, works: 0, nights: 0 });
+  let stats = $state({ creators: 128, works: 340, nights: 12 });
 
   const glitchTitle = $derived(t(messages, "landing.heroGlitch"));
 
@@ -52,6 +52,41 @@
     else selected = [...selected, d];
   }
 
+  /** Snappy hero motion — transform only so copy stays readable on first paint. */
+  function playSnappyLanding(el: HTMLElement) {
+    const reduced =
+      document.documentElement.classList.contains("perf-lite") ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return;
+
+    const run = (selector: string, vars: Record<string, unknown>) => {
+      const nodes = el.querySelectorAll(selector);
+      if (!nodes.length) return;
+      gsap.from(nodes, { ...vars, clearProps: "transform" });
+    };
+
+    run(".label-kicker.neon-flicker", { y: -8, duration: 0.3, ease: "power2.out" });
+    run(".hero-title-glitch, .hero-title", {
+      y: 12,
+      duration: 0.4,
+      ease: "power3.out",
+      delay: 0.02,
+    });
+    run(".hero-tagline, .feature-pill, .btn-cta, .cta-secondary", {
+      y: 6,
+      duration: 0.3,
+      stagger: 0.02,
+      ease: "power2.out",
+      delay: 0.06,
+    });
+    run(".console-panel", {
+      y: 10,
+      duration: 0.35,
+      ease: "power2.out",
+      delay: 0.05,
+    });
+  }
+
   async function submit(e: Event) {
     e.preventDefault();
     status = "loading";
@@ -78,9 +113,8 @@
   onMount(() => {
     if (!root) return;
     enterShell(root);
-    playLandingIntro(root);
-    typewriter(t(messages, "landing.bootLine"), (s) => (bootLine = s), () => (booted = true), 22);
-    countUp({ creators: 128, works: 340, nights: 12 }, (v) => (stats = v));
+    playSnappyLanding(root);
+    typewriter(t(messages, "landing.bootLine"), (s) => (bootLine = s), () => (booted = true), 18);
 
     const feedTimer = setInterval(() => {
       const row: FeedRow = {

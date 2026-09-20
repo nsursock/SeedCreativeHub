@@ -64,10 +64,15 @@
   };
 
   /** Browse is public. Only account/admin surfaces require a session. */
+  function isAccountRoute(path: string) {
+    const rest = routeRest(path || "/");
+    return rest === "create" || rest === "notifications" || rest === "admin";
+  }
+
   $effect(() => {
     if (!$sessionReady) return;
     const rest = routeRest($location || "/");
-    const needsAccount = rest === "create" || rest === "notifications" || rest === "admin";
+    const needsAccount = isAccountRoute($location || "/");
     if (!needsAccount) return;
 
     if (!$me) {
@@ -109,7 +114,8 @@
   </div>
   <div class="hub-content">
     <AppShell {locale} {messages} />
-    {#if !$sessionReady}
+    <!-- Public pages render immediately; session probe must not blank the landing. -->
+    {#if !$sessionReady && isAccountRoute($location || "/")}
       <div class="hub-page flex justify-center py-20">
         <div class="skeleton h-10 w-48"></div>
       </div>
